@@ -1,9 +1,9 @@
-<img src="./readme/title1.svg"/>
+<img src="./readme/Readme Template Assets/title1.svg"/>
 
 <br><br>
 
 <!-- project overview -->
-<img src="./readme/title2.svg"/>
+<img src="./readme/Readme Template Assets/title2.svg"/>
 
 > Fridget is a full-stack IoT-powered smart fridge application designed to help users manage the contents of their fridge efficiently. Users can log in, view what's currently inside their fridge, get notified about products that are near expiry, and generate meal ideas based on available ingredients.
 >
@@ -12,7 +12,7 @@
 <br><br>
 
 <!-- System Design -->
-<img src="./readme/title3.svg"/>
+<img src="./readme/Readme Template Assets/title3.svg"/>
 
 ### Fridget
 
@@ -21,7 +21,7 @@
 <br><br>
 
 <!-- Project Highlights -->
-<img src="./readme/title4.svg"/>
+<img src="./readme/Readme Template Assets/title4.svg"/>
 
 ### Fridget
 
@@ -32,7 +32,7 @@
 <br><br>
 
 <!-- Demo -->
-<img src="./readme/title5.svg"/>
+<img src="./readme/Readme Template Assets/title5.svg"/>
 
 ### User Screens (Mobile)
 
@@ -51,7 +51,7 @@
 <br><br>
 
 <!-- Development & Testing -->
-<img src="./readme/title6.svg"/>
+<img src="./readme/Readme Template Assets/title6.svg"/>
 
 ### Fridget
 
@@ -64,7 +64,7 @@
 <br><br>
 
 <!-- Deployment -->
-<img src="./readme/title7.svg"/>
+<img src="./readme/Readme Template Assets/title7.svg"/>
 
 ### Fridget
 
