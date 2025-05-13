@@ -97,4 +97,23 @@ class AuthTest extends TestCase
                  ]);
     }
 
+    public function testLoginFailsWithInvalidPassword()
+    {
+        $user = User::factory()->create([
+            "email" => "rawan@example.com",
+            "password" => bcrypt("correct-password")
+        ]);
+
+        $response = $this->postJson("/api/v0.1/guest/login", [
+            "email" => "rawan@example.com",
+            "password" => "wrong-password"
+        ]);
+
+        $response->assertStatus(401)
+                ->assertJson([
+                    "success" => false,
+                    "error" => "Unauthorized"
+                ]);
+    }
+
 }
