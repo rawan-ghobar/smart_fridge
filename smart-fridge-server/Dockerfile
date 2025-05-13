@@ -2,8 +2,8 @@ FROM bitnami/laravel
 
 WORKDIR /app
 
-COPY ./smart-fridge-server /app/
+COPY . .
 
-RUN composer install --no-dev --optimize-autoloader \
-    && php artisan config:cache \
-    && php artisan route:cache
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+RUN composer install --optimize-autoloader
