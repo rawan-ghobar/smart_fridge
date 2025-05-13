@@ -45,4 +45,39 @@ class AuthTest extends TestCase
                      ]
                  ]);
     }
+
+    public function testLogin(): void
+    {
+        $user = User::factory()->create([
+            "email" => "rawan@example.com",
+            "password" => bcrypt("password123")
+        ]);
+
+        $response = $this->postJson("/api/v0.1/guest/login", [
+            "email" => "rawan@example.com",
+            "password" => "password123"
+        ]);
+
+        $response->assertStatus(200)
+                 ->assertJson([
+                     "success" => true,
+                     "data" => [
+                         "message" => "User logged in successfully",
+                     ]
+                 ])
+                 ->assertJsonStructure([
+                    "success",
+                    "data" => [
+                         "message",
+                         "user" => [
+                             "id",
+                             "first_name",
+                             "last_name",
+                             "email"
+                            ],
+                    "token"
+                     ]
+                 ]);
+    }
+
 }
