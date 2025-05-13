@@ -15,4 +15,14 @@ class Meal extends Model
         'description',
         'calories'
     ];
+
+    public function fridge()
+    {
+        return $this->belongsTo(Fridge::class);
+    }
+
+    public function ingredients()
+    {
+        return $this->hasMany(MealIngredient::class);
+    }
 }
