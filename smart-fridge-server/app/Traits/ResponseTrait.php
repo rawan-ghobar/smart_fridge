@@ -12,4 +12,11 @@ trait ResponseTrait{
             "data" => $data
         ], $code);
     }
+
+    public static function errorResponse($message, $code){
+        return response()->json([
+            "success" => false,
+            "message" => $message
+        ], $code);
+    }
 }
