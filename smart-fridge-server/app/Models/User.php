@@ -50,6 +50,16 @@ class User extends Authenticatable implements JWTSubject
         return [];
     }
 
+    public function notifications()
+    {
+        return $this->hasMany(Notification::class);
+    }
+
+    public function fridges()
+    {
+        return $this->belongsToMany(Fridge::class);
+    }
+
     protected function casts(): array
     {
         return [
