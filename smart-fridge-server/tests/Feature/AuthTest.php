@@ -79,5 +79,22 @@ class AuthTest extends TestCase
                      ]
                  ]);
     }
+    public function testLogout(): void
+    {
+        $user = User::factory()->create();
+        $token = JWTAuth::fromUser($user);
+
+        $response = $this->withHeaders([
+            "Authorization" => "Bearer $token"
+        ])->postJson("/api/v0.1/user/logout");
+
+        $response->assertStatus(200)
+                 ->assertJson([
+                     "success" => true,
+                     "data" => [
+                         "message" => "User logged out successfully."
+                     ]
+                 ]);
+    }
 
 }
