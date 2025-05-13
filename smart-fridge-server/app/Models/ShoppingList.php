@@ -13,4 +13,14 @@ class ShoppingList extends Model
         'fridge_id',
         'title'
     ];
+
+    public function fridge()
+    {
+        return $this->belongsTo(Fridge::class);
+    }
+
+    public function items()
+    {
+        return $this->hasMany(ShoppingListItem::class);
+    }
 }
