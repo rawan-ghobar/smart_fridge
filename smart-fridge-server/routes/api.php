@@ -8,5 +8,6 @@ Route::prefix('v0.1')->group(function () {
 
     Route::prefix('guest')->group(function () {
         Route::post('/login',  [AuthController::class, 'login']);
+        Route::post('/signup', [AuthController::class, 'signup']);
     });
 });
