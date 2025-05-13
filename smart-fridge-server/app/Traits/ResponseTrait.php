@@ -19,4 +19,12 @@ trait ResponseTrait{
             "message" => $message
         ], $code);
     }
+
+    public function handleFailedValidation(Validator $validator)
+    {
+        throw new HttpResponseException(response()->json([
+            "success" => false,
+            "result" => $validator->errors()
+        ], 422));
+    }
 }
