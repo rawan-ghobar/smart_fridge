@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-
+use App\Models\User;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Notification>
  */
@@ -17,7 +17,7 @@ class NotificationFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => \App\Models\User::factory(),
+            'user_id' => User::factory(),
             'message' => fake()->sentence(),
             'type' => fake()->randomElement(['expiry','info']),
         ];
