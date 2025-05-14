@@ -48,4 +48,19 @@ class ItemService
 
         return ['message' => $message,'item' => $item];
     }
+
+    public static function deleteItem(int $fridgeId, int $itemId)
+    {
+        $fridge = Fridge::find($fridgeId);
+        if (!$fridge) {
+            return false;
+        }
+
+        $item = $fridge->items()->find($itemId);
+        if (!$item) {
+            return false;
+        }
+
+        return $item->delete();
+    }
 }
