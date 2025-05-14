@@ -45,6 +45,17 @@ const Login = ({ navigation }) => {
     <Image source={require('../../assets/fridget.png')} style={styles.logo} resizeMode="contain"/>
     <View style={styles.inputGroup}>
     <AppText style={styles.label}>Email</AppText>
+        <TextInput
+          placeholder="jhon@gmail.com"
+          placeholderTextColor="#C0C0C0"
+          keyboardType="email-address"
+          autoCapitalize="none"
+          style={styles.input}
+          value={email}
+          onChangeText={setEmail}
+        />
+    </View>
+
 
 
 }
