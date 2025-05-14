@@ -22,4 +22,11 @@ class FridgeController extends Controller
         $fridges = FridgeService::getFridges();
         return ResponseTrait::successResponse($fridges);
     }
+
+    public static function addorUpdateFridge(CreateFridgeRequest $request, $id="null")
+    {
+         $fridge = FridgeService::addorUpdateFridge($request, $id);
+         return ResponseTrait::successResponse($fridge);
+
+    }
 }
