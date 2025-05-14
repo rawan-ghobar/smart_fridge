@@ -9,3 +9,5 @@ const Login = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordVisible, setPasswordVisible] = useState(false);
+
+  const togglePasswordVisibility = () => setPasswordVisible(prev => !prev);
