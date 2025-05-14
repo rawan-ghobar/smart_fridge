@@ -13,3 +13,7 @@ const fetchFonts = () => {
 };
 export default function App() {
   const [fontsLoaded, setFontsLoaded] = React.useState(false);
+  React.useEffect(() => {
+    DefaultText.defaultProps = DefaultText.defaultProps || {};
+    DefaultText.defaultProps.style = { fontFamily: 'Outfit-Regular' };
+  }, []);
