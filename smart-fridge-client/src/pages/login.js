@@ -68,6 +68,16 @@ const Login = ({ navigation }) => {
             value={password}
             onChangeText={setPassword}
           />
+          <TouchableOpacity onPress={togglePasswordVisibility}>
+            <Ionicons
+              name={passwordVisible ? 'eye-off-outline' : 'eye-outline'}
+              size={20} 
+              color={COLORS.primaryAccent}
+            />
+          </TouchableOpacity>
+        </View>
+      </View>
+
 
 
 }
