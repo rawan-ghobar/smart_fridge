@@ -38,6 +38,7 @@ class FridgeService
     public static function addOrUpdateFridge(CreateFridgeRequest $request, $id = "null"){
         if ($id === "add") {
             $fridge = new Fridge;
+            $fridge->user_id = Auth::id();
             $message = "Fridge added successfully";
         } else {
             $fridge = Fridge::find($id);
