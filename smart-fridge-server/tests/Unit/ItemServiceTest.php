@@ -4,6 +4,7 @@ namespace Tests\Unit;
 
 use App\Models\Fridge;
 use App\Models\FridgeItem;
+use App\Models\User;
 use App\Services\ItemService;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\Request;
@@ -11,14 +12,13 @@ use Tests\TestCase;
 
 class ItemServiceTest extends TestCase
 {
-    /**
-     * A basic unit test example.
-     */
     use RefreshDatabase;
 
-    /** @test */
     public function add_item()
     {
+        $user = User::factory()->create();
+        $this->actingAs($user, 'api');
+
         $fridge = Fridge::factory()->create();
 
         $request = new Request([
@@ -37,7 +37,7 @@ class ItemServiceTest extends TestCase
     public function update_item()
     {
         $fridge = Fridge::factory()->create();
-        $item = FridgeItem::factory()->create(['fridge_id' => $fridge->id]);
+        $item = FridgeItem::factory()->create();
 
         $request = new Request([
             'name' => 'Butter',
