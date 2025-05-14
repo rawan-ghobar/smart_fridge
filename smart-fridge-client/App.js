@@ -17,3 +17,12 @@ export default function App() {
     DefaultText.defaultProps = DefaultText.defaultProps || {};
     DefaultText.defaultProps.style = { fontFamily: 'Outfit-Regular' };
   }, []);
+  if (!fontsLoaded) {
+    return (
+      <AppLoading
+        startAsync={fetchFonts}
+        onFinish={() => setFontsLoaded(true)}
+        onError={console.warn}
+      />
+    );
+  }
