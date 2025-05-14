@@ -17,20 +17,31 @@ const Login = ({ navigation }) => {
     const response = await api.post('/guest/login', { email, password }, {
       headers: { 'Content-Type': 'application/json' },
     });
+
     console.log('Response Data:', response.data);
 
     const { success, data } = response.data;
     const { user, token, message } = data;
 
-    await AsyncStorage.setItem('token', token);
-    await AsyncStorage.setItem('id', user.id.toString());
-    await AsyncStorage.setItem('fullname', `${user.first_name} ${user.last_name}`);
-    await AsyncStorage.setItem('account_type', user.role); 
+    if (success && user) {
+      await AsyncStorage.setItem('token', token);
+      await AsyncStorage.setItem('id', user.id.toString());
+      await AsyncStorage.setItem('fullname', `${user.first_name} ${user.last_name}`);
+      await AsyncStorage.setItem('account_type', user.role); 
 
-    navigation.navigate('ConnectFridge');
-    } else {
+      navigation.navigate('ConnectFridge');
+    } 
+    else {
       Alert.alert('Login Failed', 'Invalid credentials');
     }
+  }
+  catch (err) {
+    console.error(err.response?.data || err.message);
+    Alert.alert('Error', 'An error occurred. Please try again.');
+  }
+};
+}
+
 
 
 
