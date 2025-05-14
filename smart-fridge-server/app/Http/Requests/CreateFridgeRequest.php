@@ -28,4 +28,10 @@ class CreateFridgeRequest extends FormRequest
         ];
     }
 
+    public function messages():array{
+        return [
+            'code.unique' => 'This fridge code already exists.',
+            'password.min' => 'The fridge password must be at least 6 characters.',
+        ];
+    }
 }
