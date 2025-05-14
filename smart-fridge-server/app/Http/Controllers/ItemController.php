@@ -28,6 +28,8 @@ class ItemController extends Controller
         if (!$result) {
             return ResponseTrait::errorResponse("Fridge or item not found.", 404);
         }
+
+        return ResponseTrait::successResponse($result);
     }
 
 }
