@@ -56,6 +56,8 @@ const Login = ({ navigation }) => {
         />
     </View>
 
+    <View style={styles.inputGroup}>
+        <AppText style={styles.label}>Password</AppText>
 
 
 }
