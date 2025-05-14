@@ -16,6 +16,7 @@ Route::prefix('v0.1')->group(function () {
 
         Route::prefix('meal')->group(function () {
             Route::post('/generate', [MealGenerationController::class, 'generate']);
+            Route::post('/generatewithcal', [MealGenerationController::class, 'generateMealWithCalorieLimit']);
         });
 
         Route::prefix('fridge')->group(function () {
