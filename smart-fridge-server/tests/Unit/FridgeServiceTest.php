@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Tests\TestCase;
+use App\Http\Requests\CreateFridgeRequest;
+use Illuminate\Support\Facades\Validator;
 
 class FridgeServiceTest extends TestCase
 {
@@ -34,5 +36,22 @@ class FridgeServiceTest extends TestCase
         $this->assertEquals($fridge->id, $response->id);
     }
 
-    
+    public function testUpdateFridgeSuccessfully()
+    {
+        $data = [
+            'name' => 'New Fridge Name',
+            'code' => 'AB3423',
+            'password' => 'secret123'
+        ];
+
+        $request = new CreateFridgeRequest();
+        $request->merge($data);
+
+        $validator = Validator::make($data, $request->rules());
+        $this->assertFalse($validator->fails());
+
+        $result = FridgeService::addOrUpdateFridge($request, "add");
+
+        $this->assertEquals("Fridge added successfully", $result['message']);
+    }
 }
