@@ -77,6 +77,14 @@ const Login = ({ navigation }) => {
           </TouchableOpacity>
         </View>
       </View>
+      <TouchableOpacity 
+        style={styles.loginButton} 
+        activeOpacity={0.8} 
+        onPress={handleLogin}
+        >
+        <AppText style={styles.loginButtonText}>Login</AppText>
+      </TouchableOpacity>
+
 
 
 
