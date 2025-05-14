@@ -40,6 +40,9 @@ const Login = ({ navigation }) => {
     Alert.alert('Error', 'An error occurred. Please try again.');
   }
 };
+  return (
+    <View style={styles.container}>
+
 }
 
 
