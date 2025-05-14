@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Http\Requests\CreateFridgeRequest;
 use App\Models\Fridge;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Traits\ResponseTrait;
