@@ -36,4 +36,18 @@ class FridgeControllerTest extends TestCase
             'fridge_id' => $fridge->id,
         ]);
     }
+
+    public function test_get_user_fridges()
+    {
+        $user = User::factory()->create();
+        $this->actingAs($user, 'api');
+
+        $fridge = Fridge::factory()->create();
+        $user->fridges()->attach($fridge);
+
+        $response = $this->getJson('/api/v0.1/fridge/getfridges');
+
+        $response->assertStatus(200)
+                 ->assertJsonFragment(['code' => $fridge->code]);
+    }
 }
