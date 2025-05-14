@@ -44,6 +44,7 @@ class ItemService
         $item->quantity = $request["quantity"];
         $item->calories = $request["calories"];
         $item->unit = $request["unit"];
+        $item->fridge_id = $fridgeId;
         $item->save();
 
         return ['message' => $message,'item' => $item];
