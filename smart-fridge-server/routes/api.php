@@ -13,6 +13,9 @@ Route::prefix('v0.1')->group(function () {
                 Route::post('/logout', [AuthController::class, 'logout']);
         });
 
+        Route::prefix('meal')->group(function () {
+        });
+
         Route::prefix('fridge')->group(function () {
             Route::post('/connect', [FridgeController::class, 'connect']);
             Route::get('/getfridges', [FridgeController::class, 'getFridges']);
