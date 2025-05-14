@@ -112,7 +112,7 @@ class AuthTest extends TestCase
         $response->assertStatus(401)
                 ->assertJson([
                     "success" => false,
-                    "error" => "Unauthorized"
+                    "message" => "Unauthorized"
                 ]);
     }
 
