@@ -23,6 +23,7 @@ Route::prefix('v0.1')->group(function () {
 
         Route::prefix('items')->group(function () {
             Route::get('/getitems/{fridgeId}' , [ItemController::class, 'getItems']);
+            Route::get('/getitem/{fridgeId}/{itemId}', [ItemController::class, 'getItem']);
         });
 
     });
