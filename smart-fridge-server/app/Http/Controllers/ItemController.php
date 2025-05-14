@@ -24,6 +24,10 @@ class ItemController extends Controller
     public static function addorUpdateItem(Request $request, $fridgeId, $itemId = "add")
     {
         $result = ItemService::addOrUpdateItem($request, $fridgeId, $itemId);
+
+        if (!$result) {
+            return ResponseTrait::errorResponse("Fridge or item not found.", 404);
+        }
     }
 
 }
