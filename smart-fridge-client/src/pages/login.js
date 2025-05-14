@@ -59,6 +59,15 @@ const Login = ({ navigation }) => {
     <View style={styles.inputGroup}>
         <AppText style={styles.label}>Password</AppText>
         <View style={styles.passwordContainer}>
+          <TextInput
+            placeholder="********"
+            placeholderTextColor="#C0C0C0"
+            secureTextEntry={!passwordVisible}
+            autoCapitalize="none"
+            style={styles.passwordInput}
+            value={password}
+            onChangeText={setPassword}
+          />
 
 
 }
