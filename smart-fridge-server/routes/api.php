@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FridgeController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\MealGenerationController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('v0.1')->group(function () {
@@ -14,6 +15,7 @@ Route::prefix('v0.1')->group(function () {
         });
 
         Route::prefix('meal')->group(function () {
+            Route::post('/generate', [MealGenerationController::class, 'generate']);
         });
 
         Route::prefix('fridge')->group(function () {
