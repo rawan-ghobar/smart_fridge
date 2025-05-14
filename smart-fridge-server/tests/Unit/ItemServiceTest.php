@@ -34,6 +34,23 @@ class ItemServiceTest extends TestCase
         $this->assertDatabaseHas('fridge_items', ['name' => 'Cheese', 'fridge_id' => $fridge->id]);
     }
 
+    public function update_item()
+    {
+        $fridge = Fridge::factory()->create();
+        $item = FridgeItem::factory()->create(['fridge_id' => $fridge->id]);
+
+        $request = new Request([
+            'name' => 'Butter',
+            'quantity' => 3,
+            'calories' => 250,
+            'unit' => 'block'
+        ]);
+
+        $result = ItemService::addOrUpdateItem($request, $fridge->id, $item->id);
+
+        $this->assertEquals('Item updated successfully', $result['message']);
+        $this->assertDatabaseHas('fridge_items', ['id' => $item->id, 'name' => 'Butter']);
+    }
 
     public function delete_item()
     {
