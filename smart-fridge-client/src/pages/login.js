@@ -23,5 +23,7 @@ const Login = ({ navigation }) => {
     const { user, token, message } = data;
 
     await AsyncStorage.setItem('token', token);
+    await AsyncStorage.setItem('id', user.id.toString());
+
 
 
