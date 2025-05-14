@@ -10,6 +10,17 @@ class ItemService
 {
     use ResponseTrait;
 
+    public static function getItems(int $fridgeId)
+    {
+        $fridge = Fridge::find($fridgeId);
+
+        if (!$fridge) {
+            return null;
+        }
+
+        return $fridge->items;
+    }
+
     public static function getItem(int $fridgeId, int $itemId)
     {
         $fridge = Fridge::find($fridgeId);
