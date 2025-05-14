@@ -21,6 +21,9 @@ class ItemController extends Controller
         return ResponseTrait::successResponse($item);
     }
 
-    
+    public static function addorUpdateItem(Request $request, $fridgeId, $itemId = "add")
+    {
+        $result = ItemService::addOrUpdateItem($request, $fridgeId, $itemId);
+    }
 
 }
