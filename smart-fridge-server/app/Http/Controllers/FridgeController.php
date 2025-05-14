@@ -29,4 +29,14 @@ class FridgeController extends Controller
          return ResponseTrait::successResponse($fridge);
 
     }
+
+    public static function disconnect($id)
+    {
+        $disconnected = FridgeService::disconnect($id);
+        if (!$disconnected) {
+        return ResponseTrait::errorResponse("Fridge not found or not connected to user.", 404);
+        }
+
+        return ResponseTrait::successResponse("Fridge disconnected successfully.");
+    }
 }
