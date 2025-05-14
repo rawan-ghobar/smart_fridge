@@ -16,6 +16,7 @@ Route::prefix('v0.1')->group(function () {
         Route::prefix('fridge')->group(function () {
             Route::post('/connect', [FridgeController::class, 'connect']);
             Route::get('/getfridges', [FridgeController::class, 'getFridges']);
+            Route::post('/addorupdate/{id}',   [FridgeController::class, 'addorUpdateFridge']);
         });
 
     });
