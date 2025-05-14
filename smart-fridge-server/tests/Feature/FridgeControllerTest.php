@@ -68,4 +68,21 @@ class FridgeControllerTest extends TestCase
 
         $this->assertDatabaseHas('fridges', ['code' => 'FR123']);
     }
+
+    public function test_update_fridge_successfully()
+    {
+        $user = User::factory()->create();
+        $this->actingAs($user, 'api');
+
+        $fridge = Fridge::factory()->create();
+
+        $response = $this->postJson("/api/v0.1/fridge/addorupdate/{$fridge->id}", [
+            'name' => 'Updated Name',
+            'code' => 'FR999',
+            'password' => 'newpass',
+        ]);
+
+        $response->assertStatus(200)
+                 ->assertJsonFragment(['code' => 'FR999']);
+    }
 }
