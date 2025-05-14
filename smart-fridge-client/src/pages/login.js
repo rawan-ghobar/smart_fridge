@@ -84,6 +84,8 @@ const Login = ({ navigation }) => {
         >
         <AppText style={styles.loginButtonText}>Login</AppText>
       </TouchableOpacity>
+      <View style={styles.footer}>
+        <AppText style={styles.footerText}>Don’t have an account? </AppText>
 
 
 
