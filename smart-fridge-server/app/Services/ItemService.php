@@ -20,4 +20,32 @@ class ItemService
 
         return $fridge->items()->find($itemId);
     }
+
+    public static function addOrUpdateItem(Request $request, $fridgeId, $itemId = "add")
+    {
+        $fridge = Fridge::find($fridgeId);
+
+        $fridgeId = (int) $fridgeId;
+
+        if ($itemId === "add"){
+            $item = new FridgeItem;
+            $message = "Item added successfully";
+        }
+
+        else {
+            $item = FridgeItem::find($itemId);
+            if (!$item){
+                return ResponseTrait::errorResponse("Fridge not found!",404);
+            }
+            $message = "Item updated successfully";
+        }
+
+        $item->name = $request['name'];
+        $item->quantity = $request["quantity"];
+        $item->calories = $request["calories"];
+        $item->unit = $request["unit"];
+        $item->save();
+
+        return ['message' => $message,'item' => $item];
+    }
 }
