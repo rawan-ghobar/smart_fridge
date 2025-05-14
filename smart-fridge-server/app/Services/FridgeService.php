@@ -69,5 +69,17 @@ class FridgeService
         return true;
     }
 
-    
+    public static function deleteFridge(int $id)
+    {
+        $fridge = Fridge::find($id);
+        if (!$fridge) {
+        return ResponseTrait::errorResponse("Fridge not found.", 404);
+        }
+
+        $fridge->users()->detach();
+
+        $fridge->delete();
+
+        return ResponseTrait::successResponse("Fridge deleted successfully.");
+    }
 }
