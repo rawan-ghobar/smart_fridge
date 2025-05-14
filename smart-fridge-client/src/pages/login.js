@@ -144,12 +144,34 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingVertical: 12,
   },
+  loginButton: {
+    backgroundColor: COLORS.primaryAccent,
+    width: '100%',
+    paddingVertical: 14,
+    borderRadius: 10,
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  loginButtonText: {
+    color: COLORS.white,
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  footer: {
+    flexDirection: 'row',
+    marginTop: 20,
+  },
+  footerText: {
+    color: COLORS.primary,
+  },
+  signupLink: {
+    color: COLORS.secondaryAccent,
+    fontWeight: '500',
+  },
+});
 
+export default Login;
 
-
-
-
-}
 
 
 
