@@ -54,4 +54,20 @@ class FridgeService
 
         return $fridge;
     }
+    public static function disconnect(int $id)
+    {
+        $user=Auth::user();
+
+        $fridge = $user->fridges()->find($id);
+
+        if (!$fridge) {
+            return false;
+        }
+
+        $user->fridges()->detach($fridge->id);
+
+        return true;
+    }
+
+    
 }
