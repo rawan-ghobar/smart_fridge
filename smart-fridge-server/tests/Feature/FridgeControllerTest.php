@@ -85,4 +85,23 @@ class FridgeControllerTest extends TestCase
         $response->assertStatus(200)
                  ->assertJsonFragment(['code' => 'FR999']);
     }
+
+    public function test_disconnect_fridge_successfully()
+    {
+        $user = User::factory()->create();
+        $this->actingAs($user, 'api');
+
+        $fridge = Fridge::factory()->create();
+        $user->fridges()->attach($fridge);
+
+        $response = $this->deleteJson("/api/v0.1/fridge/disconnect/{$fridge->id}");
+
+        $response->assertStatus(200)
+                ->assertJsonFragment(['data' => 'Fridge disconnected successfully.']);
+
+        $this->assertDatabaseMissing('fridge_user', [
+            'user_id' => $user->id,
+            'fridge_id' => $fridge->id,
+        ]);
+    }
 }
