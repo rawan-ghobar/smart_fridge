@@ -24,6 +24,7 @@ const Login = ({ navigation }) => {
 
     await AsyncStorage.setItem('token', token);
     await AsyncStorage.setItem('id', user.id.toString());
+    await AsyncStorage.setItem('fullname', `${user.first_name} ${user.last_name}`);
 
 
 
