@@ -42,6 +42,8 @@ const Login = ({ navigation }) => {
 };
   return (
     <View style={styles.container}>
+    <Image source={require('../../assets/fridget.png')} style={styles.logo} resizeMode="contain"/>
+
 
 }
 
