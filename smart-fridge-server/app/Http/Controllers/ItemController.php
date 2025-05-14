@@ -9,4 +9,18 @@ use App\Traits\ResponseTrait;
 class ItemController extends Controller
 {
     use ResponseTrait;
+
+    public static function getItem($fridgeId, $itemId)
+    {
+        $item = ItemService::getItem($fridgeId, $itemId);
+
+        if (!$item) {
+            return ResponseTrait::errorResponse("Item not found.", 404);
+        }
+
+        return ResponseTrait::successResponse($item);
+    }
+
+    
+
 }
