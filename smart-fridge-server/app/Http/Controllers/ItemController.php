@@ -32,4 +32,14 @@ class ItemController extends Controller
         return ResponseTrait::successResponse($result);
     }
 
+    public static function deleteItem($fridgeId, $itemId)
+    {
+        $deleted = ItemService::deleteItem($fridgeId, $itemId);
+
+        if (!$deleted) {
+            return ResponseTrait::errorResponse("Fridge or item not found.", 404);
+        }
+
+        return ResponseTrait::successResponse("Item deleted successfully.");
+    }
 }
