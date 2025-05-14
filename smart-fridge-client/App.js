@@ -12,3 +12,4 @@ const fetchFonts = () => {
   });
 };
 export default function App() {
+  const [fontsLoaded, setFontsLoaded] = React.useState(false);
