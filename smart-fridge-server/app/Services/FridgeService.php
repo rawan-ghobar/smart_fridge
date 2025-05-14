@@ -52,7 +52,7 @@ class FridgeService
         $fridge->password = Hash::make($request["password"]);
         $fridge->save();
 
-        return $fridge;
+        return ['message' => $message,'fridge' => $fridge];
     }
     public static function disconnect(int $id)
     {
