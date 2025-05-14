@@ -11,3 +11,4 @@ const fetchFonts = () => {
     'Outfit-SemiBold': require('./assets/fonts/Outfit/static/Outfit-SemiBold.ttf'),
   });
 };
+export default function App() {
