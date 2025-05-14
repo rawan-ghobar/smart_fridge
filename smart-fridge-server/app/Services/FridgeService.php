@@ -28,4 +28,30 @@ class FridgeService
 
         return $fridge;
     }
+    public static function getFridges()
+    {
+        $user = Auth::user();
+        $fridges = $user->fridges;
+        return $fridges;
+    }
+
+    public static function addOrUpdateFridge(CreateFridgeRequest $request, $id = "null"){
+        if ($id === "add") {
+            $fridge = new Fridge;
+            $message = "Fridge added successfully";
+        } else {
+            $fridge = Fridge::find($id);
+            if (!$fridge){
+                return ResponseTrait::errorResponse("Fridge not found!",404);
+            }
+            $message = "Fridge info updated successfully";
+        }
+
+        $fridge->name = $request['name'];
+        $fridge->code = $request["code"];
+        $fridge->password = Hash::make($request["password"]);
+        $fridge->save();
+
+        return $fridge;
+    }
 }
