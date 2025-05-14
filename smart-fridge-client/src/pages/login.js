@@ -101,6 +101,19 @@ const Login = ({ navigation }) => {
   white: '#FFFFFF',
   border: '#E0E0E0',
 };
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: COLORS.background,
+    paddingHorizontal: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  logo: {
+    width: 120,
+    height: 120,
+    marginBottom: 50,
+  },
 
 
 
