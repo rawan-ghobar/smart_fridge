@@ -30,21 +30,21 @@ const Login = ({ navigation }) => {
       await AsyncStorage.setItem('account_type', user.role); 
 
       navigation.navigate('ConnectFridge');
-    } 
-    else {
+    } else {
       Alert.alert('Login Failed', 'Invalid credentials');
     }
-  }
-  catch (err) {
+  } catch (err) {
     console.error(err.response?.data || err.message);
     Alert.alert('Error', 'An error occurred. Please try again.');
   }
 };
+
   return (
     <View style={styles.container}>
-    <Image source={require('../../assets/fridget.png')} style={styles.logo} resizeMode="contain"/>
-    <View style={styles.inputGroup}>
-    <AppText style={styles.label}>Email</AppText>
+      <Image source={require('../../assets/fridget.png')} style={styles.logo} resizeMode="contain"/>
+
+      <View style={styles.inputGroup}>
+        <AppText style={styles.label}>Email</AppText>
         <TextInput
           placeholder="jhon@gmail.com"
           placeholderTextColor="#C0C0C0"
@@ -54,9 +54,9 @@ const Login = ({ navigation }) => {
           value={email}
           onChangeText={setEmail}
         />
-    </View>
+      </View>
 
-    <View style={styles.inputGroup}>
+      <View style={styles.inputGroup}>
         <AppText style={styles.label}>Password</AppText>
         <View style={styles.passwordContainer}>
           <TextInput
@@ -77,6 +77,7 @@ const Login = ({ navigation }) => {
           </TouchableOpacity>
         </View>
       </View>
+
       <TouchableOpacity 
         style={styles.loginButton} 
         activeOpacity={0.8} 
@@ -84,6 +85,7 @@ const Login = ({ navigation }) => {
         >
         <AppText style={styles.loginButtonText}>Login</AppText>
       </TouchableOpacity>
+
       <View style={styles.footer}>
         <AppText style={styles.footerText}>Don’t have an account? </AppText>
         <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
@@ -92,7 +94,9 @@ const Login = ({ navigation }) => {
       </View>
     </View>
   );
-  const COLORS = {
+};
+
+const COLORS = {
   primary: '#033BB5',
   background: '#F7F9FB',
   primaryAccent: '#2A6AE4',
@@ -101,6 +105,7 @@ const Login = ({ navigation }) => {
   white: '#FFFFFF',
   border: '#E0E0E0',
 };
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -171,8 +176,3 @@ const styles = StyleSheet.create({
 });
 
 export default Login;
-
-
-
-
-
