@@ -18,8 +18,10 @@ const Login = ({ navigation }) => {
       headers: { 'Content-Type': 'application/json' },
     });
     console.log('Response Data:', response.data);
-    
+
     const { success, data } = response.data;
     const { user, token, message } = data;
+
+    await AsyncStorage.setItem('token', token);
 
 
