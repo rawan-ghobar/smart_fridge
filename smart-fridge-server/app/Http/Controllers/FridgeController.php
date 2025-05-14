@@ -16,4 +16,10 @@ class FridgeController extends Controller
         $connection = FridgeService::connect($request);
         return ResponseTrait::successResponse($connection);
     }
+
+    public static function getFridges()
+    {
+        $fridges = FridgeService::getFridges();
+        return ResponseTrait::successResponse($fridges);
+    }
 }
