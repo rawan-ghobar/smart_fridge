@@ -17,7 +17,7 @@ class ItemServiceTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function add_item_fridge()
+    public function add_item()
     {
         $fridge = Fridge::factory()->create();
 
@@ -33,4 +33,18 @@ class ItemServiceTest extends TestCase
         $this->assertEquals('Item added successfully', $result['message']);
         $this->assertDatabaseHas('fridge_items', ['name' => 'Cheese', 'fridge_id' => $fridge->id]);
     }
+
+
+    public function delete_item()
+    {
+        $fridge = Fridge::factory()->create();
+        $item = FridgeItem::factory()->create(['fridge_id' => $fridge->id]);
+
+        $result = ItemService::deleteItem($fridge->id, $item->id);
+
+        $this->assertTrue($result);
+        $this->assertDatabaseMissing('fridge_items', ['id' => $item->id]);
+    }
+
+
 }
