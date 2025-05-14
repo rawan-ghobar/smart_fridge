@@ -49,4 +49,26 @@ class ItemControllerTest extends TestCase
 
         $this->assertDatabaseHas('fridge_items', ['name' => 'Milk', 'fridge_id' => $fridge->id]);
     }
+
+    public function update_item()
+    {
+        $fridge = Fridge::factory()->create(['user_id' => $this->user->id]);
+        $item = FridgeItem::factory()->create(['fridge_id' => $fridge->id]);
+
+        $data = [
+            'name' => 'Yogurt',
+            'quantity' => 5,
+            'calories' => 80,
+            'unit' => 'pcs'
+        ];
+
+        $response = $this->actingAs($this->user, 'api')
+                         ->postJson("/api/v0.1/items/addorupdateitem/{$fridge->id}/{$item->id}", $data);
+
+        $response->assertStatus(200)
+                 ->assertJsonFragment(['message' => 'Item updated successfully']);
+
+        $this->assertDatabaseHas('fridge_items', ['id' => $item->id, 'name' => 'Yogurt']);
+    }
+
 }
