@@ -20,6 +20,9 @@ Route::prefix('v0.1')->group(function () {
             Route::delete('/disconnect/{id}',  [FridgeController::class, 'disconnect']);
         });
 
+        Route::prefix('items')->group(function () {
+        });
+
     });
 
     Route::prefix('guest')->group(function () {
