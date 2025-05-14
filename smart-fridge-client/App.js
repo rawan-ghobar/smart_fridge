@@ -11,12 +11,16 @@ const fetchFonts = () => {
     'Outfit-SemiBold': require('./assets/fonts/Outfit/static/Outfit-SemiBold.ttf'),
   });
 };
+
 export default function App() {
+
   const [fontsLoaded, setFontsLoaded] = React.useState(false);
+
   React.useEffect(() => {
     DefaultText.defaultProps = DefaultText.defaultProps || {};
     DefaultText.defaultProps.style = { fontFamily: 'Outfit-Regular' };
   }, []);
+
   if (!fontsLoaded) {
     return (
       <AppLoading
@@ -26,5 +30,6 @@ export default function App() {
       />
     );
   }
+
   return <Routes />;
 }
