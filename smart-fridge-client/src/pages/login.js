@@ -11,9 +11,11 @@ const Login = ({ navigation }) => {
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   const togglePasswordVisibility = () => setPasswordVisible(prev => !prev);
-  
+
   const handleLogin = async () => {
   try {
     const response = await api.post('/guest/login', { email, password }, {
       headers: { 'Content-Type': 'application/json' },
     });
+    console.log('Response Data:', response.data);
+
