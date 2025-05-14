@@ -3,6 +3,11 @@
 namespace Tests\Unit;
 
 use App\Services\MealGenerationService;
+use App\Schemas\MealGenerationSchema;
+use Illuminate\Support\Collection;
+use Mockery;
+use Prism\Prism\Prism;
+use Prism\Prism\Enums\Provider;
 use Tests\TestCase;
 
 class MealGenerationServiceTest extends TestCase
@@ -21,4 +26,15 @@ class MealGenerationServiceTest extends TestCase
         $this->assertEquals($expected, $result);
     }
 
+    public function build_prompt()
+    {
+        $mealType = 'Breakfast';
+        $itemsDescription = "- Egg : 6 pcs available, 70 kcal per pcs";
+
+        $prompt = MealGenerationService::buildPrompt($mealType, $itemsDescription);
+
+        $this->assertStringContainsString('Create a Breakfast recipe using ONLY the items listed below', $prompt);
+        $this->assertStringContainsString($itemsDescription, $prompt);
+        $this->assertStringContainsString('Return the recipe **strictly as JSON**', $prompt);
+    }
 }
