@@ -71,4 +71,18 @@ class ItemControllerTest extends TestCase
         $this->assertDatabaseHas('fridge_items', ['id' => $item->id, 'name' => 'Yogurt']);
     }
 
+    public function delete_item()
+    {
+        $fridge = Fridge::factory()->create(['user_id' => $this->user->id]);
+        $item = FridgeItem::factory()->create(['fridge_id' => $fridge->id]);
+
+        $response = $this->actingAs($this->user, 'api')
+                         ->deleteJson("/api/v0.1/items/deleteitem/{$fridge->id}/{$item->id}");
+
+        $response->assertStatus(200)
+                 ->assertJsonFragment(['message' => 'Item deleted successfully.']);
+
+        $this->assertDatabaseMissing('fridge_items', ['id' => $item->id]);
+    }
+
 }
