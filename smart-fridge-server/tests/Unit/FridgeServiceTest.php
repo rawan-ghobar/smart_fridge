@@ -38,6 +38,9 @@ class FridgeServiceTest extends TestCase
 
     public function testUpdateFridgeSuccessfully()
     {
+        $user = User::factory()->create();
+        $this->actingAs($user);
+
         $data = [
             'name' => 'New Fridge Name',
             'code' => 'AB3423',
@@ -53,5 +56,7 @@ class FridgeServiceTest extends TestCase
         $result = FridgeService::addOrUpdateFridge($request, "add");
 
         $this->assertEquals("Fridge added successfully", $result['message']);
+        $this->assertEquals($user->id, $result['fridge']->user_id);
     }
+
 }
