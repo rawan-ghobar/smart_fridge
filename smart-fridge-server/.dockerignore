@@ -1,0 +1,10 @@
+vendor
+node_modules
+storage/*.key
+storage/oauth-private.key
+storage/oauth-public.key
+.env
+.env.*
+.idea
+.vscode
+*.log
