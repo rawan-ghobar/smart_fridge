@@ -52,7 +52,7 @@ class ItemServiceTest extends TestCase
         $this->assertDatabaseHas('fridge_items', ['id' => $item->id, 'name' => 'Butter']);
     }
 
-    public function delete_item()
+    public function test_delete_item()
     {
         $fridge = Fridge::factory()->create();
         $item = FridgeItem::factory()->create(['fridge_id' => $fridge->id]);
