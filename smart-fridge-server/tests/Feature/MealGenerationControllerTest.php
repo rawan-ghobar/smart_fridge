@@ -20,7 +20,7 @@ class MealGenerationControllerTest extends TestCase
         parent::tearDown();
     }
 
-    public function generate_meal()
+    public function test_generate_meal()
     {
         $user = User::factory()->create();
         $fridge = Fridge::factory()->create(['user_id' => $user->id]);
