@@ -80,7 +80,10 @@ class ItemControllerTest extends TestCase
                          ->deleteJson("/api/v0.1/items/deleteitem/{$fridge->id}/{$item->id}");
 
         $response->assertStatus(200)
-                 ->assertJsonFragment(['message' => 'Item deleted successfully.']);
+         ->assertJson([
+             'data' => 'Item deleted successfully.',
+             'success' => true
+         ]);
 
         $this->assertDatabaseMissing('fridge_items', ['id' => $item->id]);
     }
