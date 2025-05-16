@@ -27,14 +27,16 @@ class MealGenerationControllerTest extends TestCase
 
         $this->actingAs($user, 'api');
 
+        $itemServiceMock = Mockery::mock('alias:' . ItemService::class);
+        $mealServiceMock = Mockery::mock('alias:' . MealGenerationService::class);
+
         $items = collect([
-            (object)[ 'name' => 'Egg', 'quantity' => 5, 'unit' => 'pcs', 'calories' => 70 ],
-            (object)[ 'name' => 'Milk', 'quantity' => 1, 'unit' => 'liter', 'calories' => 500 ]
+            (object)['name' => 'Egg', 'quantity' => 5, 'unit' => 'pcs', 'calories' => 70],
+            (object)['name' => 'Milk', 'quantity' => 1, 'unit' => 'liter', 'calories' => 500]
         ]);
-        $itemServiceMock = Mockery::mock('overload:' . ItemService::class);
+
         $itemServiceMock->shouldReceive('getItems')->once()->with($fridge->id)->andReturn($items);
 
-        $mealServiceMock = Mockery::mock('overload:' . MealGenerationService::class);
         $mealServiceMock->shouldReceive('generateMeal')->once()->andReturn([
             'meal_name' => 'Omelette',
             'ingredients' => 'Egg, Milk',
@@ -48,7 +50,9 @@ class MealGenerationControllerTest extends TestCase
         ]);
 
         $response->assertOk()
-                ->assertJsonStructure(['success', 'data' => ['meal_name', 'ingredients', 'instructions', 'total_calories']]);
+            ->assertJsonStructure([
+                'success',
+                'data' => ['meal_name', 'ingredients', 'instructions', 'total_calories']
+            ]);
     }
-
 }
