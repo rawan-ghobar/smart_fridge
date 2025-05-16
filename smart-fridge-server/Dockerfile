@@ -4,6 +4,6 @@ WORKDIR /app
 
 COPY . .
 
-RUN cp .env.example .env \
-    && composer install --optimize-autoloader --no-dev \
-    && php artisan key:generate
+RUN composer install --optimize-autoloader --no-dev
+
+RUN cp .env.example .env && php artisan key:generate
