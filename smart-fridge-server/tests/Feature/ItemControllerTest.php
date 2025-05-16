@@ -19,7 +19,7 @@ class ItemControllerTest extends TestCase
         parent::setUp();
         $this->user = User::factory()->create();
     }
-    public function get_item()
+    public function test_get_item()
     {
         $fridge = Fridge::factory()->create(['user_id' => $this->user->id]);
         $item = FridgeItem::factory()->create(['fridge_id' => $fridge->id]);
