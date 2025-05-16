@@ -14,7 +14,7 @@ class ItemServiceTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function add_item()
+    public function test_add_item()
     {
         $user = User::factory()->create();
         $this->actingAs($user, 'api');
