@@ -71,7 +71,7 @@ class ItemControllerTest extends TestCase
         $this->assertDatabaseHas('fridge_items', ['id' => $item->id, 'name' => 'Yogurt']);
     }
 
-    public function delete_item()
+    public function test_delete_item()
     {
         $fridge = Fridge::factory()->create(['user_id' => $this->user->id]);
         $item = FridgeItem::factory()->create(['fridge_id' => $fridge->id]);
