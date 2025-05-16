@@ -31,6 +31,9 @@
 #### Frontend
 - The mobile application is developed using React Native with Expo, providing cross-platform compatibility. Axios is used for seamless communication with the backend APIs.
 
+#### IoT & Edge Integration
+Besides the manual input, an ESP32-CAM module is used as the smart fridge's visual sensor. The module captures images and sends them directly to the backend for ingredient detection and logging.
+
 <br><br>
 
 <!-- Project Highlights -->
