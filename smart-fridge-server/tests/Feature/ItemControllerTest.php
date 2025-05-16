@@ -50,7 +50,7 @@ class ItemControllerTest extends TestCase
         $this->assertDatabaseHas('fridge_items', ['name' => 'Milk', 'fridge_id' => $fridge->id]);
     }
 
-    public function update_item()
+    public function test_update_item()
     {
         $fridge = Fridge::factory()->create(['user_id' => $this->user->id]);
         $item = FridgeItem::factory()->create(['fridge_id' => $fridge->id]);
