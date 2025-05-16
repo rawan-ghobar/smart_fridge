@@ -30,7 +30,7 @@ class ItemControllerTest extends TestCase
         $response->assertStatus(200)
                  ->assertJsonFragment(['name' => $item->name]);
     }
-    public function add_item()
+    public function test_add_item()
     {
         $fridge = Fridge::factory()->create(['user_id' => $this->user->id]);
 
