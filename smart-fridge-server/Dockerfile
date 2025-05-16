@@ -1,15 +1,9 @@
-FROM bitnami/laravel
+FROM bitnami/laravel:latest
 
 WORKDIR /app
 
 COPY . .
 
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-
-COPY .env.example .env
-
-RUN php artisan key:generate
-
-RUN composer install --optimize-autoloader
-
-CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
+RUN cp .env.example .env \
+    && composer install --optimize-autoloader --no-dev \
+    && php artisan key:generate
