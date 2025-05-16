@@ -14,9 +14,10 @@
 <!-- System Design -->
 <img src="./readme/Readme Template Assets/title3.svg"/>
 
-### Fridget
+### From Pixels to Plates: The Tech Inside Smart Fridge
 
-- To be decided on later on.
+## UI/UX
+- Before initiating development, the application screens and flows were carefully designed and prototyped using Figma. This step ensured a user-friendly experience and clear alignment with the intended features.
 
 <br><br>
 
