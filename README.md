@@ -34,14 +34,7 @@
 #### IoT & Edge Integration
 Besides the manual input, an ESP32-CAM module is used as the smart fridge's visual sensor. The module captures images and sends them directly to the backend for ingredient detection and logging.
 
-#### Deployment & DevOps
 
-- The backend services are containerized using Docker, making them easily portable and environment agnostic.
-
-- The backend is deployed on two AWS EC2 instances:
-- Staging Environment: Used for testing and validating new features before pushing to production.
-- Production Environment: The live environment serving end users.
-- A CI/CD pipeline using GitHub Actions automates the build, testing, and deployment process. Depending on the target branch, the pipeline deploys to either the staging or production instance, ensuring safe rollouts and rapid iteration.
 <br><br>
 
 <!-- Project Highlights -->
@@ -90,9 +83,14 @@ Besides the manual input, an ESP32-CAM module is used as the smart fridge's visu
 <!-- Deployment -->
 <img src="./readme/Readme Template Assets/title7.svg"/>
 
-### Fridget
+#### Deployment & DevOps
 
-- Description here.
+- The backend services are containerized using Docker, making them easily portable and environment agnostic.
+
+- The backend is deployed on two AWS EC2 instances:
+- Staging Environment: Used for testing and validating new features before pushing to production.
+- Production Environment: The live environment serving end users.
+- A CI/CD pipeline using GitHub Actions automates the build, testing, and deployment process. Depending on the target branch, the pipeline deploys to either the staging or production instance, ensuring safe rollouts and rapid iteration.
 
 
 | Postman API 1                            | Postman API 2                       | Postman API 3                        |
