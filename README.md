@@ -28,6 +28,8 @@
 
 - IoT Communication: Handles requests from an ESP32-CAM module, receiving images and processing them through the custom food detection pipeline.
 
+#### Frontend
+- The mobile application is developed using React Native with Expo, providing cross-platform compatibility. Axios is used for seamless communication with the backend APIs.
 
 <br><br>
 
