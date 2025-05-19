@@ -103,11 +103,9 @@ class AuthTest extends TestCase
         ])->postJson("/api/v0.1/user/logout");
 
         $response->assertStatus(200)
-                 ->assertJson([
-                     "success" => true,
-                     "data" => [
-                         "message" => "User logged out successfully."
-                     ]
-                 ]);
+                ->assertJson([
+                    "success" => true,
+                    "data" => "User logged out successfully"
+                ]);
     }
 }

@@ -30,6 +30,7 @@ class AuthController extends Controller
 
     public function logout()
     {
-        return AuthService::logout();
+        AuthService::logout();
+        return ResponseTrait::successResponse('User logged out successfully');
     }
 }
