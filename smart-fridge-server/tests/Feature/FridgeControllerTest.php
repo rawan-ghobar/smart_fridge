@@ -2,17 +2,26 @@
 
 namespace Tests\Feature;
 
+use App\Http\Controllers\FridgeController;
+use App\Http\Requests\ConnectFridgeRequest;
 use App\Models\User;
 use App\Models\Fridge;
 use App\Services\FridgeService;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\Hash;
+use Mockery;
 use Tests\TestCase;
 
 class FridgeControllerTest extends TestCase
 {
     use RefreshDatabase;
+
+    protected function tearDown(): void
+    {
+        Mockery::close();
+        parent::tearDown();
+    }
 
     public function test_connect_fridge_successfully()
     {
@@ -29,13 +38,14 @@ class FridgeControllerTest extends TestCase
         ]);
 
         $response->assertStatus(200)
-                 ->assertJsonFragment(['code' => $fridge->code]);
+                ->assertJsonFragment(['code' => $fridge->code]);
 
         $this->assertDatabaseHas('fridge_user', [
             'user_id' => $user->id,
             'fridge_id' => $fridge->id,
         ]);
     }
+
 
     public function test_get_user_fridges()
     {
