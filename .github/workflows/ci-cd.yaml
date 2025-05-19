@@ -103,10 +103,10 @@ jobs:
             sudo docker compose up -d
             echo "Running migrations..."
             echo "Running Laravel migrations..."
-            
+
             for i in {1..12}; do
               echo "Waiting for MySQL to be ready..."
-              sudo docker exec smart_fridge-database-1 mysqladmin ping -h localhost -proot && break
+              sudo docker exec smart_fridge-database-1 mysqladmin ping -h localhost -p1234 && break
               sleep 5
             done
 
@@ -151,7 +151,7 @@ jobs:
             echo "Running Laravel migrations..."
             for i in {1..12}; do
               echo "Waiting for MySQL to be ready..."
-              sudo docker exec smart_fridge-database-1 mysqladmin ping -h localhost -proot && break
+              sudo docker exec smart_fridge-database-1 mysqladmin ping -h localhost -p1234 && break
               sleep 5
             done
 
