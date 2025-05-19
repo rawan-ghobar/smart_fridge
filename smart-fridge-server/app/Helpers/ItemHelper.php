@@ -33,3 +33,4 @@ class ItemHelper
 
         return implode("\n", $lines);
     }
+}
