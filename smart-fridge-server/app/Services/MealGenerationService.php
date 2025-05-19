@@ -14,6 +14,8 @@ class MealGenerationService
     {
         $mappedItems = ItemHelper::mapFridgeItems($fridgeItems);
 
+        $itemsDescription = ItemHelper::buildItemsDescription($mappedItems);
+
         $schema = MealGenerationSchema::createPrismSchema(
             'meal_recommendation',
             "A {$mealType} meal using available quantities and returning total calories",
@@ -58,24 +60,4 @@ class MealGenerationService
                     Return the recipe **strictly as JSON** that conforms to the attached schema.
                     PROMPT;
     }
-
-    public static function buildItemsDescription(array $items): string
-    {
-        $lines = [];
-
-        foreach ($items as $item) {
-            $lines[] = sprintf(
-                '- %s : %s %s available, %s kcal per %s',
-                $item['name'],
-                $item['quantity'],
-                $item['unit'],
-                $item['calories_per_unit'],
-                $item['unit']
-            );
-        }
-
-        return implode("\n", $lines);
-    }
-
-
 }
