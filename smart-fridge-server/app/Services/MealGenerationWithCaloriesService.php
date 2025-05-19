@@ -20,6 +20,8 @@ class MealGenerationWithCaloriesService
 
         $itemsDescription = ItemHelper::buildItemsDescription($mappedItems);
 
+        $prompt = PromptHelper::buildMealGenerationPrompt($itemsDescription, $mealType, $usercalories, $userNotes);
+
         $schema = MealGenerationSchema::createPrismSchema(
             'meal_recommendation',
             "3 meals using available quantities and returning total calories",
@@ -32,7 +34,6 @@ class MealGenerationWithCaloriesService
                 'status'         => 'Complete or incomplete',
             ]
         );
-        $prompt = PromptHelper::buildMealGenerationPrompt($itemsDescription, $mealType, $usercalories, $userNotes);
 
         $response = Prism::structured()
             ->using(Provider::OpenAI, 'gpt-4o')
