@@ -29,17 +29,14 @@ class AuthService
         return $user;
     }
 
-    public function signup(SignupRequest $request)
+    public static function signup(SignupRequest $request)
     {
         $data = $request->validated();
         $data['password'] = Hash::make($data['password']);
 
         $user = User::create($data);
 
-        return $this->successResponse([
-            'message' => 'User registered successfully.',
-            'user'    => $user,
-        ], 201);
+        return $user;
     }
 
     public function logout(Request $request)
