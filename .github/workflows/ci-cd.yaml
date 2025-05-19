@@ -79,8 +79,9 @@ jobs:
         run: |
           docker push ${{ secrets.DOCKER_USERNAME }}/smart_fridge_laravel:latest
 
-  deploy-to-ec2:
+  deploy-to-staging:
     needs: build-and-push
+    if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
 
     steps:
