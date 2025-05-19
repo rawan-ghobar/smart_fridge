@@ -19,4 +19,12 @@ class ItemRecognitionSchema
         return $schema;
     }
 
+    public static function createProperties(array $properties): array
+    {
+        $props = [];
+        foreach ($properties as $key => $value) {
+            $props[] = new StringSchema($key, $value);
+        }
+        return $props;
+    }
 }
