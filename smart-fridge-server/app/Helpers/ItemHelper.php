@@ -15,3 +15,21 @@ class ItemHelper
             ];
         })->toArray();
     }
+
+    public static function buildItemsDescription(array $items): string
+    {
+        $lines = [];
+
+        foreach ($items as $item) {
+            $lines[] = sprintf(
+                '- %s : %s %s available, %s kcal per %s',
+                $item['name'],
+                $item['quantity'],
+                $item['unit'],
+                $item['calories_per_unit'],
+                $item['unit']
+            );
+        }
+
+        return implode("\n", $lines);
+    }
