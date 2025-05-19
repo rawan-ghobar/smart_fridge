@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ConnectFridgeRequest;
 use App\Http\Requests\CreateFridgeRequest;
 use App\Services\FridgeService;
 use App\Traits\ResponseTrait;
@@ -11,7 +12,7 @@ class FridgeController extends Controller
 {
     use ResponseTrait;
 
-    public function connect(Request $request)
+    public function connect(ConnectFridgeRequest $request)
     {
         $connection = FridgeService::connect($request);
         return ResponseTrait::successResponse($connection);
