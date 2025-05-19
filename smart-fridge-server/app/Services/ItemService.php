@@ -5,6 +5,7 @@ use App\Models\Fridge;
 use App\Models\FridgeItem;
 use App\Traits\ResponseTrait;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ItemService
 {
