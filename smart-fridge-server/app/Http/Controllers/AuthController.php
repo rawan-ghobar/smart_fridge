@@ -5,19 +5,21 @@ namespace App\Http\Controllers;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\SignupRequest;
 use App\Services\AuthService;
+use App\Traits\ResponseTrait;
 
 class AuthController extends Controller
 {
-    protected AuthService $authService;
+    use ResponseTrait;
 
-    public function __construct(AuthService $authService)
+    public static function login(LoginRequest $request)
     {
-        $this->authService = $authService;
-    }
+        $user = AuthService::login($request);
 
-    public function login(LoginRequest $request)
-    {
-        return $this->authService->login($request);
+        if (!$user) {
+            return ResponseTrait::errorResponse('Invalid credentials', 401);
+        }
+
+        return ResponseTrait::successResponse($user);
     }
 
     public function signup(SignupRequest $request)
