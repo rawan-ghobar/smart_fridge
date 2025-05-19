@@ -29,6 +29,8 @@
 - Notifying users about near to expiry products.
 - Calorie tracking for custom meal generation.
 
+<img src="./readme/Readme Template Assets/project_highlights.png"/>
+
 <br><br>
 
 <!-- Demo -->
