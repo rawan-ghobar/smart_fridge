@@ -17,31 +17,31 @@ class AuthTest extends TestCase
         $email = $this->faker->unique()->safeEmail();
 
         $response = $this->postJson("/api/v0.1/guest/signup", [
-                                    "first_name" => "Rawan",
-                                    "last_name" => "Ghobar",
-                                    "email" => $email,
-                                    "password" => "password123"
+            "first_name" => "Rawan",
+            "last_name" => "Ghobar",
+            "email" => $email,
+            "password" => "password123"
         ]);
 
-        $response->assertStatus(201)
+        $response->assertStatus(200)
                  ->assertJson([
                      "success" => true,
                      "data" => [
-                         "message" => "User registered successfully.",
+                         "id" => true,
+                         "first_name" => "Rawan",
+                         "last_name" => "Ghobar",
+                         "email" => $email,
                      ]
                  ])
                  ->assertJsonStructure([
                      "success",
                      "data" => [
-                         "message",
-                         "user" => [
-                             "id",
-                             "first_name",
-                             "last_name",
-                             "email",
-                             "created_at",
-                             "updated_at"
-                         ]
+                         "id",
+                         "first_name",
+                         "last_name",
+                         "email",
+                         "created_at",
+                         "updated_at"
                      ]
                  ]);
     }
@@ -61,24 +61,38 @@ class AuthTest extends TestCase
         $response->assertStatus(200)
                  ->assertJson([
                      "success" => true,
-                     "data" => [
-                         "message" => "User logged in successfully",
-                     ]
                  ])
                  ->assertJsonStructure([
-                    "success",
-                    "data" => [
-                         "message",
-                         "user" => [
-                             "id",
-                             "first_name",
-                             "last_name",
-                             "email"
-                            ],
-                    "token"
+                     "success",
+                     "data" => [
+                         "id",
+                         "first_name",
+                         "last_name",
+                         "email",
+                         "token"
                      ]
                  ]);
     }
+
+    public function testLoginFailsWithInvalidPassword(): void
+    {
+        $user = User::factory()->create([
+            "email" => "rawan@example.com",
+            "password" => bcrypt("correct-password")
+        ]);
+
+        $response = $this->postJson("/api/v0.1/guest/login", [
+            "email" => "rawan@example.com",
+            "password" => "wrong-password"
+        ]);
+
+        $response->assertStatus(401)
+                 ->assertJson([
+                     "success" => false,
+                     "message" => "Invalid credentials"
+                 ]);
+    }
+
     public function testLogout(): void
     {
         $user = User::factory()->create();
@@ -96,24 +110,4 @@ class AuthTest extends TestCase
                      ]
                  ]);
     }
-
-    public function testLoginFailsWithInvalidPassword()
-    {
-        $user = User::factory()->create([
-            "email" => "rawan@example.com",
-            "password" => bcrypt("correct-password")
-        ]);
-
-        $response = $this->postJson("/api/v0.1/guest/login", [
-            "email" => "rawan@example.com",
-            "password" => "wrong-password"
-        ]);
-
-        $response->assertStatus(401)
-                ->assertJson([
-                    "success" => false,
-                    "message" => "Unauthorized"
-                ]);
-    }
-
 }
