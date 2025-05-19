@@ -90,8 +90,8 @@
 - A CI/CD pipeline using GitHub Actions automates the build, testing, and deployment process. Depending on the target branch, the pipeline deploys to either the staging or production instance, ensuring safe rollouts and rapid iteration.
 
 
-| Postman API 1                            | Postman API 2                       | Postman API 3                        |
+| Signup                           | Postman API 2                       | Postman API 3                        |
 | --------------------------------------- | ------------------------------------- | ------------------------------------- |
-| ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
+| ![Landing](./readme/Readme%20Template%20Assets/signup_postman.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
 
 <br><br>
