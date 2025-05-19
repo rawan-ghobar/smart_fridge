@@ -16,24 +16,7 @@
 
 ### From Pixels to Plates: The Tech Behind Fridget
 
-#### UI/UX
-- Before initiating development, the application screens and flows were carefully designed and prototyped using Figma. This step ensured a user-friendly experience and clear alignment with the intended features.
-
-#### Backend
-- The backend is built using Laravel, serving as the main API provider for the mobile app and IoT integration.Key features include:
-
-- OpenAI Meal Recommendation Integration: Leveraging Prism API to access OpenAI models, enabling dynamic meal recommendations based on detected or available ingredients.
-
-- Custom Food Detection Model: Developed a lightweight machine learning model using Roboflow, trained with a curated dataset of food images. The model is hosted via Roboflow API and integrated within the Laravel backend.
-
-- IoT Communication: Handles requests from an ESP32-CAM module, receiving images and processing them through the custom food detection pipeline.
-
-#### Frontend
-- The mobile application is developed using React Native with Expo, providing cross-platform compatibility. Axios is used for seamless communication with the backend APIs.
-
-#### IoT & Edge Integration
-Besides the manual input, an ESP32-CAM module is used as the smart fridge's visual sensor. The module captures images and sends them directly to the backend for ingredient detection and logging.
-
+<img src="./readme/Readme Template Assets/fridget_er_diagram.png"/>
 
 <br><br>
 
