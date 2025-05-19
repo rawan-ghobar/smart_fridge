@@ -39,19 +39,10 @@ class AuthService
         return $user;
     }
 
-    public function logout(Request $request)
+    public static function logout()
     {
-        try {
-            if (!$token = JWTAuth::getToken()){
-                return $this->errorResponse('Token not provided.', 400);
-            }
-            JWTAuth::invalidate($token);
-
-            return $this->successResponse(['message' => 'User logged out successfully.']);
-            }
-
-             catch (JWTException $e) {
-                return $this->errorResponse('Failed to logout, please try again.', 500);
-            }
+        $token = $token = JWTAuth::getToken();
+        JWTAuth::invalidate($token);
+        return true;
     }
 }
