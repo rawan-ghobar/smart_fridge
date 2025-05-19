@@ -22,9 +22,10 @@ class AuthController extends Controller
         return ResponseTrait::successResponse($user);
     }
 
-    public function signup(SignupRequest $request)
+    public static function signup(SignupRequest $request)
     {
-        return $this->authService->signup($request);
+        $user = AuthService::signup($request);
+        return ResponseTrait::successResponse($user);
     }
 
     public function logout()
