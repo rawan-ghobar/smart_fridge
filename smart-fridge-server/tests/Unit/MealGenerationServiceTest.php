@@ -38,18 +38,6 @@ class MealGenerationServiceTest extends TestCase
         $this->assertStringContainsString('Return the recipe **strictly as JSON**', $prompt);
     }
 
-    public function test_build_prompt_generates_correct_prompt()
-    {
-        $mealType = 'Breakfast';
-        $itemsDescription = "- Egg : 6 pcs available, 70 kcal per pcs";
-
-        $prompt = MealGenerationService::buildPrompt($mealType, $itemsDescription);
-
-        $this->assertStringContainsString('Create a Breakfast recipe using ONLY the items listed below', $prompt);
-        $this->assertStringContainsString($itemsDescription, $prompt);
-        $this->assertStringContainsString('Return the recipe **strictly as JSON**', $prompt);
-    }
-
     public function test_prism()
     {
         $fridgeItems = new Collection([
