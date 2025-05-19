@@ -70,6 +70,9 @@
 #### Prompt
 <img src="./readme/Readme Template Assets/prompt.png"/>
 
+#### Prism & Open Ai
+<img src="./readme/Readme Template Assets/openai_code.png"/>
+
 <br><br>
 
 <!-- Deployment -->
