@@ -5,6 +5,7 @@ storage/oauth-private.key
 storage/oauth-public.key
 .env
 .env.*
+!.env.example
 .idea
 .vscode
 *.log
