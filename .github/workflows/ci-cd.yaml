@@ -102,7 +102,12 @@ jobs:
             echo "Starting containers..."
             sudo docker compose up -d
             echo "Running migrations..."
-            sudo docker exec smart_fridge-server-1 php artisan migrate --force
+            echo "Running Laravel migrations..."
+            for i in {1..10}; do
+              sudo docker exec smart_fridge-server-1 php artisan migrate --force && break
+              echo "Migration failed, retrying in 5s..."
+              sleep 5
+            done
             
   deploy-to-production:
     needs: build-and-push
@@ -134,4 +139,9 @@ jobs:
             sudo docker pull ${{ secrets.DOCKER_USERNAME }}/smart_fridge_laravel:latest
             sudo docker compose up -d
             echo "Running migrations..."
-            sudo docker exec smart_fridge-server-1 php artisan migrate --force
+            echo "Running Laravel migrations..."
+            for i in {1..10}; do
+              sudo docker exec smart_fridge-server-1 php artisan migrate --force && break
+              echo "Migration failed, retrying in 5s..."
+              sleep 5
+            done
