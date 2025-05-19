@@ -17,6 +17,8 @@ class MealGenerationWithCaloriesService
 
         $mappedItems = ItemHelper::mapFridgeItems($fridgeItems);
 
+        $itemsDescription = ItemHelper::buildItemsDescription($mappedItems);
+
         $schema = MealGenerationSchema::createPrismSchema(
             'meal_recommendation',
             "3 meals using available quantities and returning total calories",
@@ -29,8 +31,6 @@ class MealGenerationWithCaloriesService
                 'status'         => 'Complete or incomplete',
             ]
         );
-
-        $itemsDescription = self::buildItemsDescription($mappedItems);
         $prompt= self::buildPrompt($itemsDescription, $mealType, $usercalories, $userNotes);
 
 
@@ -67,24 +67,6 @@ If a complete recipe cannot be produced (insufficient items), still return a val
 - status = "incomplete"
 - total_calories and other fields = null
 PROMPT;
-    }
-
-    public static function buildItemsDescription(array $items): string
-    {
-        $lines = [];
-
-        foreach ($items as $item) {
-            $lines[] = sprintf(
-                '- %s : %s %s available, %s kcal per %s',
-                $item['name'],
-                $item['quantity'],
-                $item['unit'],
-                $item['calories_per_unit'],
-                $item['unit']
-            );
-        }
-
-        return implode("\n", $lines);
     }
 
 }
