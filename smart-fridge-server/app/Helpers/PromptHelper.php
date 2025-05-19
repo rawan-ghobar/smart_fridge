@@ -4,7 +4,7 @@ namespace App\Helpers;
 
 class PromptHelper
 {
-    public static function buildMealGenerationPrompt(string $itemsDescription, string $mealType, int $userCalories, ?string $userNotes = null): string
+    public static function buildMealGenerationWithCaloriesPrompt(string $itemsDescription, string $mealType, int $userCalories, ?string $userNotes = null): string
     {
         $notesSection = $userNotes ? "Additional Notes\n{$userNotes}\n" : '';
 

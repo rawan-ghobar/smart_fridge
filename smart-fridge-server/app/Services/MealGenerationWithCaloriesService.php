@@ -20,7 +20,7 @@ class MealGenerationWithCaloriesService
 
         $itemsDescription = ItemHelper::buildItemsDescription($mappedItems);
 
-        $prompt = PromptHelper::buildMealGenerationPrompt($itemsDescription, $mealType, $usercalories, $userNotes);
+        $prompt = PromptHelper::buildMealGenerationWithCaloriesPrompt($itemsDescription, $mealType, $usercalories, $userNotes);
 
         $schema = MealGenerationSchema::createPrismSchema(
             'meal_recommendation',
