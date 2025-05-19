@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Helpers\ItemHelper;
 use Prism\Prism\Prism;
 use Prism\Prism\Enums\Provider;
 use App\Schemas\MealGenerationSchema;
@@ -11,14 +12,7 @@ class MealGenerationService
 {
     public static function generateMeal(string $mealType, Collection $fridgeItems)
     {
-        $mappedItems = $fridgeItems->map(function ($item) {
-        return [
-            'name' => $item->name,
-            'quantity' => $item->quantity,
-            'unit' => $item->unit,
-            'calories_per_unit' => $item->calories,
-        ];
-        })->toArray();
+        $mappedItems = ItemHelper::mapFridgeItems($fridgeItems);
 
         $schema = MealGenerationSchema::createPrismSchema(
             'meal_recommendation',
