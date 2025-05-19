@@ -4,7 +4,6 @@ namespace App\Services;
 use App\Models\Fridge;
 use App\Models\FridgeItem;
 use App\Traits\ResponseTrait;
-use Illuminate\Container\Attributes\Auth;
 use Illuminate\Http\Request;
 
 class ItemService
