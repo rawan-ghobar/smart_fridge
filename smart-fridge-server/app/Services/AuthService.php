@@ -26,7 +26,7 @@ class AuthService
         $user = Auth::user();
         $user->token = $token;
 
-        return true;
+        return $user;
     }
 
     public function signup(SignupRequest $request)
