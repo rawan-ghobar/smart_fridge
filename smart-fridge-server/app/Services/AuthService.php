@@ -15,7 +15,7 @@ class AuthService
 {
     use ResponseTrait;
 
-    public function login(LoginRequest $request)
+    public static function login(LoginRequest $request)
     {
         $credentials = $request->validated();
 
