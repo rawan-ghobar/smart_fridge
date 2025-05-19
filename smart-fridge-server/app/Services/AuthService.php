@@ -20,17 +20,13 @@ class AuthService
         $credentials = $request->validated();
 
         if (! $token = Auth::attempt($credentials)){
-            return $this->errorResponse("Unauthorized", 401);
+            return false;
         }
 
         $user = Auth::user();
         $user->token = $token;
 
-        return $this->successResponse([
-            'message' => 'User logged in successfully',
-            'user'  => $user,
-            'token' => $token,
-        ]);
+        return true;
     }
 
     public function signup(SignupRequest $request)
