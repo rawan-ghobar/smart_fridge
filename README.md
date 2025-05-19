@@ -63,8 +63,17 @@
 
 <br><br>
 
-<!-- Deployment -->
 <img src="./readme/Readme Template Assets/title7.svg"/>
+
+### OpenAi Integration
+
+#### Prompt
+<img src="./readme/Readme Template Assets/prompt.png"/>
+
+<br><br>
+
+<!-- Deployment -->
+<img src="./readme/Readme Template Assets/title8.svg"/>
 
 #### Deployment & DevOps
 
