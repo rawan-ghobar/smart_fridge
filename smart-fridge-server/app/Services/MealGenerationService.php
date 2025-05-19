@@ -17,7 +17,7 @@ class MealGenerationService
 
         $itemsDescription = ItemHelper::buildItemsDescription($mappedItems);
 
-        $prompt = PromptHelper::buildPrompt($itemsDescription, $mealType);
+        $prompt = PromptHelper::buildMealGenerationPrompt($itemsDescription, $mealType);
 
         $schema = MealGenerationSchema::createPrismSchema(
             'meal_recommendation',

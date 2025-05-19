@@ -31,7 +31,7 @@ If a complete recipe cannot be produced (insufficient items), still return a val
 PROMPT;
     }
 
-    public static function buildPrompt(string $mealType, string $itemsDescription){
+    public static function buildMealGenerationPrompt(string $mealType, string $itemsDescription){
             return <<<PROMPT
                     GOAL
                     Create a {$mealType} recipe using ONLY the items listed below.
