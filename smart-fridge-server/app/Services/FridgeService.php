@@ -77,13 +77,13 @@ class FridgeService
     {
         $fridge = Fridge::find($id);
         if (!$fridge) {
-        return ResponseTrait::errorResponse("Fridge not found.", 404);
+        return false;
         }
 
         $fridge->users()->detach();
 
         $fridge->delete();
 
-        return ResponseTrait::successResponse("Fridge deleted successfully.");
+        return true;
     }
 }
