@@ -103,11 +103,20 @@ jobs:
             sudo docker compose up -d
             echo "Running migrations..."
             echo "Running Laravel migrations..."
-            for i in {1..10}; do
+            
+            for i in {1..12}; do
+              echo "Waiting for MySQL to be ready..."
+              sudo docker exec smart_fridge-database-1 mysqladmin ping -h localhost -proot && break
+              sleep 5
+            done
+
+            for i in {1..5}; do
+              echo "Trying Laravel migrations..."
               sudo docker exec smart_fridge-server-1 php artisan migrate --force && break
               echo "Migration failed, retrying in 5s..."
               sleep 5
             done
+
             
   deploy-to-production:
     needs: build-and-push
@@ -140,8 +149,16 @@ jobs:
             sudo docker compose up -d
             echo "Running migrations..."
             echo "Running Laravel migrations..."
-            for i in {1..10}; do
+            for i in {1..12}; do
+              echo "Waiting for MySQL to be ready..."
+              sudo docker exec smart_fridge-database-1 mysqladmin ping -h localhost -proot && break
+              sleep 5
+            done
+
+            for i in {1..5}; do
+              echo "Trying Laravel migrations..."
               sudo docker exec smart_fridge-server-1 php artisan migrate --force && break
               echo "Migration failed, retrying in 5s..."
               sleep 5
             done
+
