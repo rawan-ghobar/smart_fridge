@@ -23,7 +23,7 @@
 <!-- Project Highlights -->
 <img src="./readme/Readme Template Assets/title4.svg"/>
 
-### Fridget
+### Smarter Meals , Healthier Choices
 
 - Generating meals based on available items in the fridge.
 - Notifying users about near to expiry products.
