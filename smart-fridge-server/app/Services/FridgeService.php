@@ -18,10 +18,13 @@ class FridgeService
     {
         $user = Auth::user();
 
-        $fridge = Fridge::where('code', $request['code'])->first();
+        $data = $request->validated();
 
-        if (!$fridge || !Hash::check($request['password'], $fridge->password)) {
-            return ResponseTrait::errorResponse("Invalid fridge credentials.", 401);
+        $fridge = Fridge::where('code', $data['code'])->first();
+
+        if (!$fridge || !Hash::check($data['password'], $fridge->password)) {
+
+            return false;
         }
 
         $user->fridges()->syncWithoutDetaching([$fridge->id]);
