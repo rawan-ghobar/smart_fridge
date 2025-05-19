@@ -2,6 +2,7 @@
 
 namespace Tests\Unit;
 
+use App\Http\Requests\ConnectFridgeRequest;
 use App\Models\User;
 use App\Models\Fridge;
 use App\Services\FridgeService;
@@ -12,6 +13,7 @@ use Illuminate\Http\Request;
 use Tests\TestCase;
 use App\Http\Requests\CreateFridgeRequest;
 use Illuminate\Support\Facades\Validator;
+use Mockery;
 
 class FridgeServiceTest extends TestCase
 {
@@ -26,15 +28,24 @@ class FridgeServiceTest extends TestCase
 
     public function test_connect_success()
     {
-        $this->authenticate();
-        $fridge = Fridge::factory()->create(['password' => Hash::make('secretpass')]);
+        $user = User::factory()->create();
+        $this->actingAs($user, 'api');
 
-        $request = new Request(['code' => $fridge->code, 'password' => 'secretpass']);
+        $fridge = Fridge::factory()->create([
+            'password' => Hash::make('secretpass'),
+        ]);
+
+        $request = Mockery::mock(ConnectFridgeRequest::class);
+        $request->shouldReceive('validated')->andReturn([
+            'code' => $fridge->code,
+            'password' => 'secretpass',
+        ]);
 
         $response = FridgeService::connect($request);
 
         $this->assertEquals($fridge->id, $response->id);
     }
+
 
     public function testUpdateFridgeSuccessfully()
     {
