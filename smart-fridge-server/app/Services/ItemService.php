@@ -46,7 +46,7 @@ class ItemService
         else {
             $item = FridgeItem::find($itemId);
             if (!$item){
-                return ResponseTrait::errorResponse("Fridge not found!",404);
+                return false;
             }
             $message = "Item updated successfully";
         }
