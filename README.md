@@ -30,9 +30,7 @@
 
 ### Smarter Meals , Healthier Choices
 
-| Project Highlights |
-|---------|
-| ![](./readme/Readme%20Template%20Assets/project_highlights.png) |
+<img src="./readme/Readme Template Assets/project_highlights.png"/>
 
 <br><br>
 
