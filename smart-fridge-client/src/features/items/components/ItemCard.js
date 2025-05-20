@@ -6,3 +6,7 @@ const ItemCard = ({ item, onLongPress }) => {
     <TouchableOpacity onLongPress={onLongPress} style={styles.itemCard}>
       <View>
         <Text style={styles.itemName}>{item.name}</Text>
+        <Text style={styles.itemDate}>
+          Quantity: {item.quantity} {item.unit}
+        </Text>
+      </View>
