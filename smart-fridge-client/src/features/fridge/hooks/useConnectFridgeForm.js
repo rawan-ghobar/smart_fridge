@@ -17,3 +17,4 @@ const handleConnect = async () => {
     const response = await api.post('/fridge/connect', { code, password }, {
       headers: { 'Content-Type': 'application/json' },
     });
+    const { success, data } = response.data;
