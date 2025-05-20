@@ -24,3 +24,4 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: COLORS.primary,
   },
+export default FormInput;
