@@ -3,3 +3,4 @@ import AppText from '../../../components/textWrapper';
 import EmailInput from '../components/EmailInput';
 import PasswordInput from '../components/PasswordInput';
 import { useLoginForm } from '../hooks/useLoginForm';
+import COLORS from '../../../theme/colors';
