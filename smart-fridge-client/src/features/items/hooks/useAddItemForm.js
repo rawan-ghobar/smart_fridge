@@ -75,3 +75,13 @@ const pickImage = async () => {
   });
   if (!result.canceled) setImageUri(result.assets[0].uri);
 };
+return {
+  name, setName,
+  quantity, setQuantity,
+  unit, setUnit,
+  calories, setCalories,
+  expiryDate, showDatePicker,
+  setShowDatePicker, handleDateChange,
+  handleSave, pickImage,
+  imageUri, loading,
+};
