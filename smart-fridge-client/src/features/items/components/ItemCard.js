@@ -35,3 +35,8 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '500',
   },
+  itemDate: {
+    color: COLORS.placeholder,
+    marginTop: 4,
+    fontSize: 12,
+  },
