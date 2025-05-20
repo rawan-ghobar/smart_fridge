@@ -28,3 +28,11 @@ const LoginScreen = ({ navigation }) => {
     <AppText style={styles.signupLink}>Sign Up</AppText>
   </TouchableOpacity>
 </View>
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: COLORS.background,
+    paddingHorizontal: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
