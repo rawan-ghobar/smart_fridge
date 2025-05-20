@@ -45,7 +45,7 @@
 
 | Login screen                           | Expiring Items List                      | Custom Meal Generation screen                       |
 | --------------------------------------- | ------------------------------------- | ------------------------------------- |
-| ![Landing](./readme/Readme%20Template%20Assets/login_screen.jpg) | ![fsdaf](./readme/Readme%20Template%20Assets/expiring_items_list.jpg) | ![fsdaf](./readme/Readme%20Template%20Assets/custom_meal_generation.gif) |
+| ![Landing](./readme/Readme%20Template%20Assets/login_screen.jpg) | ![fsdaf](./readme/Readme%20Template%20Assets/expiring_items_list.jpg) | ![fsdaf](./readme/Readme%20Template%20Assets/meal_customization_screen.jpg) |
 
 
 
