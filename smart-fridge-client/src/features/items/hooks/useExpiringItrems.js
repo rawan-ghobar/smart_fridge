@@ -13,3 +13,12 @@ const fetchExpiring = async () => {
       setLoading(false);
       return;
     }
+    const res = await api.get(`/items/expiring/${fridgeId}`);
+    if (res.data?.success) {
+      const arr = Array.isArray(res.data.data)
+        ? res.data.data
+        : Object.values(res.data.data || {});
+      setItems(arr.filter(Boolean));
+    } else {
+      Alert.alert('Error', 'Could not load expiring items.');
+    }
