@@ -4,6 +4,7 @@ import EmailInput from '../components/EmailInput';
 import PasswordInput from '../components/PasswordInput';
 import { useLoginForm } from '../hooks/useLoginForm';
 import COLORS from '../../../theme/colors';
+
 const LoginScreen = ({ navigation }) => {
   const {
     email, setEmail,
@@ -12,22 +13,32 @@ const LoginScreen = ({ navigation }) => {
     togglePasswordVisibility,
     handleLogin,
   } = useLoginForm(navigation);
-<Image
-  source={require('../../../../assets/fridget.png')}
-  style={styles.logo}
-  resizeMode="contain"
-/>
-<EmailInput value={email} onChangeText={setEmail} />
-<PasswordInput value={password} onChangeText={setPassword} visible={passwordVisible} toggleVisibility={togglePasswordVisibility} />
-<TouchableOpacity style={styles.loginButton} onPress={handleLogin} activeOpacity={0.8}>
-  <AppText style={styles.loginButtonText}>Login</AppText>
-</TouchableOpacity>
-<View style={styles.footer}>
-  <AppText style={styles.footerText}>Don’t have an account? </AppText>
-  <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
-    <AppText style={styles.signupLink}>Sign Up</AppText>
-  </TouchableOpacity>
-</View>
+
+  return (
+    <View style={styles.container}>
+      <Image
+        source={require('../../../../assets/fridget.png')}
+        style={styles.logo}
+        resizeMode="contain"
+      />
+
+      <EmailInput value={email} onChangeText={setEmail} />
+      <PasswordInput value={password} onChangeText={setPassword} visible={passwordVisible} toggleVisibility={togglePasswordVisibility} />
+
+      <TouchableOpacity style={styles.loginButton} onPress={handleLogin} activeOpacity={0.8}>
+        <AppText style={styles.loginButtonText}>Login</AppText>
+      </TouchableOpacity>
+
+      <View style={styles.footer}>
+        <AppText style={styles.footerText}>Don’t have an account? </AppText>
+        <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
+          <AppText style={styles.signupLink}>Sign Up</AppText>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+};
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
