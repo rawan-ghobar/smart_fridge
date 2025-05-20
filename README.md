@@ -36,11 +36,18 @@
 <!-- Demo -->
 <img src="./readme/Readme Template Assets/title5.svg"/>
 
-### User Screens (Mobile)
+### User Screens
 
 | Home screen                            | Items List                       | Choose Meal screen                       |
 | --------------------------------------- | ------------------------------------- | ------------------------------------- |
 | ![Landing](./readme/Readme%20Template%20Assets/home_screen.jpg) | ![fsdaf](./readme/Readme%20Template%20Assets/items_list_screen.jpg) | ![fsdaf](./readme/Readme%20Template%20Assets/choose_meal_screen.jpg) |
+
+
+### App Walkthroughs
+
+| Add item | Add Item Flow | Meal Recommendation |
+|----------------------|----------------|----------------------|
+| ![](./readme/Readme%20Template%20Assets/add_item.gif) | ![](./readme/gifs/add_item.gif) | ![](./readme/gifs/meal_gen.gif) |
 
 <br><br>
 
