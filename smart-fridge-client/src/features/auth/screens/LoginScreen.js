@@ -12,3 +12,8 @@ const LoginScreen = ({ navigation }) => {
     togglePasswordVisibility,
     handleLogin,
   } = useLoginForm(navigation);
+<Image
+  source={require('../../../../assets/fridget.png')}
+  style={styles.logo}
+  resizeMode="contain"
+/>
