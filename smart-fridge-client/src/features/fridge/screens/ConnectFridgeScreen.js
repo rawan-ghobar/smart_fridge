@@ -1,9 +1,10 @@
 import { View, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import AppText from '../../../components/textWrapper';
-import FridgeCodeInput from '../components/FridgeCodeInput';
+import EmailInput from '../../auth/components/EmailInput';
 import PasswordInput from '../../auth/components/PasswordInput';
 import { useConnectFridgeForm } from '../hooks/useConnectFridgeForm';
 import COLORS from '../../../theme/colors';
+
 const ConnectFridgeScreen = ({ navigation }) => {
   const {
     code, setCode,
@@ -11,21 +12,31 @@ const ConnectFridgeScreen = ({ navigation }) => {
     passwordVisible, togglePasswordVisibility,
     handleConnect,
   } = useConnectFridgeForm(navigation);
-<Image source={require('../../../../assets/fridget.png')} style={styles.logo} resizeMode="contain" />
-<FridgeCodeInput value={code} onChangeText={setCode} />
-<PasswordInput
-  value={password}
-  onChangeText={setPassword}
-  visible={passwordVisible}
-  toggleVisibility={togglePasswordVisibility}
-/>
-<TouchableOpacity
-  style={styles.connectButton}
-  activeOpacity={0.8}
-  onPress={handleConnect}
->
-  <AppText style={styles.connectButtonText}>Connect</AppText>
-</TouchableOpacity>
+
+  return (
+    <View style={styles.container}>
+      <Image source={require('../../../../assets/fridget.png')} style={styles.logo} resizeMode="contain" />
+
+      <EmailInput value={code} onChangeText={setCode} />
+
+      <PasswordInput
+        value={password}
+        onChangeText={setPassword}
+        visible={passwordVisible}
+        toggleVisibility={togglePasswordVisibility}
+      />
+
+      <TouchableOpacity
+        style={styles.connectButton}
+        activeOpacity={0.8}
+        onPress={handleConnect}
+      >
+        <AppText style={styles.connectButtonText}>Connect</AppText>
+      </TouchableOpacity>
+    </View>
+  );
+};
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -53,4 +64,5 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 });
+
 export default ConnectFridgeScreen;
