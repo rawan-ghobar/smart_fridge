@@ -22,3 +22,10 @@ const fetchExpiring = async () => {
     } else {
       Alert.alert('Error', 'Could not load expiring items.');
     }
+  } catch (err) {
+    console.error(err.response?.data || err.message);
+    Alert.alert('Error', 'Network error.');
+  } finally {
+    setLoading(false);
+  }
+};
