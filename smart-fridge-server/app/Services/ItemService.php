@@ -5,6 +5,7 @@ use App\Models\Fridge;
 use App\Models\FridgeItem;
 use App\Traits\ResponseTrait;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ItemService
 {
@@ -74,5 +75,14 @@ class ItemService
         }
 
         return $item->delete();
+    }
+
+    public static function getExpiringItems(int $fridgeId)
+    {
+        $user = Auth::user();
+
+        $items = FridgeItem::where('fridge_id', $fridgeId)->ExpiringWithin($user)->get();
+
+        return $items;
     }
 }

@@ -25,4 +25,14 @@ class FridgeItem extends Model
     {
         return $this->belongsTo(Fridge::class);
     }
+
+    public function scopeExpiringWithin($query, $user)
+    {
+        $days = $user->settings->days_before_expiry ?? 3;
+        $today = now();
+        $limit = now()->addDays($days);
+
+        return $query->whereDate('expiry_date', '>=', $today) ->whereDate('expiry_date', '<=', $limit);
+    }
+
 }

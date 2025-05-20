@@ -2,6 +2,8 @@
 
 namespace App\Services;
 
+use App\Helpers\ItemHelper;
+use App\Helpers\PromptHelper;
 use Prism\Prism\Prism;
 use Prism\Prism\Enums\Provider;
 use App\Schemas\MealGenerationSchema;
@@ -14,14 +16,11 @@ class MealGenerationWithCaloriesService
     {
         $usercalories ??= Auth::user()?->daily_calories;
 
-        $mappedItems = $fridgeItems->map(function ($item) {
-        return [
-            'name' => $item->name,
-            'quantity' => $item->quantity,
-            'unit' => $item->unit,
-            'calories_per_unit' => $item->calories,
-        ];
-        })->toArray();
+        $mappedItems = ItemHelper::mapFridgeItems($fridgeItems);
+
+        $itemsDescription = ItemHelper::buildItemsDescription($mappedItems);
+
+        $prompt = PromptHelper::buildMealGenerationWithCaloriesPrompt($itemsDescription, $mealType, $usercalories, $userNotes);
 
         $schema = MealGenerationSchema::createPrismSchema(
             'meal_recommendation',
@@ -36,10 +35,6 @@ class MealGenerationWithCaloriesService
             ]
         );
 
-        $itemsDescription = self::buildItemsDescription($mappedItems);
-        $prompt= self::buildPrompt($itemsDescription, $mealType, $usercalories, $userNotes);
-
-
         $response = Prism::structured()
             ->using(Provider::OpenAI, 'gpt-4o')
             ->withSchema($schema)
@@ -49,48 +44,4 @@ class MealGenerationWithCaloriesService
 
         return $response->structured;
     }
-
-    public static function buildPrompt(string $itemsDescription, string $mealType, int $usercalories, ?string $userNotes = null){
-            $notesSection = $userNotes ? "Additional Notes\n{$userNotes}\n" : '';
-        return <<<PROMPT
-GOAL
-Create a {$mealType} recipe using **only** the items listed below, plus basic household staples (salt, pepper, oil, garlic, herbs, etc.).
-Aim for **approximately {$usercalories} kcal**.
-
-For **each ingredient you choose**
-- Declare the exact amount used (must not exceed the available quantity).
-- Keep the same unit (convert only if absolutely necessary).
-- Show calories for that amount using the provided per‑unit value.
-
-After the ingredients and instructions, include:
-**total_calories = (sum of calories for all ingredients)**
-
-{$notesSection}### Available items
-{$itemsDescription}
-
-Return the recipe **strictly as JSON** that conforms to the attached schema.
-If a complete recipe cannot be produced (insufficient items), still return a valid JSON object with:
-- status = "incomplete"
-- total_calories and other fields = null
-PROMPT;
-    }
-
-    public static function buildItemsDescription(array $items): string
-    {
-        $lines = [];
-
-        foreach ($items as $item) {
-            $lines[] = sprintf(
-                '- %s : %s %s available, %s kcal per %s',
-                $item['name'],
-                $item['quantity'],
-                $item['unit'],
-                $item['calories_per_unit'],
-                $item['unit']
-            );
-        }
-
-        return implode("\n", $lines);
-    }
-
 }
