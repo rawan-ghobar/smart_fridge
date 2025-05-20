@@ -56,3 +56,7 @@ return (
     <Text style={styles.saveText}>Save Item</Text>
   )}
 </TouchableOpacity>
+</ScrollView>
+</TouchableWithoutFeedback>
+</KeyboardAvoidingView>
+</SafeAreaView>
