@@ -75,3 +75,17 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingBottom: 40,
   },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 30,
+    textAlign: 'center',
+  },
+  inputGroup: {
+    marginBottom: 20,
+  },
+  label: {
+    marginBottom: 6,
+    fontSize: 16,
+    color: COLORS.primary,
+  },
