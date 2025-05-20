@@ -24,7 +24,7 @@ class AuthService
         }
 
         $user = Auth::user();
-        $user->token = $token;
+        $token = JWTAuth::attempt($credentials);
 
         return $this->successResponse([
             'message' => 'User logged in successfully',
