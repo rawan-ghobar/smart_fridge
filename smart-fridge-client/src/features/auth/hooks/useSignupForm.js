@@ -9,3 +9,5 @@ const [password, setPassword] = useState('');
 const [confirmPassword, setConfirmPassword] = useState('');
 const [passwordVisible, setPasswordVisible] = useState(false);
 const [confirmVisible, setConfirmVisible] = useState(false);
+const togglePasswordVisibility = () => setPasswordVisible(p => !p);
+const toggleConfirmVisibility = () => setConfirmVisible(p => !p);
