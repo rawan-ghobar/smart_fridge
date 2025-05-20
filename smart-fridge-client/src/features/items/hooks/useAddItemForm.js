@@ -9,3 +9,7 @@ const [name, setName] = useState('');
 const [quantity, setQuantity] = useState('');
 const [unit, setUnit] = useState('');
 const [calories, setCalories] = useState('');
+const [expiryDate, setExpiryDate] = useState(null);
+const [showDatePicker, setShowDatePicker] = useState(false);
+const [imageUri, setImageUri] = useState(null);
+const [loading, setLoading] = useState(false);
