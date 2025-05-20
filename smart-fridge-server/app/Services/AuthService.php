@@ -26,7 +26,7 @@ class AuthService
         $user = Auth::user();
         $user->token = $token;
 
-        return $user;
+        return ['credentials' =>$user, 'token'=> $token];
     }
 
     public static function signup(SignupRequest $request)
