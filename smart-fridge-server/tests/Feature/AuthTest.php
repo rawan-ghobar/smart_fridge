@@ -17,36 +17,36 @@ class AuthTest extends TestCase
         $email = $this->faker->unique()->safeEmail();
 
         $response = $this->postJson("/api/v0.1/guest/signup", [
-            "first_name" => "Rawan",
-            "last_name" => "Ghobar",
-            "email" => $email,
-            "password" => "password123"
+                                    "first_name" => "Rawan",
+                                    "last_name" => "Ghobar",
+                                    "email" => $email,
+                                    "password" => "password123"
         ]);
 
-        $response->assertStatus(200)
+        $response->assertStatus(201)
                  ->assertJson([
                      "success" => true,
                      "data" => [
-                         "id" => true,
-                         "first_name" => "Rawan",
-                         "last_name" => "Ghobar",
-                         "email" => $email,
+                         "message" => "User registered successfully.",
                      ]
                  ])
                  ->assertJsonStructure([
                      "success",
                      "data" => [
-                         "id",
-                         "first_name",
-                         "last_name",
-                         "email",
-                         "created_at",
-                         "updated_at"
+                         "message",
+                         "user" => [
+                             "id",
+                             "first_name",
+                             "last_name",
+                             "email",
+                             "created_at",
+                             "updated_at"
+                         ]
                      ]
                  ]);
     }
 
-   public function testLogin(): void
+    public function testLogin(): void
     {
         $user = User::factory()->create([
             "email" => "rawan@example.com",
@@ -59,25 +59,26 @@ class AuthTest extends TestCase
         ]);
 
         $response->assertStatus(200)
-                ->assertJson([
-                    "success" => true,
-                ])
-                ->assertJsonStructure([
+                 ->assertJson([
+                     "success" => true,
+                     "data" => [
+                         "message" => "User logged in successfully",
+                     ]
+                 ])
+                 ->assertJsonStructure([
                     "success",
                     "data" => [
-                        "message",
-                        "user" => [
-                            "id",
-                            "first_name",
-                            "last_name",
-                            "email"
-                        ],
-                        "token"
-                    ]
-                ]);
+                         "message",
+                         "user" => [
+                             "id",
+                             "first_name",
+                             "last_name",
+                             "email"
+                            ],
+                    "token"
+                     ]
+                 ]);
     }
-
-
 
     public function testLogout(): void
     {
@@ -89,9 +90,11 @@ class AuthTest extends TestCase
         ])->postJson("/api/v0.1/user/logout");
 
         $response->assertStatus(200)
-                ->assertJson([
-                    "success" => true,
-                    "data" => "User logged out successfully"
-                ]);
+                 ->assertJson([
+                     "success" => true,
+                     "data" => [
+                         "message" => "User logged out successfully."
+                     ]
+                 ]);
     }
 }

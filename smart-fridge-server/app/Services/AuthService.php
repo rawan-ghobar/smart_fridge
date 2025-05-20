@@ -15,38 +15,50 @@ class AuthService
 {
     use ResponseTrait;
 
-    public static function login(LoginRequest $request)
+    public function login(LoginRequest $request)
     {
         $credentials = $request->validated();
 
         if (! $token = Auth::attempt($credentials)){
-            return self::errorResponse('invalid credentials',401);
+            return $this->errorResponse("Unauthorized", 401);
         }
 
         $user = Auth::user();
-        $token = Auth::attempt($credentials);
+        $user->token = $token;
 
-        return [
+        return $this->successResponse([
             'message' => 'User logged in successfully',
-            'user'    => $user,
-            'token'   => $token,
-        ];
+            'user'  => $user,
+            'token' => $token,
+        ]);
     }
 
-    public static function signup(SignupRequest $request)
+    public function signup(SignupRequest $request)
     {
         $data = $request->validated();
         $data['password'] = Hash::make($data['password']);
 
         $user = User::create($data);
 
-        return $user;
+        return $this->successResponse([
+            'message' => 'User registered successfully.',
+            'user'    => $user,
+        ], 201);
     }
 
-    public static function logout()
+    public function logout(Request $request)
     {
-        $token = $token = JWTAuth::getToken();
-        JWTAuth::invalidate($token);
-        return true;
+        try {
+            if (!$token = JWTAuth::getToken()){
+                return $this->errorResponse('Token not provided.', 400);
+            }
+            JWTAuth::invalidate($token);
+
+            return $this->successResponse(['message' => 'User logged out successfully.']);
+            }
+
+             catch (JWTException $e) {
+                return $this->errorResponse('Failed to logout, please try again.', 500);
+            }
     }
 }
