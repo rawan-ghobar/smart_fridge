@@ -33,3 +33,7 @@ return (
     }
   />
 )}
+<TouchableOpacity style={styles.fab} onPress={showAddOptions} activeOpacity={0.8}>
+  <Ionicons name="add" size={28} color={COLORS.white} />
+</TouchableOpacity>
+</SafeAreaView>
