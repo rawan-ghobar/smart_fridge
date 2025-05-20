@@ -15,3 +15,4 @@ const SignupScreen = ({ navigation }) => {
     confirmVisible, toggleConfirmVisibility,
     handleSignup,
   } = useSignupForm(navigation);
+<Image source={require('../../../../assets/fridget.png')} style={styles.logo} resizeMode="contain" />
