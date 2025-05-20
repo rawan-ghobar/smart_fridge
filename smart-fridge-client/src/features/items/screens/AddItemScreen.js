@@ -4,3 +4,5 @@ import { Ionicons } from '@expo/vector-icons';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import moment from 'moment';
 import { useAddItemForm } from '../hooks/useAddItemForm';
+import FormInput from '../components/FormInput';
+import ImagePickerField from '../components/ImagePickerField';
