@@ -6,3 +6,4 @@ export const useConnectFridgeForm = (navigation) => {
 const [code, setCode] = useState('');
 const [password, setPassword] = useState('');
 const [passwordVisible, setPasswordVisible] = useState(false);
+const togglePasswordVisibility = () => setPasswordVisible(prev => !prev);
