@@ -15,3 +15,16 @@ const fetchItems = async () => {
       Alert.alert('Error', 'Fridge ID not found.');
       return;
     }
+    const res = await api.get(`items/getitems/${fridgeId}`);
+    if (res.data?.success) {
+      setItems(res.data.data);
+    } else {
+      Alert.alert('Error', 'Failed to fetch items.');
+    }
+  } catch (err) {
+    console.error(err.response?.data || err.message);
+    Alert.alert('Error', 'An error occurred while fetching items.');
+  } finally {
+    setLoading(false);
+  }
+};
