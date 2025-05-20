@@ -37,3 +37,5 @@ return (
   <Ionicons name="add" size={28} color={COLORS.white} />
 </TouchableOpacity>
 </SafeAreaView>
+const styles = StyleSheet.create({
+  safeArea: { flex: 1, backgroundColor: COLORS.background },
