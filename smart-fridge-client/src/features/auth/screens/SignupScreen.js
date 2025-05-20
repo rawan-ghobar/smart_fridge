@@ -56,3 +56,22 @@ const styles = StyleSheet.create({
     width: 300,
     height: 300,
   },
+  inputGroup: {
+    width: '90%',
+    marginBottom: 15,
+  },
+  label: {
+    color: COLORS.primary,
+    marginBottom: 8,
+    fontSize: 16,
+    fontWeight: '500',
+  },
+  inputWrapper: {
+    backgroundColor: COLORS.white,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+  },
+  input: {
+    padding: 12,
+  },
