@@ -43,9 +43,9 @@
 | --------------------------------------- | ------------------------------------- | ------------------------------------- |
 | ![Landing](./readme/Readme%20Template%20Assets/home_screen.jpg) | ![fsdaf](./readme/Readme%20Template%20Assets/items_list_screen.jpg) | ![fsdaf](./readme/Readme%20Template%20Assets/choose_meal_screen.jpg) |
 
-| Login screen                           | Expiring Items List                      | Choose Meal screen                       |
+| Login screen                           | Expiring Items List                      | Custom Meal Generation screen                       |
 | --------------------------------------- | ------------------------------------- | ------------------------------------- |
-| ![Landing](./readme/Readme%20Template%20Assets/login_screen.jpg) | ![fsdaf](./readme/Readme%20Template%20Assets/expiring_items_list.jpg) |
+| ![Landing](./readme/Readme%20Template%20Assets/login_screen.jpg) | ![fsdaf](./readme/Readme%20Template%20Assets/expiring_items_list.jpg) | ![fsdaf](./readme/Readme%20Template%20Assets/custom_meal_generation.gif) |
 
 
 
