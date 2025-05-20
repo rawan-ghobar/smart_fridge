@@ -28,3 +28,4 @@ const fetchItems = async () => {
     setLoading(false);
   }
 };
+const handleAddManual = () => navigation.navigate('AddItem');
