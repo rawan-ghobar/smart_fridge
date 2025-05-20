@@ -25,3 +25,8 @@ useEffect(() => {
     setImageUri(route.params.imageUri);
   }
 }, []);
+const handleSave = async () => {
+  if (!name.trim() || !quantity || !unit.trim() || !calories) {
+    Alert.alert('Missing fields', 'Please fill out all required fields.');
+    return;
+  }
