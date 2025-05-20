@@ -62,3 +62,10 @@ const handleAddViaCamera = async () => {
     } else {
       Alert.alert('Error', 'Could not recognise the item.');
     }
+  } catch (err) {
+    console.error(err.response?.data || err.message);
+    Alert.alert('Error', 'Recognition service failed.');
+  } finally {
+    setLoading(false);
+  }
+};
