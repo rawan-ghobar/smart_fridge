@@ -23,3 +23,6 @@ const handleLogin = async () => {
       await AsyncStorage.setItem('fullname', `${user.first_name} ${user.last_name}`);
       await AsyncStorage.setItem('account_type', user.role);
       navigation.navigate('ConnectFridge');
+    } else {
+      Alert.alert('Login Failed', 'Invalid credentials');
+    }
