@@ -21,3 +21,6 @@ const SignupScreen = ({ navigation }) => {
 <EmailInput value={email} onChangeText={setEmail} />
 <PasswordInput value={password} onChangeText={setPassword} visible={passwordVisible} toggleVisibility={togglePasswordVisibility} />
 <PasswordInput label="Confirm Password" value={confirmPassword} onChangeText={setConfirmPassword} visible={confirmVisible} toggleVisibility={toggleConfirmVisibility} />
+<TouchableOpacity style={styles.signupButton} onPress={handleSignup} activeOpacity={0.8}>
+  <AppText style={styles.signupButtonText}>Signup</AppText>
+</TouchableOpacity>
