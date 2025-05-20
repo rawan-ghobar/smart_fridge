@@ -5,3 +5,6 @@ import * as ImagePicker from 'expo-image-picker';
 import { useIsFocused } from '@react-navigation/native';
 import api from '../../../services/api';
 export const useItemList = (navigation) => {
+const [items, setItems] = useState([]);
+const [loading, setLoading] = useState(true);
+const isFocused = useIsFocused();
