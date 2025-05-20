@@ -65,3 +65,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: COLORS.background,
   },
+  backButton: {
+    padding: 20,
+  },
+  keyboardView: {
+    flex: 1,
+  },
+  scrollView: {
+    paddingHorizontal: 20,
+    paddingBottom: 40,
+  },
