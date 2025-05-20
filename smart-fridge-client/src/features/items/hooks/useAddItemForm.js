@@ -62,3 +62,7 @@ const handleSave = async () => {
     setLoading(false);
   }
 };
+const handleDateChange = (_, selectedDate) => {
+  setShowDatePicker(false);
+  if (selectedDate) setExpiryDate(selectedDate);
+};
