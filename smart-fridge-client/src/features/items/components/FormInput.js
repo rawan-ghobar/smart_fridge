@@ -1,19 +1,22 @@
 import { View, Text, TextInput, StyleSheet } from 'react-native';
 import COLORS from '../../../theme/colors';
+
 const FormInput = ({ label, value, onChangeText, placeholder, keyboardType = 'default' }) => {
-return (
-  <View style={styles.container}>
-    <Text style={styles.label}>{label}</Text>
-    <TextInput
-      style={styles.input}
-      placeholder={placeholder}
-      placeholderTextColor={COLORS.placeholder}
-      value={value}
-      onChangeText={onChangeText}
-      keyboardType={keyboardType}
-    />
-  </View>
-);
+  return (
+    <View style={styles.container}>
+      <Text style={styles.label}>{label}</Text>
+      <TextInput
+        style={styles.input}
+        placeholder={placeholder}
+        placeholderTextColor={COLORS.placeholder}
+        value={value}
+        onChangeText={onChangeText}
+        keyboardType={keyboardType}
+      />
+    </View>
+  );
+};
+
 const styles = StyleSheet.create({
   container: {
     marginBottom: 20,
@@ -24,4 +27,13 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: COLORS.primary,
   },
+  input: {
+    backgroundColor: COLORS.white,
+    borderRadius: 8,
+    padding: 12,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+  },
+});
+
 export default FormInput;
