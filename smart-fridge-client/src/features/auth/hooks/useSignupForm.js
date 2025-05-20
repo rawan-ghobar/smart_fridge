@@ -19,3 +19,10 @@ const handleSignup = async () => {
   if (password !== confirmPassword) {
     return Alert.alert('Password Mismatch', 'Passwords do not match.');
   }
+  try {
+    const res = await api.post('/guest/signup', {
+      first_name: firstName,
+      last_name: lastName,
+      email,
+      password,
+    });
