@@ -44,3 +44,11 @@ const handleSave = async () => {
       Alert.alert('Error', 'Fridge ID not found. Please reconnect.');
       return;
     }
+    const res = await api.post(`/items/addorupdateitem/${fridgeId}/add`, {
+      name: name.trim(),
+      quantity: quantityNum,
+      unit: unit.trim(),
+      calories: caloriesNum,
+      expiry_date: expiryDate ? moment(expiryDate).format('YYYY-MM-DD') : null,
+      image: imageUri,
+    });
