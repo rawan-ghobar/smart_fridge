@@ -52,3 +52,6 @@ const handleSave = async () => {
       expiry_date: expiryDate ? moment(expiryDate).format('YYYY-MM-DD') : null,
       image: imageUri,
     });
+    Alert.alert('Success', res.data?.message || 'Item added successfully', [
+      { text: 'OK', onPress: () => navigation.goBack() },
+    ]);
