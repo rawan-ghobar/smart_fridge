@@ -33,3 +33,4 @@ useEffect(() => {
   fetchExpiring();
 }, []);
 return { items, loading, refetch: fetchExpiring };
+export default useExpiringItems;
