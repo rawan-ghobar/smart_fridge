@@ -10,3 +10,6 @@ const PasswordInput = ({
   toggleVisibility,
   label = 'Password',
 }) => {
+    <View style={styles.inputGroup}>
+  <AppText style={styles.label}>{label}</AppText>
+
