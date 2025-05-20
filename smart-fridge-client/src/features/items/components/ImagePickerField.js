@@ -39,3 +39,7 @@ const styles = StyleSheet.create({
     height: 100,
     borderRadius: 10,
   },
+  placeholder: {
+    color: COLORS.placeholder,
+  },
+});
