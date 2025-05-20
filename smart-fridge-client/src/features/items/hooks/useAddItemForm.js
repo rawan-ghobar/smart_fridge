@@ -66,3 +66,12 @@ const handleDateChange = (_, selectedDate) => {
   setShowDatePicker(false);
   if (selectedDate) setExpiryDate(selectedDate);
 };
+const pickImage = async () => {
+  const result = await ImagePicker.launchImageLibraryAsync({
+    mediaTypes: ImagePicker.MediaType.Images,
+    allowsEditing: true,
+    aspect: [1, 1],
+    quality: 0.7,
+  });
+  if (!result.canceled) setImageUri(result.assets[0].uri);
+};
