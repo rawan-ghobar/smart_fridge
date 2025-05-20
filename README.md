@@ -30,11 +30,9 @@
 
 ### Smarter Meals , Healthier Choices
 
-- Generating meals based on available items in the fridge.
-- Notifying users about near to expiry products.
-- Calorie tracking for custom meal generation.
-
-<img src="./readme/Readme Template Assets/project_highlights.png"/>
+| Project Highlights |
+|---------|
+| ![](./readme/Readme%20Template%20Assets/project_highlights.png) |
 
 <br><br>
 
