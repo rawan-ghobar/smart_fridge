@@ -101,3 +101,10 @@ useEffect(() => {
     fetchItems();
   }
 }, [isFocused]);
+return {
+  items,
+  loading,
+  fetchItems,
+  showAddOptions,
+  handleDeleteItem,
+};
