@@ -51,3 +51,9 @@ const styles = StyleSheet.create({
     borderColor: COLORS.border,
     paddingHorizontal: 10,
   },
+
+    input: {
+    flex: 1,
+    paddingVertical: 12,
+  },
+});
