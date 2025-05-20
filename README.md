@@ -43,6 +43,11 @@
 | --------------------------------------- | ------------------------------------- | ------------------------------------- |
 | ![Landing](./readme/Readme%20Template%20Assets/home_screen.jpg) | ![fsdaf](./readme/Readme%20Template%20Assets/items_list_screen.jpg) | ![fsdaf](./readme/Readme%20Template%20Assets/choose_meal_screen.jpg) |
 
+| Login screen                           | Items List                       | Choose Meal screen                       |
+| --------------------------------------- | ------------------------------------- | ------------------------------------- |
+| ![Landing](./readme/Readme%20Template%20Assets/login_screen.jpg) | ![fsdaf](./readme/Readme%20Template%20Assets/choose_meal_screen.jpg) |
+
+
 
 ### App Walkthroughs
 
