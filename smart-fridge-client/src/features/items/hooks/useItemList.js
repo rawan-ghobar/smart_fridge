@@ -85,3 +85,13 @@ const showAddOptions = () => {
     ]);
   }
 };
+const handleDeleteItem = async (itemId) => {
+  try {
+    const fridgeId = await AsyncStorage.getItem('fridgeId');
+    await api.delete(`/items/deleteitem/${fridgeId}/${itemId}`);
+    setItems(prev => prev.filter(i => i.id !== itemId));
+  } catch (err) {
+    console.error(err.response?.data || err.message);
+    Alert.alert('Error', 'Could not delete item.');
+  }
+};
