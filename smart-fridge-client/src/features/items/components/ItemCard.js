@@ -18,3 +18,4 @@ const ItemCard = ({ item, onLongPress }) => {
     </TouchableOpacity>
   );
 };
+const styles = StyleSheet.create({
