@@ -55,3 +55,10 @@ const handleSave = async () => {
     Alert.alert('Success', res.data?.message || 'Item added successfully', [
       { text: 'OK', onPress: () => navigation.goBack() },
     ]);
+  } catch (err) {
+    console.error(err.response?.data || err.message);
+    Alert.alert('Error', 'Could not add item. Please try again.');
+  } finally {
+    setLoading(false);
+  }
+};
