@@ -14,3 +14,11 @@ const handleLogin = async () => {
     const response = await api.post('/guest/login', { email, password }, {
       headers: { 'Content-Type': 'application/json' },
     });
+    const { success, data } = response.data;
+    const { user, token } = data;
+
+    if (success && user) {
+      await AsyncStorage.setItem('token', token);
+      await AsyncStorage.setItem('id', user.id.toString());
+      await AsyncStorage.setItem('fullname', `${user.first_name} ${user.last_name}`);
+      await AsyncStorage.setItem('account_type', user.role);
