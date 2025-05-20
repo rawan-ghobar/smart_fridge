@@ -19,3 +19,10 @@ const ConnectFridgeScreen = ({ navigation }) => {
   visible={passwordVisible}
   toggleVisibility={togglePasswordVisibility}
 />
+<TouchableOpacity
+  style={styles.connectButton}
+  activeOpacity={0.8}
+  onPress={handleConnect}
+>
+  <AppText style={styles.connectButtonText}>Connect</AppText>
+</TouchableOpacity>
