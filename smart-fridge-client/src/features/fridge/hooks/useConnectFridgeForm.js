@@ -5,3 +5,4 @@ import api from '../../../services/api';
 export const useConnectFridgeForm = (navigation) => {
 const [code, setCode] = useState('');
 const [password, setPassword] = useState('');
+const [passwordVisible, setPasswordVisible] = useState(false);
