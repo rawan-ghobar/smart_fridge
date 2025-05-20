@@ -31,3 +31,11 @@ const handleLogin = async () => {
     Alert.alert('Error', 'An error occurred. Please try again.');
   }
 };
+  return {
+    email, setEmail,
+    password, setPassword,
+    passwordVisible,
+    togglePasswordVisibility,
+    handleLogin,
+  };
+};
