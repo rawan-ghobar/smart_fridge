@@ -89,3 +89,21 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: COLORS.primary,
   },
+  input: {
+    backgroundColor: COLORS.white,
+    borderRadius: 8,
+    padding: 12,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+  },
+  saveButton: {
+    backgroundColor: COLORS.primaryAccent,
+    paddingVertical: 14,
+    borderRadius: 10,
+    alignItems: 'center',
+  },
+  saveText: {
+    color: COLORS.white,
+    fontWeight: 'bold',
+  },
+});
