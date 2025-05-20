@@ -14,21 +14,10 @@ class AuthController extends Controller
     public static function login(LoginRequest $request)
     {
         $user = AuthService::login($request);
-
         if (!$user) {
-            return ResponseTrait::errorResponse('Invalid credentials', 401);
-        }
-
-        $responseData = [
-        'id' => $user->id,
-        'first_name' => $user->first_name,
-        'last_name' => $user->last_name,
-        'email' => $user->email,
-        'token' => $user->token,
-        ];
-
-
-        return ResponseTrait::successResponse($responseData);
+        return $user;
+    }
+        return ResponseTrait::successResponse($user);
     }
 
     public static function signup(SignupRequest $request)

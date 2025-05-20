@@ -20,7 +20,7 @@ class AuthService
         $credentials = $request->validated();
 
         if (! $token = Auth::attempt($credentials)){
-            return false;
+            return self::errorResponse('invalid credentials',401);
         }
 
         $user = Auth::user();
