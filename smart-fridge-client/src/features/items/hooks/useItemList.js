@@ -95,3 +95,9 @@ const handleDeleteItem = async (itemId) => {
     Alert.alert('Error', 'Could not delete item.');
   }
 };
+useEffect(() => {
+  if (isFocused) {
+    setLoading(true);
+    fetchItems();
+  }
+}, [isFocused]);
