@@ -42,3 +42,12 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '500',
   },
+  passwordContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: COLORS.white,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+    paddingHorizontal: 10,
+  },
