@@ -24,7 +24,6 @@ class AuthService
         }
 
         $user = Auth::user();
-        $user->token = $token;
 
         return [
             'message' => 'User logged in successfully',
