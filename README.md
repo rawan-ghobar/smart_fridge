@@ -16,7 +16,12 @@
 
 ### From Pixels to Plates: The Tech Behind Fridget
 
+#### ER diagram
 <img src="./readme/Readme Template Assets/fridget_er_diagram.png"/>
+
+#### Component Diagram
+<img src="./readme/Readme Template Assets/system_design.png"/>
+
 
 <br><br>
 
