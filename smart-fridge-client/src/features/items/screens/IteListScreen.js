@@ -48,3 +48,8 @@ const styles = StyleSheet.create({
     right: 0,
     textAlign: 'center',
   },
+  listContent: {
+    paddingHorizontal: 20,
+    paddingTop: 10,
+    paddingBottom: 80,
+  },
