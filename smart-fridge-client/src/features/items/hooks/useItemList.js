@@ -29,3 +29,9 @@ const fetchItems = async () => {
   }
 };
 const handleAddManual = () => navigation.navigate('AddItem');
+const handleAddViaCamera = async () => {
+  const { status } = await ImagePicker.requestCameraPermissionsAsync();
+  if (status !== 'granted') {
+    Alert.alert('Permission denied', 'Camera permission is required.');
+    return;
+  }
