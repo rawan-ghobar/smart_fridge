@@ -54,3 +54,15 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
   },
+  footer: {
+    flexDirection: 'row',
+    marginTop: 20,
+  },
+  footerText: {
+    color: COLORS.primary,
+  },
+  signupLink: {
+    color: COLORS.secondaryAccent,
+    fontWeight: '500',
+  },
+});
