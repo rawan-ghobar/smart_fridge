@@ -18,3 +18,8 @@ const AddItemScreen = ({ navigation, route }) => {
     handleSave, pickImage,
     imageUri, loading,
   } = useAddItemForm(route, navigation);
+return (
+  <SafeAreaView style={styles.container}>
+    <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
+      <Ionicons name="arrow-back-outline" size={24} color={COLORS.primary} />
+    </TouchableOpacity>
