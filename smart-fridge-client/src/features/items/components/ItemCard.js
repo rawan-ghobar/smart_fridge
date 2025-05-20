@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import COLORS from '../../../theme/colors';
+
 const ItemCard = ({ item, onLongPress }) => {
   return (
     <TouchableOpacity onLongPress={onLongPress} style={styles.itemCard}>
@@ -18,6 +19,7 @@ const ItemCard = ({ item, onLongPress }) => {
     </TouchableOpacity>
   );
 };
+
 const styles = StyleSheet.create({
   itemCard: {
     flexDirection: 'row',
@@ -45,4 +47,5 @@ const styles = StyleSheet.create({
     height: 40,
   },
 });
+
 export default ItemCard;
