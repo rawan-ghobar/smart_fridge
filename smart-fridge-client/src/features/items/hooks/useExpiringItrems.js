@@ -29,3 +29,6 @@ const fetchExpiring = async () => {
     setLoading(false);
   }
 };
+useEffect(() => {
+  fetchExpiring();
+}, []);
