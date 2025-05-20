@@ -5,7 +5,7 @@
 <!-- project overview -->
 <img src="./readme/Readme Template Assets/title2.svg"/>
 
-> Fridget is a full-stack IoT-powered smart fridge application designed to help users manage the contents of their fridge efficiently. Users can log in, view what's currently inside their fridge, get notified about products that are near expiry, and generate meal ideas based on available ingredients users' preferences.
+> Fridget is a full-stack smart fridge application designed to help users manage the contents of their fridge efficiently. Users can log in, view what's currently inside their fridge, get notified about products that are near expiry, and generate meal ideas based on available ingredients users' preferences.
 >
 > The system supports multi-user access for each fridge, manual shopping list creation, and calorie tracking for smarter meal planning. Built with React Native for the mobile interface and Laravel for the backend, Fridget ensures a seamless, real-time experience.
 
