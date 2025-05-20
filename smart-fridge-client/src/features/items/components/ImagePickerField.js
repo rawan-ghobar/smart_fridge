@@ -12,3 +12,5 @@ return (
     <Text style={styles.placeholder}>Pick an image</Text>
   )}
 </TouchableOpacity>
+  </View>
+);
