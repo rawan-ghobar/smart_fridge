@@ -32,3 +32,12 @@ const handleConnect = async () => {
     Alert.alert('Error', 'An error occurred. Please try again.');
   }
 };
+return {
+  code,
+  setCode,
+  password,
+  setPassword,
+  passwordVisible,
+  togglePasswordVisibility,
+  handleConnect,
+};
