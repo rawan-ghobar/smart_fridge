@@ -40,3 +40,8 @@ const styles = StyleSheet.create({
     marginTop: 4,
     fontSize: 12,
   },
+  itemImage: {
+    width: 40,
+    height: 40,
+  },
+});
