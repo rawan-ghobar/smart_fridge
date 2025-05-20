@@ -10,3 +10,11 @@ const ItemCard = ({ item, onLongPress }) => {
           Quantity: {item.quantity} {item.unit}
         </Text>
       </View>
+      <Image
+        source={item.image ? { uri: item.image } : require('../../../../assets/placeholder.png')}
+        style={styles.itemImage}
+        resizeMode="contain"
+      />
+    </TouchableOpacity>
+  );
+};
