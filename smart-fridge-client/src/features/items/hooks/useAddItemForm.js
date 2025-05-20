@@ -37,3 +37,10 @@ const handleSave = async () => {
     Alert.alert('Invalid numbers', 'Quantity and Calories must be positive numbers.');
     return;
   }
+  try {
+    setLoading(true);
+    const fridgeId = await AsyncStorage.getItem('fridgeId');
+    if (!fridgeId) {
+      Alert.alert('Error', 'Fridge ID not found. Please reconnect.');
+      return;
+    }
