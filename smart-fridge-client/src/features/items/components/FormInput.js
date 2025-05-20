@@ -14,3 +14,8 @@ return (
     />
   </View>
 );
+const styles = StyleSheet.create({
+  container: {
+    marginBottom: 20,
+    width: '100%',
+  },
