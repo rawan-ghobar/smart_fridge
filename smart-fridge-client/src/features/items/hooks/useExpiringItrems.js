@@ -3,3 +3,5 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import api from '../../../services/api';
 import { Alert } from 'react-native';
 const useExpiringItems = () => {
+const [items, setItems] = useState([]);
+const [loading, setLoading] = useState(true);
