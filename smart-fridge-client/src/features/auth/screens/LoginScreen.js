@@ -19,3 +19,6 @@ const LoginScreen = ({ navigation }) => {
 />
 <EmailInput value={email} onChangeText={setEmail} />
 <PasswordInput value={password} onChangeText={setPassword} visible={passwordVisible} toggleVisibility={togglePasswordVisibility} />
+<TouchableOpacity style={styles.loginButton} onPress={handleLogin} activeOpacity={0.8}>
+  <AppText style={styles.loginButtonText}>Login</AppText>
+</TouchableOpacity>
