@@ -93,6 +93,6 @@
 | --------------------------------------- | ------------------------------------- | ------------------------------------- |
 | ![Landing](./readme/Readme%20Template%20Assets/signup_postman.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
 
-<img src="./readme/Readme Template Assets/Group 16.png/>
+<img src="./readme/Readme Template Assets/deployment_diagram.png/>
 
 <br><br>
