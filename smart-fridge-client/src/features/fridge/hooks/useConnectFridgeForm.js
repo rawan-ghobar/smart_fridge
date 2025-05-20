@@ -18,3 +18,8 @@ const handleConnect = async () => {
       headers: { 'Content-Type': 'application/json' },
     });
     const { success, data } = response.data;
+    if (success && data) {
+      await AsyncStorage.setItem('fridgeId', data.id.toString());
+      await AsyncStorage.setItem('code', data.code);
+      await AsyncStorage.setItem('fridgeName', data.name);
+      navigation.navigate('Home');
