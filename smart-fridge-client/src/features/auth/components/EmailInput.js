@@ -24,3 +24,10 @@ const styles = StyleSheet.create({
     width: '90%',
     marginBottom: 20,
   },
+    label: {
+    color: COLORS.primary,
+    marginBottom: 8,
+    fontSize: 18,
+    fontWeight: '500',
+  },
+
