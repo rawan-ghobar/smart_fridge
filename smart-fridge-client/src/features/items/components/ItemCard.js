@@ -19,3 +19,14 @@ const ItemCard = ({ item, onLongPress }) => {
   );
 };
 const styles = StyleSheet.create({
+  itemCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    backgroundColor: COLORS.white,
+    borderRadius: 10,
+    padding: 15,
+    marginBottom: 15,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+  },
