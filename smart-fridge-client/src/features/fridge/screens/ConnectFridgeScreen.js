@@ -12,3 +12,4 @@ const ConnectFridgeScreen = ({ navigation }) => {
     handleConnect,
   } = useConnectFridgeForm(navigation);
 <Image source={require('../../../../assets/fridget.png')} style={styles.logo} resizeMode="contain" />
+<FridgeCodeInput value={code} onChangeText={setCode} />
