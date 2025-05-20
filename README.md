@@ -51,9 +51,9 @@
 
 ### App Walkthroughs
 
-| Add item | Generate Custom Meal | Meal Recommendation |
+| Add item | Generate Custom Meal | Checking Expiring Items |
 |----------------------|----------------|----------------------|
-| ![](./readme/Readme%20Template%20Assets/add_item.gif) | ![](./readme/Readme%20Template%20Assets/custom_meal_generation.gif) | ![](./readme/gifs/meal_gen.gif) |
+| ![](./readme/Readme%20Template%20Assets/add_item.gif) | ![](./readme/Readme%20Template%20Assets/custom_meal_generation.gif) | ![](./readme/Readme%20Template%20Assets/add_items_and_check_expiry.gif) |
 
 <br><br>
 
