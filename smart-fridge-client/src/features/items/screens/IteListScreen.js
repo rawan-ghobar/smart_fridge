@@ -70,3 +70,4 @@ const styles = StyleSheet.create({
     shadowRadius: 3,
   },
 });
+export default ItemListScreen;
