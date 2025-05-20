@@ -30,3 +30,10 @@ const handleSave = async () => {
     Alert.alert('Missing fields', 'Please fill out all required fields.');
     return;
   }
+  const quantityNum = Number(quantity);
+  const caloriesNum = Number(calories);
+
+  if (isNaN(quantityNum) || isNaN(caloriesNum) || quantityNum <= 0 || caloriesNum <= 0) {
+    Alert.alert('Invalid numbers', 'Quantity and Calories must be positive numbers.');
+    return;
+  }
