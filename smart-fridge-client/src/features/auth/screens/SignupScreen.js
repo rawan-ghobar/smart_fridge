@@ -30,3 +30,17 @@ const SignupScreen = ({ navigation }) => {
     <AppText style={styles.loginLink}>Login</AppText>
   </TouchableOpacity>
 </View>
+const FormField = ({ label, placeholder, value, onChangeText }) => (
+  <View style={styles.inputGroup}>
+    <AppText style={styles.label}>{label}</AppText>
+    <View style={styles.inputWrapper}>
+      <AppText.Input
+        placeholder={placeholder}
+        placeholderTextColor={COLORS.placeholder}
+        style={styles.input}
+        value={value}
+        onChangeText={onChangeText}
+      />
+    </View>
+  </View>
+);
