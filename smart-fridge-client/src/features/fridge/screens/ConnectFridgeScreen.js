@@ -26,3 +26,11 @@ const ConnectFridgeScreen = ({ navigation }) => {
 >
   <AppText style={styles.connectButtonText}>Connect</AppText>
 </TouchableOpacity>
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: COLORS.background,
+    paddingHorizontal: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
