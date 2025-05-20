@@ -27,3 +27,8 @@ const handleConnect = async () => {
       const errorMessage = data?.original?.message || 'Invalid code or password';
       Alert.alert('Connection Failed', errorMessage);
     }
+  } catch (err) {
+    console.error(err.response?.data || err.message);
+    Alert.alert('Error', 'An error occurred. Please try again.');
+  }
+};
