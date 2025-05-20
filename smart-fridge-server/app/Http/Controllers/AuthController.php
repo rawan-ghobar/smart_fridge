@@ -19,7 +19,16 @@ class AuthController extends Controller
             return ResponseTrait::errorResponse('Invalid credentials', 401);
         }
 
-        return ResponseTrait::successResponse($user);
+        $responseData = [
+        'id' => $user->id,
+        'first_name' => $user->first_name,
+        'last_name' => $user->last_name,
+        'email' => $user->email,
+        'token' => $user->token,
+        ];
+
+
+        return ResponseTrait::successResponse($responseData);
     }
 
     public static function signup(SignupRequest $request)
