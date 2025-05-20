@@ -47,3 +47,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 10,
   },
+  connectButtonText: {
+    color: COLORS.white,
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+});
