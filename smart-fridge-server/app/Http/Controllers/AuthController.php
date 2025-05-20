@@ -13,11 +13,13 @@ class AuthController extends Controller
 
     public static function login(LoginRequest $request)
     {
-        $user = AuthService::login($request);
-        if (!$user) {
-        return $user;
-    }
-        return ResponseTrait::successResponse($user);
+        $userData= AuthService::login($request);
+        
+        if (!is_array($userData)) {
+            return $userData;
+        }
+
+        return ResponseTrait::successResponse($userData);
     }
 
     public static function signup(SignupRequest $request)

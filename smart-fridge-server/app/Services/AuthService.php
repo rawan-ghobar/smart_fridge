@@ -26,7 +26,11 @@ class AuthService
         $user = Auth::user();
         $user->token = $token;
 
-        return $user;
+        return [
+            'message' => 'User logged in successfully',
+            'user'    => $user,
+            'token'   => $token,
+        ];
     }
 
     public static function signup(SignupRequest $request)
