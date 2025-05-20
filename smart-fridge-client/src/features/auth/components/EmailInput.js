@@ -18,3 +18,9 @@ const EmailInput = ({ value, onChangeText, label = 'Email' }) => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  inputGroup: {
+    width: '90%',
+    marginBottom: 20,
+  },
