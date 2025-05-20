@@ -49,3 +49,10 @@ return (
   )}
 </View>
 <ImagePickerField imageUri={imageUri} onPick={pickImage} />
+<TouchableOpacity onPress={handleSave} style={styles.saveButton}>
+  {loading ? (
+    <ActivityIndicator color={COLORS.white} />
+  ) : (
+    <Text style={styles.saveText}>Save Item</Text>
+  )}
+</TouchableOpacity>
