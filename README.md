@@ -38,9 +38,9 @@
 
 ### User Screens (Mobile)
 
-| Home screen                            | Items List                       | Register screen                       |
+| Home screen                            | Items List                       | Choose Meal screen                       |
 | --------------------------------------- | ------------------------------------- | ------------------------------------- |
-| ![Landing](./readme/Readme%20Template%20Assets/home_screen.jpg) | ![fsdaf](./readme/Readme%20Template%20Assets/items_list_screen.jpg) | ![fsdaf](./readme/demo/1440x1024.png) |
+| ![Landing](./readme/Readme%20Template%20Assets/home_screen.jpg) | ![fsdaf](./readme/Readme%20Template%20Assets/items_list_screen.jpg) | ![fsdaf](./readme/Readme%20Template%20Assets/choose_meal_screen.jpg) |
 
 <br><br>
 
