@@ -35,3 +35,9 @@ const handleAddViaCamera = async () => {
     Alert.alert('Permission denied', 'Camera permission is required.');
     return;
   }
+  const result = await ImagePicker.launchCameraAsync({
+    quality: 0.7,
+    allowsEditing: false,
+  });
+
+  if (result.canceled) return;
