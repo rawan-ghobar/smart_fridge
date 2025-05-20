@@ -26,3 +26,10 @@ const handleSignup = async () => {
       email,
       password,
     });
+    if (res.data?.success) {
+      Alert.alert('Success', res.data?.message || 'Account created', [
+        { text: 'Login now', onPress: () => navigation.goBack() },
+      ]);
+    } else {
+      Alert.alert('Signup failed', res.data?.message || 'Something went wrong');
+    }
