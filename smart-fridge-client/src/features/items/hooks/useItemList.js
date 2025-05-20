@@ -8,3 +8,10 @@ export const useItemList = (navigation) => {
 const [items, setItems] = useState([]);
 const [loading, setLoading] = useState(true);
 const isFocused = useIsFocused();
+const fetchItems = async () => {
+  try {
+    const fridgeId = await AsyncStorage.getItem('fridgeId');
+    if (!fridgeId) {
+      Alert.alert('Error', 'Fridge ID not found.');
+      return;
+    }
