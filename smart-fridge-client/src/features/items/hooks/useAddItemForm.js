@@ -13,3 +13,15 @@ const [expiryDate, setExpiryDate] = useState(null);
 const [showDatePicker, setShowDatePicker] = useState(false);
 const [imageUri, setImageUri] = useState(null);
 const [loading, setLoading] = useState(false);
+useEffect(() => {
+  if (route?.params?.prefill) {
+    const p = route.params.prefill;
+    setName(p.name || '');
+    setQuantity((p.quantity ?? '').toString());
+    setUnit(p.unit || '');
+    setCalories((p.calories ?? '').toString());
+  }
+  if (route?.params?.imageUri) {
+    setImageUri(route.params.imageUri);
+  }
+}, []);
