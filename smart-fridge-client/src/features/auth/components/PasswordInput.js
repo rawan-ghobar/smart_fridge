@@ -10,26 +10,30 @@ const PasswordInput = ({
   toggleVisibility,
   label = 'Password',
 }) => {
+  return (
     <View style={styles.inputGroup}>
-  <AppText style={styles.label}>{label}</AppText>
-<View style={styles.passwordContainer}>
-  <TextInput
-    placeholder="********"
-    placeholderTextColor={COLORS.placeholder}
-    secureTextEntry={!visible}
-    autoCapitalize="none"
-    value={value}
-    onChangeText={onChangeText}
-    style={styles.input}
-  />
-  <TouchableOpacity onPress={toggleVisibility}>
-    <Ionicons
-      name={visible ? 'eye-off-outline' : 'eye-outline'}
-      size={20}
-      color={COLORS.primaryAccent}
-    />
-  </TouchableOpacity>
-</View>
+      <AppText style={styles.label}>{label}</AppText>
+      <View style={styles.passwordContainer}>
+        <TextInput
+          placeholder="********"
+          placeholderTextColor={COLORS.placeholder}
+          secureTextEntry={!visible}
+          autoCapitalize="none"
+          value={value}
+          onChangeText={onChangeText}
+          style={styles.input}
+        />
+        <TouchableOpacity onPress={toggleVisibility}>
+          <Ionicons
+            name={visible ? 'eye-off-outline' : 'eye-outline'}
+            size={20}
+            color={COLORS.primaryAccent}
+          />
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   inputGroup: {
@@ -51,8 +55,7 @@ const styles = StyleSheet.create({
     borderColor: COLORS.border,
     paddingHorizontal: 10,
   },
-
-    input: {
+  input: {
     flex: 1,
     paddingVertical: 12,
   },
