@@ -39,3 +39,11 @@ const styles = StyleSheet.create({
     height: 350,
     marginBottom: 10,
   },
+  connectButton: {
+    backgroundColor: COLORS.primaryAccent,
+    width: '90%',
+    paddingVertical: 14,
+    borderRadius: 10,
+    alignItems: 'center',
+    marginTop: 10,
+  },
