@@ -75,3 +75,16 @@ const styles = StyleSheet.create({
   input: {
     padding: 12,
   },
+  signupButton: {
+    backgroundColor: COLORS.primaryAccent,
+    width: '90%',
+    paddingVertical: 14,
+    borderRadius: 10,
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  signupButtonText: {
+    color: COLORS.white,
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
