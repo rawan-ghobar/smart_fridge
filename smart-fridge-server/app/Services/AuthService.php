@@ -24,6 +24,7 @@ class AuthService
         }
 
         $user = Auth::user();
+        $token = Auth::attempt($credentials);
 
         return [
             'message' => 'User logged in successfully',
