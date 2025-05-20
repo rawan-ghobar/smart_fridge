@@ -48,3 +48,4 @@ return (
     />
   )}
 </View>
+<ImagePickerField imageUri={imageUri} onPick={pickImage} />
