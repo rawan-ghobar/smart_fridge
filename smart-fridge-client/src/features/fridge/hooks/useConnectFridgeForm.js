@@ -23,3 +23,7 @@ const handleConnect = async () => {
       await AsyncStorage.setItem('code', data.code);
       await AsyncStorage.setItem('fridgeName', data.name);
       navigation.navigate('Home');
+    } else {
+      const errorMessage = data?.original?.message || 'Invalid code or password';
+      Alert.alert('Connection Failed', errorMessage);
+    }
