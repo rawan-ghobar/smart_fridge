@@ -6,3 +6,4 @@ import moment from 'moment';
 import { useAddItemForm } from '../hooks/useAddItemForm';
 import FormInput from '../components/FormInput';
 import ImagePickerField from '../components/ImagePickerField';
+import COLORS from '../../../theme/colors';
