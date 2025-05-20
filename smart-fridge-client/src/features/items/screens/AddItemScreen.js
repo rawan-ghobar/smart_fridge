@@ -32,3 +32,19 @@ return (
 <FormInput label="Quantity *" placeholder="e.g. 2" value={quantity} onChangeText={setQuantity} keyboardType="numeric" />
 <FormInput label="Unit *" placeholder="e.g. pcs, g, ml" value={unit} onChangeText={setUnit} />
 <FormInput label="Calories per unit *" placeholder="e.g. 165" value={calories} onChangeText={setCalories} keyboardType="numeric" />
+<View style={styles.inputGroup}>
+  <Text style={styles.label}>Expiry Date (optional)</Text>
+  <TouchableOpacity onPress={() => setShowDatePicker(true)} style={styles.input}>
+    <Text style={{ color: expiryDate ? COLORS.text : COLORS.placeholder }}>
+      {expiryDate ? moment(expiryDate).format('YYYY-MM-DD') : 'Select Date'}
+    </Text>
+  </TouchableOpacity>
+  {showDatePicker && (
+    <DateTimePicker
+      value={expiryDate || new Date()}
+      mode="date"
+      display="default"
+      onChange={handleDateChange}
+    />
+  )}
+</View>
