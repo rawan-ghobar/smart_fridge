@@ -23,3 +23,6 @@ return (
     <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
       <Ionicons name="arrow-back-outline" size={24} color={COLORS.primary} />
     </TouchableOpacity>
+<KeyboardAvoidingView style={styles.keyboardView} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+  <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+    <ScrollView contentContainerStyle={styles.scrollView}>
