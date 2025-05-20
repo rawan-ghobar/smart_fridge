@@ -11,3 +11,4 @@ const ConnectFridgeScreen = ({ navigation }) => {
     passwordVisible, togglePasswordVisibility,
     handleConnect,
   } = useConnectFridgeForm(navigation);
+<Image source={require('../../../../assets/fridget.png')} style={styles.logo} resizeMode="contain" />
