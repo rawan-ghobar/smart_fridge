@@ -41,3 +41,16 @@ const styles = StyleSheet.create({
     height: 350,
     marginBottom: 20,
   },
+  loginButton: {
+    backgroundColor: COLORS.primaryAccent,
+    width: '90%',
+    paddingVertical: 14,
+    borderRadius: 10,
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  loginButtonText: {
+    color: COLORS.white,
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
