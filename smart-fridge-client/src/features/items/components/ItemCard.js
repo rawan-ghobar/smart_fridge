@@ -4,3 +4,5 @@ import COLORS from '../../../theme/colors';
 const ItemCard = ({ item, onLongPress }) => {
   return (
     <TouchableOpacity onLongPress={onLongPress} style={styles.itemCard}>
+      <View>
+        <Text style={styles.itemName}>{item.name}</Text>
