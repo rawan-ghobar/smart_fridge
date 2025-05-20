@@ -32,3 +32,4 @@ const fetchExpiring = async () => {
 useEffect(() => {
   fetchExpiring();
 }, []);
+return { items, loading, refetch: fetchExpiring };
