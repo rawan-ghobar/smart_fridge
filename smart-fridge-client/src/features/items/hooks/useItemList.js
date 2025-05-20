@@ -69,3 +69,6 @@ const handleAddViaCamera = async () => {
     setLoading(false);
   }
 };
+const showAddOptions = () => {
+  const options = ['Add Manually', 'Add with Camera', 'Cancel'];
+  const actions = [handleAddManual, handleAddViaCamera];
