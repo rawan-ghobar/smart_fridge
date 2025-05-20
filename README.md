@@ -38,17 +38,9 @@
 
 ### User Screens (Mobile)
 
-| Login screen                            | Register screen                       | Register screen                       |
+| Home screen                            | Register screen                       | Register screen                       |
 | --------------------------------------- | ------------------------------------- | ------------------------------------- |
-| ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
-
-
-### Admin Screens (Web)
-
-| Login screen                            | Register screen                       |
-| --------------------------------------- | ------------------------------------- |
-| ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
-
+| ![Landing](./readme/Readme%20Template%20Assets/home_screen.jpg) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
 
 <br><br>
 
