@@ -33,3 +33,8 @@ const handleSignup = async () => {
     } else {
       Alert.alert('Signup failed', res.data?.message || 'Something went wrong');
     }
+  } catch (err) {
+    console.error(err.response?.data || err.message);
+    Alert.alert('Error', 'Signup failed');
+  }
+};
