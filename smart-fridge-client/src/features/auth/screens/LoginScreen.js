@@ -17,3 +17,5 @@ const LoginScreen = ({ navigation }) => {
   style={styles.logo}
   resizeMode="contain"
 />
+<EmailInput value={email} onChangeText={setEmail} />
+<PasswordInput value={password} onChangeText={setPassword} visible={passwordVisible} toggleVisibility={togglePasswordVisibility} />
