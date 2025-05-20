@@ -41,3 +41,12 @@ const handleAddViaCamera = async () => {
   });
 
   if (result.canceled) return;
+  const imageUri = result.assets[0].uri;
+  try {
+    setLoading(true);
+    const form = new FormData();
+    form.append('image', {
+      uri: imageUri,
+      name: 'fridge.jpg',
+      type: 'image/jpeg',
+    });
