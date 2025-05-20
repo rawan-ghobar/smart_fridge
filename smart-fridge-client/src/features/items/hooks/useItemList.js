@@ -50,3 +50,15 @@ const handleAddViaCamera = async () => {
       name: 'fridge.jpg',
       type: 'image/jpeg',
     });
+    const res = await api.post('/items/itemrecognize', form, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    });
+
+    if (res.data?.success) {
+      navigation.navigate('AddItem', {
+        prefill: res.data.data,
+        imageUri,
+      });
+    } else {
+      Alert.alert('Error', 'Could not recognise the item.');
+    }
