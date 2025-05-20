@@ -5,3 +5,11 @@ import { Alert } from 'react-native';
 const useExpiringItems = () => {
 const [items, setItems] = useState([]);
 const [loading, setLoading] = useState(true);
+const fetchExpiring = async () => {
+  try {
+    const fridgeId = await AsyncStorage.getItem('fridgeId');
+    if (!fridgeId) {
+      Alert.alert('Error', 'Fridge ID not found.');
+      setLoading(false);
+      return;
+    }
