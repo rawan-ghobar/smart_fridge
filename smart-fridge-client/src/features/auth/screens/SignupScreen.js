@@ -16,3 +16,8 @@ const SignupScreen = ({ navigation }) => {
     handleSignup,
   } = useSignupForm(navigation);
 <Image source={require('../../../../assets/fridget.png')} style={styles.logo} resizeMode="contain" />
+<EmailInput label="First Name" placeholder="John" value={firstName} onChangeText={setFirstName} />
+<EmailInput label="Last Name" placeholder="Doe" value={lastName} onChangeText={setLastName} />
+<EmailInput value={email} onChangeText={setEmail} />
+<PasswordInput value={password} onChangeText={setPassword} visible={passwordVisible} toggleVisibility={togglePasswordVisibility} />
+<PasswordInput label="Confirm Password" value={confirmPassword} onChangeText={setConfirmPassword} visible={confirmVisible} toggleVisibility={toggleConfirmVisibility} />
