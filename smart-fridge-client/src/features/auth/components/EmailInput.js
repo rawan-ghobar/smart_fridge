@@ -30,4 +30,13 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '500',
   },
+    input: {
+    backgroundColor: COLORS.white,
+    borderRadius: 8,
+    padding: 12,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+  },
+});
+
 
