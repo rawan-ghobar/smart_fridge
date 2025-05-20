@@ -26,3 +26,9 @@ return (
 <KeyboardAvoidingView style={styles.keyboardView} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
   <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
     <ScrollView contentContainerStyle={styles.scrollView}>
+<Text style={styles.title}>Add Item</Text>
+
+<FormInput label="Name *" placeholder="e.g. Chicken breast" value={name} onChangeText={setName} />
+<FormInput label="Quantity *" placeholder="e.g. 2" value={quantity} onChangeText={setQuantity} keyboardType="numeric" />
+<FormInput label="Unit *" placeholder="e.g. pcs, g, ml" value={unit} onChangeText={setUnit} />
+<FormInput label="Calories per unit *" placeholder="e.g. 165" value={calories} onChangeText={setCalories} keyboardType="numeric" />
