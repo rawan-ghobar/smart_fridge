@@ -11,3 +11,11 @@ const [passwordVisible, setPasswordVisible] = useState(false);
 const [confirmVisible, setConfirmVisible] = useState(false);
 const togglePasswordVisibility = () => setPasswordVisible(p => !p);
 const toggleConfirmVisibility = () => setConfirmVisible(p => !p);
+const handleSignup = async () => {
+  if (!firstName || !lastName || !email || !password || !confirmPassword) {
+    return Alert.alert('Missing Fields', 'Please fill all fields.');
+  }
+
+  if (password !== confirmPassword) {
+    return Alert.alert('Password Mismatch', 'Passwords do not match.');
+  }
