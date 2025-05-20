@@ -19,3 +19,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     width: '100%',
   },
+  label: {
+    marginBottom: 6,
+    fontSize: 16,
+    color: COLORS.primary,
+  },
