@@ -7,3 +7,14 @@ import { useAddItemForm } from '../hooks/useAddItemForm';
 import FormInput from '../components/FormInput';
 import ImagePickerField from '../components/ImagePickerField';
 import COLORS from '../../../theme/colors';
+const AddItemScreen = ({ navigation, route }) => {
+  const {
+    name, setName,
+    quantity, setQuantity,
+    unit, setUnit,
+    calories, setCalories,
+    expiryDate, showDatePicker,
+    setShowDatePicker, handleDateChange,
+    handleSave, pickImage,
+    imageUri, loading,
+  } = useAddItemForm(route, navigation);
