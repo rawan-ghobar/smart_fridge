@@ -72,3 +72,16 @@ const handleAddViaCamera = async () => {
 const showAddOptions = () => {
   const options = ['Add Manually', 'Add with Camera', 'Cancel'];
   const actions = [handleAddManual, handleAddViaCamera];
+  if (Platform.OS === 'ios') {
+    ActionSheetIOS.showActionSheetWithOptions(
+      { options, cancelButtonIndex: 2 },
+      index => index < 2 && actions[index]()
+    );
+  } else {
+    Alert.alert('Add Item', 'Choose how to add your item:', [
+      { text: 'Add Manually', onPress: handleAddManual },
+      { text: 'Add with Camera', onPress: handleAddViaCamera },
+      { text: 'Cancel', style: 'cancel' },
+    ]);
+  }
+};
