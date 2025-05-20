@@ -38,3 +38,13 @@ const handleSignup = async () => {
     Alert.alert('Error', 'Signup failed');
   }
 };
+return {
+  firstName, setFirstName,
+  lastName, setLastName,
+  email, setEmail,
+  password, setPassword,
+  confirmPassword, setConfirmPassword,
+  passwordVisible, togglePasswordVisibility,
+  confirmVisible, toggleConfirmVisibility,
+  handleSignup,
+};
