@@ -26,3 +26,8 @@ const handleLogin = async () => {
     } else {
       Alert.alert('Login Failed', 'Invalid credentials');
     }
+  } catch (err) {
+    console.error(err.response?.data || err.message);
+    Alert.alert('Error', 'An error occurred. Please try again.');
+  }
+};
