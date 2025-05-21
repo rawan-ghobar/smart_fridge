@@ -17,3 +17,5 @@ import MealInfoScreen from '../features/meals/screens/MealInfoScreen';
 import ChooseCustomizedMealScreen from '../features/meals/screens/ChooseCustomizedMealScreen';
 import CustomizeMealScreen from '../features/meals/screens/CustomizeMealScreen';
 import CustomizedMealInfoScreen from '../features/meals/screens/CustomizedMealInfoScreen';
+
+const Stack = createNativeStackNavigator();
