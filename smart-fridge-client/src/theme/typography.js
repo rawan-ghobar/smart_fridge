@@ -11,3 +11,7 @@ const typography = {
     fontFamily: 'Outfit-Bold',
     color: '#033BB5',
   },
+  subheader: {
+    fontFamily: 'Outfit-SemiBold',
+    fontSize: 18,
+  },
