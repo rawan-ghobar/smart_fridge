@@ -46,3 +46,11 @@ const NotificationsScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   safeArea: { flex: 1, backgroundColor: COLORS.background },
   headerWrapper: { paddingHorizontal: 20, paddingVertical: 10, marginTop: 30 },
+  header: { flexDirection: 'row', alignItems: 'center', position: 'relative' },
+  headerTitle: {
+    ...typography.header,
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    textAlign: 'center',
+  },
