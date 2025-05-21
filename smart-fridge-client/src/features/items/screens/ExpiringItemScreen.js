@@ -13,3 +13,7 @@ import useExpiringItems from '../hooks/useExpiringItems';
 import ItemCard from '../components/ItemCard'; // reused component
 import COLORS from '../../../theme/colors';
 import typography from '../../../theme/typography';
+const ExpiringItemsScreen = ({ navigation }) => {
+  const { items, loading } = useExpiringItems();
+
+  const renderItem = ({ item }) => <ItemCard item={item} />;
