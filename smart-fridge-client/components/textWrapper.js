@@ -7,3 +7,4 @@ const AppText = ({ style, children, ...props }) => {
     </Text>
   );
 };
+export default AppText;
