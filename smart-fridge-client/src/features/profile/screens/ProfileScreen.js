@@ -28,3 +28,4 @@ return (
           <Ionicons name="create-outline" size={20} color={COLORS.primary} />
           <Text style={styles.buttonText}>Edit Profile</Text>
         </TouchableOpacity>
+          <Ionicons name="lock-closed-outline" size={20} color={COLORS.primary} />
