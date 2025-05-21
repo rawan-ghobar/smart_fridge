@@ -26,7 +26,6 @@ const Routes = () => {
         <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Signup" component={SignupScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Home" component={BottomTabsRoutes} options={{ headerShown: false }} />
-        {/* Items */}
         <Stack.Screen name="Items" component={ItemListScreen} options={{ headerShown: false }} />
         <Stack.Screen name="AddItem" component={AddItemScreen} options={{ headerShown: false }} />
         <Stack.Screen name="ExpiringItems" component={ExpiringItemScreen} options={{ headerShown: false }} />
