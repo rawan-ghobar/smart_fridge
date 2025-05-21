@@ -18,3 +18,4 @@ const HomeScreen = ({ navigation }) => {
         <Image source={require('../../../../assets/happyfridge.png')} style={styles.fridgeImage} resizeMode="contain" />
         <View style={styles.buttonsContainer}>
           <OptionButton icon={<FontAwesome6 name="list-alt" size={30} color={COLORS.primary} />} label="Check available items" onPress={() => handlePress('Check Items')} />
+          <OptionButton icon={<MaterialCommunityIcons name="alert-circle-outline" size={30} color={COLORS.primary} />} label="Near to expiry products" onPress={() => handlePress('Expiry Products')} />
