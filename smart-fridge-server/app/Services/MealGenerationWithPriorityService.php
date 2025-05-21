@@ -11,5 +11,6 @@ class MealGenerationService
     public static function generateMeal(string $mealType, Collection $fridgeItems, int $priorityItemId)
     {
         $mappedItems = ItemHelper::mapFridgeItems($fridgeItems);
-        
+
         $priorityItemId = $fridgeItems->firstWhere('id', $priorityItemId);
+        $itemsDescription = ItemHelper::buildItemsDescription($mappedItems);
