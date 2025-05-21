@@ -19,3 +19,8 @@ const typography = {
     fontFamily: 'Outfit-Regular',
     fontSize: 14,
   },
+  buttonText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+  },
