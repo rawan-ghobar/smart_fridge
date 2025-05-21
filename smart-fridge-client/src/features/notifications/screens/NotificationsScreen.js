@@ -11,3 +11,5 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 import useNotifications from '../hooks/useNotifications';
 import NotificationCard from '../components/NotificationCard';
+import COLORS from '../../../theme/colors';
+import typography from '../../../theme/typography';
