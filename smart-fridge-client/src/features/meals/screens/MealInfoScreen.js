@@ -75,3 +75,12 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     marginBottom: 10,
   },
+  caloriesText: {
+    color: COLORS.primary,
+    fontSize: 14,
+    marginVertical: 10,
+  },
+  section: {
+    width: '100%',
+    marginTop: 20,
+  },
