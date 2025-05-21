@@ -1,3 +1,8 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons, MaterialIcons } from '@expo/vector-icons';
+import HomeScreen from '../features/home/screens/HomeScreen';
+import ShoppingListScreen from '../features/shopping/screens/ShoppingListScreen';
+import MealsScreen from '../features/meals/screens/MealsScreen';
+import NotificationsScreen from '../features/notifications/screens/NotificationsScreen';
+import ProfileScreen from '../features/profile/screens/ProfileScreen';
