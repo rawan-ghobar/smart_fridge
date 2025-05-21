@@ -22,7 +22,7 @@ import api from '../../../services/api';
 import COLORS from '../../../theme/colors';
 import typography from '../../../theme/typography';
 
-const CustomizedMealInfoScreen = ({ route, navigation }) => {
+const CustomizeMealScreen = ({ route, navigation }) => {
   const { mealType } = route.params;
 
   const [usercalories, setUserCalories] = useState('');
@@ -211,4 +211,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CustomizedMealInfoScreen;
+export default CustomizeMealScreen;
