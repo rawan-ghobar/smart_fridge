@@ -78,3 +78,24 @@ const ChooseMealScreen = ({ navigation }) => {
           style={styles.fridgeImage}
           resizeMode="contain"
         />
+        <View style={styles.optionsContainer}>
+          {mealOptions.map((meal) => (
+            <TouchableOpacity
+              key={meal}
+              style={[
+                styles.optionButton,
+                selectedMeal === meal && styles.optionButtonSelected,
+              ]}
+              onPress={() => handleMealSelect(meal)}
+            >
+              <Text
+                style={[
+                  styles.optionText,
+                  selectedMeal === meal && styles.optionTextSelected,
+                ]}
+              >
+                {meal}
+              </Text>
+            </TouchableOpacity>
+          ))}
+        </View>
