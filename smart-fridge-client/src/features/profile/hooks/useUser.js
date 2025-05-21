@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
+
 const useUser = () => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const fetchUser = async () => {
       try {
@@ -15,9 +17,13 @@ const useUser = () => {
         console.error('Failed to load user', error);
       } finally {
         setLoading(false);
+      }
     };
+
     fetchUser();
   }, []);
+
   return { user, loading };
 };
+
 export default useUser;
