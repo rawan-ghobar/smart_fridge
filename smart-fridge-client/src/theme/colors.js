@@ -5,3 +5,5 @@ const COLORS = {
   secondaryAccent: '#F96E2A',
   placeholder: '#C0C0C0',
   white: '#FFFFFF',
+  border: '#E0E0E0',
+};
