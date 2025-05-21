@@ -37,3 +37,10 @@ const BottomTabsRoutes = () => (
       },
     })}
   >
+    <Tab.Screen name="Home" component={HomeScreen} />
+    <Tab.Screen name="Shopping List" component={ShoppingListScreen} />
+    <Tab.Screen name="Meals" component={MealsScreen} />
+    <Tab.Screen name="Notifications" component={NotificationsScreen} />
+    <Tab.Screen name="Profile" component={ProfileScreen} />
+  </Tab.Navigator>
+);
