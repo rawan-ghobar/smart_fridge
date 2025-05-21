@@ -10,3 +10,7 @@ const ProfileHeader = ({ avatar, name, email }) => (
   </View>
 );
 const styles = StyleSheet.create({
+  headerContainer: {
+    alignItems: 'center',
+    marginBottom: 30,
+  },
