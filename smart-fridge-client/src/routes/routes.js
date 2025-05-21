@@ -9,3 +9,5 @@ import SignupScreen from '../features/auth/screens/SignupScreen';
 import ItemListScreen from '../features/items/screens/ItemListScreen';
 import AddItemScreen from '../features/items/screens/AddItemScreen';
 import ExpiringItemsScreen from '../features/items/screens/ExpiringItemsScreen';
+
+import ConnectFridgeScreen from '../features/fridge/screens/ConnectFridgeScreen';
