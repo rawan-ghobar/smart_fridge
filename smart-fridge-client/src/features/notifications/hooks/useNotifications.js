@@ -8,3 +8,8 @@ const useNotifications = () => {
   const fetchNotifications = async () => {
     try {
       const fridgeId = await AsyncStorage.getItem('fridgeId');
+      if (!fridgeId) {
+        Alert.alert('Error', 'Fridge ID not found.');
+        setLoading(false);
+        return;
+      }
