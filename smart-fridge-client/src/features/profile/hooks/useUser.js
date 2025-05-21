@@ -4,3 +4,4 @@ const useUser = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchUser = async () => {
+      try {
