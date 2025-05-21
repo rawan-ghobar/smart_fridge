@@ -9,3 +9,4 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import useUser from '../hooks/useUser';
+import ProfileHeader from '../components/ProfileHeader';
