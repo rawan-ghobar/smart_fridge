@@ -17,14 +17,18 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+
 import api from '../../../services/api';
 import COLORS from '../../../theme/colors';
 import typography from '../../../theme/typography';
+
 const CustomizedMealInfoScreen = ({ route, navigation }) => {
   const { mealType } = route.params;
+
   const [usercalories, setUserCalories] = useState('');
   const [notes, setNotes] = useState('');
   const [loading, setLoading] = useState(false);
+
   const handleContinue = async () => {
     if (!usercalories) {
       Alert.alert('Calories', 'Please enter a calorie target.');
@@ -34,6 +38,7 @@ const CustomizedMealInfoScreen = ({ route, navigation }) => {
     try {
       setLoading(true);
       const fridgeId = await AsyncStorage.getItem('fridgeId');
+
       if (!fridgeId) {
         Alert.alert('Error', 'Fridge ID not found. Please reconnect.');
         return;
@@ -50,6 +55,7 @@ const CustomizedMealInfoScreen = ({ route, navigation }) => {
         res.data?.data && typeof res.data.data === 'object'
           ? res.data.data
           : res.data;
+
       if (meal && meal.meal_name) {
         navigation.navigate('CustomizedMealInfo', {
           mealData: {
@@ -75,64 +81,72 @@ const CustomizedMealInfoScreen = ({ route, navigation }) => {
       setLoading(false);
     }
   };
-return (
-  <SafeAreaView style={styles.safeArea}>
-    <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
-      <Ionicons name="arrow-back-outline" size={24} color={COLORS.primary} />
-    </TouchableOpacity>
-    <KeyboardAvoidingView
-      style={{ flex: 1 }}
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : 20}
-    >
-      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-        <ScrollView
-          contentContainerStyle={styles.scrollContainer}
-          keyboardShouldPersistTaps="handled"
-        >
-          <View style={styles.inner}>
-            <Text style={styles.title}>Customize your {mealType}</Text>
-            <Image
-              source={require('../../../../assets/fridgewaiting.png')}
-              style={styles.image}
-              resizeMode="contain"
-            />
-            <View style={styles.inputGroup}>
-              <Text style={styles.label}>Calorie target *</Text>
-              <TextInput
-                placeholder="e.g. 500"
-                placeholderTextColor={COLORS.placeholder}
-                keyboardType="numeric"
-                style={styles.input}
-                value={usercalories}
-                onChangeText={setUserCalories}
+
+  return (
+    <SafeAreaView style={styles.safeArea}>
+      <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+        <Ionicons name="arrow-back-outline" size={24} color={COLORS.primary} />
+      </TouchableOpacity>
+
+      <KeyboardAvoidingView
+        style={{ flex: 1 }}
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : 20}
+      >
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+          <ScrollView
+            contentContainerStyle={styles.scrollContainer}
+            keyboardShouldPersistTaps="handled"
+          >
+            <View style={styles.inner}>
+              <Text style={styles.title}>Customize your {mealType}</Text>
+
+              <Image
+                source={require('../../../../assets/fridgewaiting.png')}
+                style={styles.image}
+                resizeMode="contain"
               />
+
+              <View style={styles.inputGroup}>
+                <Text style={styles.label}>Calorie target *</Text>
+                <TextInput
+                  placeholder="e.g. 500"
+                  placeholderTextColor={COLORS.placeholder}
+                  keyboardType="numeric"
+                  style={styles.input}
+                  value={usercalories}
+                  onChangeText={setUserCalories}
+                />
+              </View>
+
+              <View style={styles.inputGroup}>
+                <Text style={styles.label}>Additional notes (optional)</Text>
+                <TextInput
+                  placeholder="No peanuts, extra protein…"
+                  placeholderTextColor={COLORS.placeholder}
+                  style={[styles.input, styles.notesInput]}
+                  value={notes}
+                  onChangeText={setNotes}
+                  multiline
+                  numberOfLines={3}
+                />
+              </View>
+
+              <TouchableOpacity style={styles.continueButton} onPress={handleContinue}>
+                {loading ? (
+                  <ActivityIndicator color={COLORS.white} />
+                ) : (
+                  <Text style={styles.continueText}>Continue</Text>
+                )}
+              </TouchableOpacity>
             </View>
-            <View style={styles.inputGroup}>
-              <Text style={styles.label}>Additional notes (optional)</Text>
-              <TextInput
-                placeholder="No peanuts, extra protein…"
-                placeholderTextColor={COLORS.placeholder}
-                style={[styles.input, styles.notesInput]}
-                value={notes}
-                onChangeText={setNotes}
-                multiline
-                numberOfLines={3}
-              />
-            </View>
-            <TouchableOpacity style={styles.continueButton} onPress={handleContinue}>
-              {loading ? (
-                <ActivityIndicator color={COLORS.white} />
-              ) : (
-                <Text style={styles.continueText}>Continue</Text>
-              )}
-            </TouchableOpacity>
-          </View>
-        </ScrollView>
-      </TouchableWithoutFeedback>
-    </KeyboardAvoidingView>
-  </SafeAreaView>
-);
+          </ScrollView>
+        </TouchableWithoutFeedback>
+      </KeyboardAvoidingView>
+    </SafeAreaView>
+  );
+};
+
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
@@ -196,4 +210,5 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 });
+
 export default CustomizedMealInfoScreen;
