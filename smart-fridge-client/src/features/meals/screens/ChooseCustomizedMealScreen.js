@@ -106,3 +106,16 @@ const styles = StyleSheet.create({
     marginTop: 30,
     marginBottom: 30,
   },
+  optionsContainer: {
+    width: '100%',
+    marginBottom: 30,
+  },
+  optionButton: {
+    borderWidth: 1,
+    borderColor: COLORS.primary,
+    borderRadius: 10,
+    paddingVertical: 14,
+    alignItems: 'center',
+    marginBottom: 15,
+    backgroundColor: COLORS.white,
+  },
