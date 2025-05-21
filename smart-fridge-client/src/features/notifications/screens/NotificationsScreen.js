@@ -25,3 +25,5 @@ const NotificationsScreen = ({ navigation }) => {
           <Text style={styles.headerTitle}>Notifications</Text>
         </View>
       </View>
+      {loading ? (
+        <ActivityIndicator size="large" color={COLORS.primaryAccent} style={styles.loader} />
