@@ -36,3 +36,5 @@ const styles = StyleSheet.create({
   safeArea: { flex: 1, backgroundColor: COLORS.background },
   container: { paddingHorizontal: 20, alignItems: 'center', paddingBottom: 20 },
   welcomeContainer: { alignItems: 'center' },
+  welcomeText: { ...typography.header, textAlign: 'center', marginTop: 100 },
+  welcomeSubText: { ...typography.header, fontSize: 18, fontWeight: '400', textAlign: 'center' },
