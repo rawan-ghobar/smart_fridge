@@ -52,3 +52,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: COLORS.background,
   },
+  headerWrapper: {
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    marginTop: 30,
+  },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    position: 'relative',
+  },
