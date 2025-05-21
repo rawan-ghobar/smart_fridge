@@ -92,3 +92,8 @@ return (
         >
           <View style={styles.inner}>
             <Text style={styles.title}>Customize your {mealType}</Text>
+            <Image
+              source={require('../../../../assets/fridgewaiting.png')}
+              style={styles.image}
+              resizeMode="contain"
+            />
