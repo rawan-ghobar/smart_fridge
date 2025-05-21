@@ -99,3 +99,14 @@ const ChooseMealScreen = ({ navigation }) => {
             </TouchableOpacity>
           ))}
         </View>
+        <TouchableOpacity style={styles.continueButton} onPress={handleContinue}>
+          {loading ? (
+            <ActivityIndicator color={COLORS.white} />
+          ) : (
+            <Text style={styles.continueButtonText}>Continue</Text>
+          )}
+        </TouchableOpacity>
+      </View>
+    </SafeAreaView>
+  );
+};
