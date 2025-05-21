@@ -31,3 +31,4 @@ return (
           <Ionicons name="lock-closed-outline" size={20} color={COLORS.primary} />
           <Text style={styles.buttonText}>Change Password</Text>
         </TouchableOpacity>
+        <TouchableOpacity style={[styles.button, styles.logout]}>
