@@ -5,3 +5,4 @@ import typography from '../../../theme/typography';
 const ProfileHeader = ({ avatar, name, email }) => (
   <View style={styles.headerContainer}>
     <Image source={avatar} style={styles.avatar} />
+    <Text style={styles.name}>{name}</Text>
