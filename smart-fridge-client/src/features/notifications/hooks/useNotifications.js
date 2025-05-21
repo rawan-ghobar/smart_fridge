@@ -19,3 +19,6 @@ const useNotifications = () => {
       } else {
         Alert.alert('Error', 'Failed to load notifications.');
       }
+    } catch (err) {
+      console.error(err.response?.data || err.message);
+      Alert.alert('Error', 'Network error.');
