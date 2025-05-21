@@ -34,3 +34,5 @@ class MealGenerationService
             ->withSystemPrompt('You are a smart fridge, professional cook, and a nutrition specialist')
             ->withPrompt($prompt)
             ->asStructured();
+        return $response->structured;
+
