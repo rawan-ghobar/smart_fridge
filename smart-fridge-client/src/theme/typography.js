@@ -25,3 +25,4 @@ const typography = {
     color: '#FFFFFF',
   },
 };
+export default typography;
