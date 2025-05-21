@@ -22,3 +22,5 @@ const styles = StyleSheet.create({
     color: COLORS.primary,
     fontSize: 16,
   },
+  date: {
+    color: COLORS.placeholder,
