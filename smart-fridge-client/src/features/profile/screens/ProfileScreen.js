@@ -25,3 +25,4 @@ return (
       <ProfileHeader avatar={user.avatar} name={user.name} email={user.email} />
       <View style={styles.actions}>
         <TouchableOpacity style={styles.button}>
+          <Ionicons name="create-outline" size={20} color={COLORS.primary} />
