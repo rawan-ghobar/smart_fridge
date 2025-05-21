@@ -62,3 +62,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     position: 'relative',
   },
+  headerTitle: {
+    ...typography.header,
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    textAlign: 'center',
+  },
