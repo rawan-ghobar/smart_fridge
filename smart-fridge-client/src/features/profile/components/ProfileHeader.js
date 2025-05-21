@@ -20,4 +20,6 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     borderWidth: 2,
     borderColor: COLORS.primaryAccent,
+    marginBottom: 16,
+  },
 
