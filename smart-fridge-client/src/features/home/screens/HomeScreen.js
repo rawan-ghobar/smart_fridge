@@ -46,3 +46,21 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     width: '100%',
   },
+  optionButton: {
+    width: '47%',
+    aspectRatio: 1,
+    backgroundColor: COLORS.white,
+    borderWidth: 1,
+    borderColor: COLORS.primary,
+    borderRadius: 12,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 20,
+  },
+  buttonText: {
+    color: COLORS.primary,
+    textAlign: 'center',
+    marginTop: 10,
+    fontSize: 14,
+  },
+});
