@@ -20,3 +20,9 @@ const HomeScreen = ({ navigation }) => {
           <OptionButton icon={<FontAwesome6 name="list-alt" size={30} color={COLORS.primary} />} label="Check available items" onPress={() => handlePress('Check Items')} />
           <OptionButton icon={<MaterialCommunityIcons name="alert-circle-outline" size={30} color={COLORS.primary} />} label="Near to expiry products" onPress={() => handlePress('Expiry Products')} />
           <OptionButton icon={<Ionicons name="dice-outline" size={30} color={COLORS.primary} />} label="Generate random meal" onPress={() => handlePress('Random Meal')} />
+          <OptionButton icon={<Ionicons name="restaurant-outline" size={30} color={COLORS.primary} />} label="Generate custom meal" onPress={() => handlePress('Custom Meal')} />
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+  );
+};
