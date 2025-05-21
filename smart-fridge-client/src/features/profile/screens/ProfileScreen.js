@@ -21,3 +21,4 @@ if (loading) {
   );
 return (
   <SafeAreaView style={styles.safeArea}>
+    <View style={styles.container}>
