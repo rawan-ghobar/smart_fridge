@@ -8,3 +8,5 @@ use App\Schemas\MealGenerationSchema;
 use Illuminate\Support\Collection;
 class MealGenerationService
 {
+    public static function generateMeal(string $mealType, Collection $fridgeItems, int $priorityItemId)
+    {
