@@ -6,3 +6,4 @@ import ShoppingListScreen from '../features/shopping/screens/ShoppingListScreen'
 import MealsScreen from '../features/meals/screens/MealsScreen';
 import NotificationsScreen from '../features/notifications/screens/NotificationsScreen';
 import ProfileScreen from '../features/profile/screens/ProfileScreen';
+import COLORS from '../theme/colors';
