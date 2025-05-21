@@ -16,3 +16,6 @@ const useNotifications = () => {
       const res = await api.get(`/user/getnotifications/${fridgeId}`);
       if (res.data?.success) {
         setNotifications(res.data.data || []);
+      } else {
+        Alert.alert('Error', 'Failed to load notifications.');
+      }
