@@ -14,3 +14,5 @@ class MealGenerationService
 
         $priorityItemId = $fridgeItems->firstWhere('id', $priorityItemId);
         $itemsDescription = ItemHelper::buildItemsDescription($mappedItems);
+
+        $prompt = PromptHelper::buildMealGenerationPrompt($itemsDescription, $mealType);
