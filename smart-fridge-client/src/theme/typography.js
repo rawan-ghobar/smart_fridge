@@ -15,3 +15,7 @@ const typography = {
     fontFamily: 'Outfit-SemiBold',
     fontSize: 18,
   },
+  body: {
+    fontFamily: 'Outfit-Regular',
+    fontSize: 14,
+  },
