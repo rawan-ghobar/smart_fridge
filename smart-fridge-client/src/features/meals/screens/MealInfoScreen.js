@@ -8,3 +8,4 @@ import {
   Image,
   ScrollView,
 } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
