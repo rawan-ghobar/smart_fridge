@@ -17,3 +17,4 @@ import typography from '../../../theme/typography';
 const ChooseMealScreen = ({ navigation }) => {
   const [selectedMeal, setSelectedMeal] = useState(null);
   const [loading, setLoading] = useState(false);
+  const mealOptions = ['Breakfast', 'Lunch', 'Dinner'];
