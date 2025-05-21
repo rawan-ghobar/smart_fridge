@@ -41,3 +41,7 @@ const Routes = () => {
         <Stack.Screen name="ChooseCustomizedMeal" component={ChooseCustomizedMealScreen} options={{ headerShown: false }} />
         <Stack.Screen name="MealCustomize" component={CustomizeMealScreen} options={{ headerShown: false }} />
         <Stack.Screen name="CustomizedMealInfo" component={CustomizedMealInfoScreen} options={{ headerShown: false }} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
