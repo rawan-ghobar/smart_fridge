@@ -150,3 +150,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 20,
   },
+  title: {
+    ...typography.header,
+    textAlign: 'center',
+    marginTop: 60,
+  },
+  image: {
+    width: 200,
+    height: 180,
+    marginVertical: 30,
+  },
