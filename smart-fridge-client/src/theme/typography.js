@@ -24,3 +24,4 @@ const typography = {
     fontWeight: 'bold',
     color: '#FFFFFF',
   },
+};
