@@ -9,3 +9,5 @@ import {
   ScrollView,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import COLORS from '../../../theme/colors';
+import typography from '../../../theme/typography';
