@@ -13,3 +13,4 @@ const styles = StyleSheet.create({
   card: {
     backgroundColor: COLORS.white,
     borderRadius: 10,
+    padding: 15,
