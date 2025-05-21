@@ -30,3 +30,14 @@ const ChooseMealScreen = ({ navigation }) => {
     try {
       setLoading(true);
       const fridgeId = await AsyncStorage.getItem('fridgeId');
+      if (!fridgeId) {
+        Alert.alert('Error', 'Fridge ID not found. Please reconnect.');
+        return;
+      }
+
+      const response = await api.post('/meal/generate', {
+        fridgeId: parseInt(fridgeId),
+        mealType: selectedMeal,
+      });
+
+      const { data } = response.data;
