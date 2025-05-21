@@ -17,3 +17,4 @@ const useUser = () => {
         setLoading(false);
     };
     fetchUser();
+  }, []);
