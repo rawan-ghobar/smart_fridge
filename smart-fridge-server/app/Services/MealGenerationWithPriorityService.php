@@ -36,3 +36,5 @@ class MealGenerationService
             ->asStructured();
         return $response->structured;
 
+    }
+}
