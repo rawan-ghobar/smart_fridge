@@ -83,3 +83,4 @@ const styles = StyleSheet.create({
     color: COLORS.placeholder,
   },
 });
+export default ExpiringItemsScreen;
