@@ -34,3 +34,5 @@ const OptionButton = ({ icon, label, onPress }) => (
 );
 const styles = StyleSheet.create({
   safeArea: { flex: 1, backgroundColor: COLORS.background },
+  container: { paddingHorizontal: 20, alignItems: 'center', paddingBottom: 20 },
+  welcomeContainer: { alignItems: 'center' },
