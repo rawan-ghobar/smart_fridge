@@ -36,3 +36,11 @@ const CustomizedMealInfoScreen = ({ route, navigation }) => {
         />
 
         <Text style={styles.caloriesText}>{usercalories} calories</Text>
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Ingredients:</Text>
+          {ingredientsArray.map((item, index) => (
+            <Text key={index} style={styles.listItem}>
+              • {item}
+            </Text>
+          ))}
+        </View>
