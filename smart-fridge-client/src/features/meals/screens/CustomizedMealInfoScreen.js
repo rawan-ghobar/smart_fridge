@@ -160,3 +160,20 @@ const styles = StyleSheet.create({
     height: 180,
     marginVertical: 30,
   },
+  inputGroup: {
+    width: '100%',
+    marginBottom: 20,
+  },
+  label: {
+    color: COLORS.primary,
+    marginBottom: 6,
+    fontSize: 16,
+    fontWeight: '500',
+  },
+  input: {
+    backgroundColor: COLORS.white,
+    borderRadius: 8,
+    padding: 12,
+    borderWidth: 1,
+    borderColor: COLORS.border,
+  },
