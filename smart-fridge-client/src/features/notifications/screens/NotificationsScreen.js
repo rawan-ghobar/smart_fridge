@@ -54,3 +54,4 @@ const styles = StyleSheet.create({
     right: 0,
     textAlign: 'center',
   },
+  loader: { marginTop: 50 },
