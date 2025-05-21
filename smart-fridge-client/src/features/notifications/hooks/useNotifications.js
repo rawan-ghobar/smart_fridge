@@ -31,3 +31,4 @@ const useNotifications = () => {
   }, []);
   return { notifications, loading, refetch: fetchNotifications };
 };
+export default useNotifications;
