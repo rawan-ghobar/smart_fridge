@@ -54,3 +54,14 @@ const ChooseMealScreen = ({ navigation }) => {
               .map((step) => step.trim()),
           },
         });
+      } else {
+        const errorMessage = data?.original?.message || 'Could not generate meal. Please try again.';
+        Alert.alert('Failed', errorMessage);
+      }
+    } catch (error) {
+      console.error(error.response?.data || error.message);
+      Alert.alert('Error', 'An error occurred. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
