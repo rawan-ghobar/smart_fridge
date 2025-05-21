@@ -65,3 +65,13 @@ const CustomizedMealInfoScreen = ({ route, navigation }) => {
               .filter(Boolean),
           },
         });
+      } else {
+        Alert.alert('Failed', 'Could not generate meal. Please try again.');
+      }
+    } catch (err) {
+      console.error(err.response?.data || err.message);
+      Alert.alert('Error', 'An error occurred. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
