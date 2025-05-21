@@ -29,3 +29,4 @@ return (
           <Text style={styles.buttonText}>Edit Profile</Text>
         </TouchableOpacity>
           <Ionicons name="lock-closed-outline" size={20} color={COLORS.primary} />
+          <Text style={styles.buttonText}>Change Password</Text>
