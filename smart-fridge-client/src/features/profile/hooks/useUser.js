@@ -6,3 +6,8 @@ const useUser = () => {
     const fetchUser = async () => {
       try {
         await new Promise(resolve => setTimeout(resolve, 1000));
+        setUser({
+          name: 'John Doe',
+          email: 'johndoe@example.com',
+          avatar: require('../../../../assets/avatar-placeholder.png'),
+        });
