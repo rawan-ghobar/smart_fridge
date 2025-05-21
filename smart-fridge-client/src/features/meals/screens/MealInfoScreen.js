@@ -37,3 +37,14 @@ return (
           </Text>
         ))}
       </View>
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>Step by Step Instructions:</Text>
+        {steps?.map((step, index) => (
+          <Text key={index} style={styles.listItem}>
+            {index + 1}. {step}
+          </Text>
+        ))}
+      </View>
+    </ScrollView>
+  </SafeAreaView>
+);
