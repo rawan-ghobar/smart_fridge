@@ -177,3 +177,22 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: COLORS.border,
   },
+  notesInput: {
+    height: 90,
+    textAlignVertical: 'top',
+  },
+  continueButton: {
+    backgroundColor: COLORS.primaryAccent,
+    width: '100%',
+    paddingVertical: 14,
+    borderRadius: 10,
+    alignItems: 'center',
+    marginTop: 10,
+    marginBottom: 30,
+  },
+  continueText: {
+    color: COLORS.white,
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+});
