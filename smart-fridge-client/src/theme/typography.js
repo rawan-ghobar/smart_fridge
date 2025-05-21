@@ -5,3 +5,9 @@ const typography = {
     fontSize: 16,
     fontWeight: '500',
   },
+  header: {
+    fontSize: 22,
+    fontWeight: '700',
+    fontFamily: 'Outfit-Bold',
+    color: '#033BB5',
+  },
