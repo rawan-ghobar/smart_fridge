@@ -18,3 +18,5 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import api from '../../../services/api';
+import COLORS from '../../../theme/colors';
+import typography from '../../../theme/typography';
