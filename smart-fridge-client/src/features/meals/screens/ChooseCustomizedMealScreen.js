@@ -95,3 +95,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 20,
   },
+  questionText: {
+    ...typography.header,
+    textAlign: 'center',
+    marginTop: 100,
+  },
+  fridgeImage: {
+    width: 200,
+    height: 200,
+    marginTop: 30,
+    marginBottom: 30,
+  },
