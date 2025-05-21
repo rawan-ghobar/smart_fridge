@@ -64,5 +64,26 @@ For each item:
 IMPORTANT RULES: Only return the JSON array, and DO NOT add any explanations.
 PROMPT;
     }
+
+    public static function buildMealGenerationWithPriorityPrompt(string $mealType, string $itemsDescription, int $priorityItemId)
+    {
+                return <<<PROMPT
+                    GOAL
+                    Create a {$mealType} recipe using ONLY the items listed below, and you are OBLIGED TO USE {$priorityItemId}.
+
+                    For **each ingredient you choose**
+                    - Declare the exact amount you use (it must not exceed the available quantity).
+                    - Keep the same unit (convert only if absolutely necessary).
+                    - Calculate the calories for that amount using the provided per‑unit value.
+
+                    After ingredients and instructions, include:
+                    total_calories = (sum of the calories for all ingredients)
+
+                    ### Available items
+                    {$itemsDescription}
+
+                    Return the recipe **strictly as JSON** that conforms to the attached schema.
+                    PROMPT;
+    }
 }
 
