@@ -15,3 +15,4 @@ const useUser = () => {
         console.error('Failed to load user', error);
       } finally {
         setLoading(false);
+    };
