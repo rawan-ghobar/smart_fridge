@@ -14,3 +14,5 @@ import COLORS from '../../../theme/colors';
 const ProfileScreen = () => {
 const { user, loading } = useUser();
 if (loading) {
+  return (
+    <SafeAreaView style={styles.safeArea}>
