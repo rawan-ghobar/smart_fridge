@@ -11,3 +11,4 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 import useExpiringItems from '../hooks/useExpiringItems';
 import ItemCard from '../components/ItemCard'; // reused component
+import COLORS from '../../../theme/colors';
