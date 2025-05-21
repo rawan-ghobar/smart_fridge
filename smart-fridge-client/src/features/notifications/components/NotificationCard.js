@@ -9,3 +9,4 @@ const NotificationCard = ({ message, created_at }) => {
     </View>
   );
 };
+const styles = StyleSheet.create({
