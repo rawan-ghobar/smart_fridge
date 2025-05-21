@@ -3,3 +3,4 @@ const COLORS = {
   background: '#F7F9FB',
   primaryAccent: '#2A6AE4',
   secondaryAccent: '#F96E2A',
+  placeholder: '#C0C0C0',
