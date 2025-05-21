@@ -16,3 +16,4 @@ const useUser = () => {
       } finally {
         setLoading(false);
     };
+    fetchUser();
