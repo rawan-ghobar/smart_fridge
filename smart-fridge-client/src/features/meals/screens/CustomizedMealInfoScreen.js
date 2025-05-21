@@ -25,3 +25,13 @@ const CustomizedMealInfoScreen = ({ route, navigation }) => {
   const [usercalories, setUserCalories] = useState('');
   const [notes, setNotes] = useState('');
   const [loading, setLoading] = useState(false);
+  const handleContinue = async () => {
+    if (!usercalories) {
+      Alert.alert('Calories', 'Please enter a calorie target.');
+      return;
+    }
+
+    try {
+      setLoading(true);
+      const fridgeId = await AsyncStorage.getItem('fridgeId');
+
