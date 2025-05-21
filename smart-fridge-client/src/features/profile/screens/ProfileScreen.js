@@ -1,32 +1,35 @@
 import React from 'react';
-import { SafeAreaView, View, Text, StyleSheet } from 'react-native';
+import {
+  SafeAreaView,
+  View,
+  StyleSheet,
+  TouchableOpacity,
+  Text,
+  ActivityIndicator,
+} from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import useUser from '../hooks/useUser';
+import ProfileHeader from '../components/ProfileHeader';
 import COLORS from '../../../theme/colors';
-
 const ProfileScreen = () => {
+const { user, loading } = useUser();
+if (loading) {
   return (
     <SafeAreaView style={styles.safeArea}>
-      <View style={styles.container}>
-        <Text style={styles.text}>Profile Screen</Text>
-      </View>
+      <ActivityIndicator size="large" color={COLORS.primaryAccent} style={{ marginTop: 100 }} />
     </SafeAreaView>
   );
-};
-
-const styles = StyleSheet.create({
-  safeArea: {
-    flex: 1,
-    backgroundColor: COLORS.background,
-  },
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  text: {
-    color: COLORS.primary,
-    fontSize: 24,
-    fontWeight: '600',
-  },
-});
-
-export default ProfileScreen;
+return (
+  <SafeAreaView style={styles.safeArea}>
+    <View style={styles.container}>
+      <ProfileHeader avatar={user.avatar} name={user.name} email={user.email} />
+      <View style={styles.actions}>
+        <TouchableOpacity style={styles.button}>
+          <Ionicons name="create-outline" size={20} color={COLORS.primary} />
+          <Text style={styles.buttonText}>Edit Profile</Text>
+        </TouchableOpacity>
+          <Ionicons name="lock-closed-outline" size={20} color={COLORS.primary} />
+          <Text style={styles.buttonText}>Change Password</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={[styles.button, styles.logout]}>
+          <Ionicons name="log-out-outline" size={20} color={COLORS.danger} />
