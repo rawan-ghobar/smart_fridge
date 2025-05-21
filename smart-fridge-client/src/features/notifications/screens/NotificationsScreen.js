@@ -56,3 +56,9 @@ const styles = StyleSheet.create({
   },
   loader: { marginTop: 50 },
   listContent: { paddingHorizontal: 20, paddingTop: 10, paddingBottom: 20 },
+  empty: {
+    textAlign: 'center',
+    color: COLORS.placeholder,
+    marginTop: 40,
+  },
+});
