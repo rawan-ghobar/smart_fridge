@@ -27,3 +27,9 @@ const NotificationsScreen = ({ navigation }) => {
       </View>
       {loading ? (
         <ActivityIndicator size="large" color={COLORS.primaryAccent} style={styles.loader} />
+      ) : (
+        <FlatList
+          data={notifications}
+          renderItem={({ item }) => (
+            <NotificationCard message={item.message} created_at={item.created_at} />
+          )}
