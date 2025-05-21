@@ -32,3 +32,4 @@ return (
           <Text style={styles.buttonText}>Change Password</Text>
         </TouchableOpacity>
         <TouchableOpacity style={[styles.button, styles.logout]}>
+          <Ionicons name="log-out-outline" size={20} color={COLORS.danger} />
