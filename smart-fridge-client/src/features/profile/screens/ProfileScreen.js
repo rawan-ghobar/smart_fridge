@@ -22,3 +22,4 @@ if (loading) {
 return (
   <SafeAreaView style={styles.safeArea}>
     <View style={styles.container}>
+      <ProfileHeader avatar={user.avatar} name={user.name} email={user.email} />
