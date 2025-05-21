@@ -21,3 +21,8 @@ const CustomizedMealInfoScreen = ({ route, navigation }) => {
   const stepsArray = Array.isArray(steps)
     ? steps
     : steps.split('.').map((item) => item.trim()).filter(Boolean);
+  return (
+    <SafeAreaView style={styles.safeArea}>
+      <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+        <Ionicons name="arrow-back-outline" size={24} color={COLORS.primary} />
+      </TouchableOpacity>
