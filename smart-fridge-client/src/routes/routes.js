@@ -19,3 +19,7 @@ import CustomizeMealScreen from '../features/meals/screens/CustomizeMealScreen';
 import CustomizedMealInfoScreen from '../features/meals/screens/CustomizedMealInfoScreen';
 
 const Stack = createNativeStackNavigator();
+const Routes = () => {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Login">
