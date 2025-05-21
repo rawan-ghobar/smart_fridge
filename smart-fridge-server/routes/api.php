@@ -19,10 +19,10 @@ Route::prefix('v0.1')->group(function () {
             Route::post('/generatewithcal', [MealGenerationController::class, 'generateMealWithCalorieLimit']);
         });
 
-        Route::prefix('fridge1')->group(function () {
-
+        Route::prefix('fridge')->group(function () {
+            Route::post('/connect', [FridgeController::class, 'connect']);
             Route::get('/getfridges', [FridgeController::class, 'getFridges']);
-
+            Route::post('/addorupdate/{id}',   [FridgeController::class, 'addorUpdateFridge']);
             Route::delete('/disconnect/{id}',  [FridgeController::class, 'disconnect']);
         });
 
@@ -38,10 +38,5 @@ Route::prefix('v0.1')->group(function () {
     Route::prefix('guest')->group(function () {
         Route::post('/login',  [AuthController::class, 'login']);
         Route::post('/signup', [AuthController::class, 'signup']);
-    });
-
-    Route::prefix('fridge')->group(function (){
-        Route::post('/addorupdate/{id}',   [FridgeController::class, 'addorUpdateFridge']);
-        Route::post('/connect', [FridgeController::class, 'connect']);
     });
 });
