@@ -15,3 +15,5 @@ import COLORS from '../../../theme/colors';
 import typography from '../../../theme/typography';
 const NotificationsScreen = ({ navigation }) => {
   const { notifications, loading } = useNotifications();
+  return (
+    <SafeAreaView style={styles.safeArea}>
