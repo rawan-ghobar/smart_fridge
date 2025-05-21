@@ -16,3 +16,5 @@ const HomeScreen = ({ navigation }) => {
           <Text style={styles.welcomeSubText}>How can we help you today?</Text>
         </View>
         <Image source={require('../../../../assets/happyfridge.png')} style={styles.fridgeImage} resizeMode="contain" />
+        <View style={styles.buttonsContainer}>
+          <OptionButton icon={<FontAwesome6 name="list-alt" size={30} color={COLORS.primary} />} label="Check available items" onPress={() => handlePress('Check Items')} />
