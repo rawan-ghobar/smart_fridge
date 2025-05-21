@@ -120,3 +120,16 @@ return (
                 numberOfLines={3}
               />
             </View>
+            <TouchableOpacity style={styles.continueButton} onPress={handleContinue}>
+              {loading ? (
+                <ActivityIndicator color={COLORS.white} />
+              ) : (
+                <Text style={styles.continueText}>Continue</Text>
+              )}
+            </TouchableOpacity>
+          </View>
+        </ScrollView>
+      </TouchableWithoutFeedback>
+    </KeyboardAvoidingView>
+  </SafeAreaView>
+);
