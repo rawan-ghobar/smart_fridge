@@ -119,3 +119,19 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     backgroundColor: COLORS.white,
   },
+  optionButtonSelected: {
+    borderColor: COLORS.secondaryAccent,
+    shadowColor: COLORS.secondaryAccent,
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3,
+    elevation: 3,
+  },
+  optionText: {
+    color: COLORS.primary,
+    fontSize: 16,
+    fontWeight: '500',
+  },
+  optionTextSelected: {
+    color: COLORS.secondaryAccent,
+  },
