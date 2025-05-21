@@ -50,3 +50,18 @@ const CustomizedMealInfoScreen = ({ route, navigation }) => {
         res.data?.data && typeof res.data.data === 'object'
           ? res.data.data
           : res.data;
+      if (meal && meal.meal_name) {
+        navigation.navigate('CustomizedMealInfo', {
+          mealData: {
+            name: meal.meal_name,
+            usercalories: meal.total_calories,
+            ingredients: meal.ingredients
+              .split('\n')
+              .map((line) => line.replace(/^- /, '').trim())
+              .filter(Boolean),
+            steps: meal.instructions
+              .split('\n')
+              .map((step) => step.trim())
+              .filter(Boolean),
+          },
+        });
