@@ -8,3 +8,6 @@ import COLORS from '../../../theme/colors';
 import typography from '../../../theme/typography';
 const HomeScreen = ({ navigation }) => {
   const { userName, handlePress } = useHomeActions(navigation);
+  return (
+    <SafeAreaView style={styles.safeArea}>
+      <ScrollView contentContainerStyle={styles.container}>
