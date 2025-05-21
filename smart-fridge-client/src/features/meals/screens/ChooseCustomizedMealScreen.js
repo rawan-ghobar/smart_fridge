@@ -135,3 +135,16 @@ const styles = StyleSheet.create({
   optionTextSelected: {
     color: COLORS.secondaryAccent,
   },
+  continueButton: {
+    backgroundColor: COLORS.primaryAccent,
+    width: '100%',
+    paddingVertical: 14,
+    borderRadius: 10,
+    alignItems: 'center',
+  },
+  continueButtonText: {
+    color: COLORS.white,
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+});
