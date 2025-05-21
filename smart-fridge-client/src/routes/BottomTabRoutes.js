@@ -9,3 +9,13 @@ import ProfileScreen from '../features/profile/screens/ProfileScreen';
 import COLORS from '../theme/colors';
 const Tab = createBottomTabNavigator();
 const BottomTabsRoutes = () => (
+  <Tab.Navigator
+    screenOptions={({ route }) => ({
+      headerShown: false,
+      tabBarActiveTintColor: COLORS.primary,
+      tabBarInactiveTintColor: COLORS.placeholder,
+      tabBarStyle: {
+        height: 100,
+        paddingBottom: 10,
+        paddingTop: 10,
+      },
