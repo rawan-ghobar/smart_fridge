@@ -41,3 +41,16 @@ const ChooseMealScreen = ({ navigation }) => {
       });
 
       const { data } = response.data;
+      if (data) {
+        navigation.navigate('MealInfo', {
+          mealData: {
+            name: data.meal_name,
+            calories: data.total_calories,
+            ingredients: data.ingredients
+              .split('\n')
+              .map((line) => line.replace(/^- /, '').trim()),
+            steps: data.instructions
+              .split('\n')
+              .map((step) => step.trim()),
+          },
+        });
