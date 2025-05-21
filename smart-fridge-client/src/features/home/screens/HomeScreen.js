@@ -11,3 +11,7 @@ const HomeScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <ScrollView contentContainerStyle={styles.container}>
+        <View style={styles.welcomeContainer}>
+          <Text style={styles.welcomeText}>Hello {userName}!</Text>
+          <Text style={styles.welcomeSubText}>How can we help you today?</Text>
+        </View>
