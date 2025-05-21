@@ -15,3 +15,4 @@ const HomeScreen = ({ navigation }) => {
           <Text style={styles.welcomeText}>Hello {userName}!</Text>
           <Text style={styles.welcomeSubText}>How can we help you today?</Text>
         </View>
+        <Image source={require('../../../../assets/happyfridge.png')} style={styles.fridgeImage} resizeMode="contain" />
