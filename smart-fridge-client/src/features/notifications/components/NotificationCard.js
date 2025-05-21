@@ -24,3 +24,7 @@ const styles = StyleSheet.create({
   },
   date: {
     color: COLORS.placeholder,
+    fontSize: 12,
+    marginTop: 6,
+  },
+});
