@@ -5,3 +5,4 @@ import api from '../../../services/api';
 const useNotifications = () => {
   const [notifications, setNotifications] = useState([]);
   const [loading, setLoading] = useState(true);
+  const fetchNotifications = async () => {
