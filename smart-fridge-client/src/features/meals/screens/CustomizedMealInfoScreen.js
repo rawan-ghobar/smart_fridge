@@ -92,3 +92,14 @@ const styles = StyleSheet.create({
     width: '100%',
     marginTop: 20,
   },
+  sectionTitle: {
+    ...typography.subheader,
+    color: COLORS.primary,
+    marginBottom: 10,
+  },
+  listItem: {
+    color: COLORS.primary,
+    fontSize: 14,
+    marginBottom: 6,
+  },
+});
