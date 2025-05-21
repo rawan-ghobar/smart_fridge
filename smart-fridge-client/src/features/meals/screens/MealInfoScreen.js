@@ -29,3 +29,11 @@ return (
       />
 
       <Text style={styles.caloriesText}>Total Calories: {calories}</Text>
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>Ingredients:</Text>
+        {ingredients?.map((item, index) => (
+          <Text key={index} style={styles.listItem}>
+            • {item}
+          </Text>
+        ))}
+      </View>
