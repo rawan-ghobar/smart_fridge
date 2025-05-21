@@ -5,3 +5,6 @@ export const useHomeActions = (navigation) => {
       case 'Random Meal':
         navigation.navigate('ChooseMeal');
         break;
+      case 'Check Items':
+        navigation.navigate('Items');
+        break;
