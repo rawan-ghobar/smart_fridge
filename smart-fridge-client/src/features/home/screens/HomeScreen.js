@@ -38,3 +38,11 @@ const styles = StyleSheet.create({
   welcomeContainer: { alignItems: 'center' },
   welcomeText: { ...typography.header, textAlign: 'center', marginTop: 100 },
   welcomeSubText: { ...typography.header, fontSize: 18, fontWeight: '400', textAlign: 'center' },
+  fridgeImage: { marginTop: 60, width: 200, height: 200, marginBottom: 10 },
+  buttonsContainer: {
+    flexDirection: 'row',
+    marginTop: 50,
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    width: '100%',
+  },
