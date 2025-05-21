@@ -12,3 +12,4 @@ const useUser = () => {
           avatar: require('../../../../assets/avatar-placeholder.png'),
         });
       } catch (error) {
+        console.error('Failed to load user', error);
