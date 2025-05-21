@@ -26,3 +26,9 @@ const HomeScreen = ({ navigation }) => {
     </SafeAreaView>
   );
 };
+const OptionButton = ({ icon, label, onPress }) => (
+  <TouchableOpacity style={styles.optionButton} onPress={onPress}>
+    {icon}
+    <Text style={styles.buttonText}>{label}</Text>
+  </TouchableOpacity>
+);
