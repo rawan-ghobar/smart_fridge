@@ -6,3 +6,5 @@ const useNotifications = () => {
   const [notifications, setNotifications] = useState([]);
   const [loading, setLoading] = useState(true);
   const fetchNotifications = async () => {
+    try {
+      const fridgeId = await AsyncStorage.getItem('fridgeId');
