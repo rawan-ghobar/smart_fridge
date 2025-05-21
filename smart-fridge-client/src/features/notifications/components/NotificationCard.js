@@ -6,3 +6,6 @@ const NotificationCard = ({ message, created_at }) => {
     <View style={styles.card}>
       <Text style={styles.message}>{message}</Text>
       <Text style={styles.date}>{new Date(created_at).toLocaleString()}</Text>
+    </View>
+  );
+};
