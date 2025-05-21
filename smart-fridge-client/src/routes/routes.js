@@ -30,3 +30,4 @@ const Routes = () => {
         <Stack.Screen name="Items" component={ItemListScreen} options={{ headerShown: false }} />
         <Stack.Screen name="AddItem" component={AddItemScreen} options={{ headerShown: false }} />
         <Stack.Screen name="ExpiringItems" component={ExpiringItemsScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="ConnectFridge" component={ConnectFridgeScreen} options={{ headerShown: false }} />
