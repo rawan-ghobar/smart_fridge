@@ -8,3 +8,4 @@ import NotificationsScreen from '../features/notifications/screens/Notifications
 import ProfileScreen from '../features/profile/screens/ProfileScreen';
 import COLORS from '../theme/colors';
 const Tab = createBottomTabNavigator();
+const BottomTabsRoutes = () => (
