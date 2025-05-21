@@ -8,7 +8,7 @@ import SignupScreen from '../features/auth/screens/SignupScreen';
 
 import ItemListScreen from '../features/items/screens/ItemListScreen';
 import AddItemScreen from '../features/items/screens/AddItemScreen';
-import ExpiringItemsScreen from '../features/items/screens/ExpiringItemsScreen';
+import ExpiringItemScreen from '../features/items/screens/ExpiringItemScreen';
 
 import ConnectFridgeScreen from '../features/fridge/screens/ConnectFridgeScreen';
 
@@ -29,7 +29,7 @@ const Routes = () => {
         {/* Items */}
         <Stack.Screen name="Items" component={ItemListScreen} options={{ headerShown: false }} />
         <Stack.Screen name="AddItem" component={AddItemScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="ExpiringItems" component={ExpiringItemsScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="ExpiringItems" component={ExpiringItemScreen} options={{ headerShown: false }} />
         <Stack.Screen name="ConnectFridge" component={ConnectFridgeScreen} options={{ headerShown: false }} />        {/* Meals */}
         <Stack.Screen name="ChooseMeal" component={ChooseMealScreen} options={{ headerShown: false }} />
         <Stack.Screen name="MealInfo" component={MealInfoScreen} options={{ headerShown: false }} />
