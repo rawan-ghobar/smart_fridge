@@ -20,3 +20,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import api from '../../../services/api';
 import COLORS from '../../../theme/colors';
 import typography from '../../../theme/typography';
+const CustomizedMealInfoScreen = ({ route, navigation }) => {
+  const { mealType } = route.params;
+  const [usercalories, setUserCalories] = useState('');
+  const [notes, setNotes] = useState('');
+  const [loading, setLoading] = useState(false);
