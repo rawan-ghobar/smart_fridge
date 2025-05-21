@@ -119,46 +119,63 @@ jobs:
 
             
   deploy-to-production:
-    needs: build-and-push
-    if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
+  needs: build-and-push
+  if: github.ref == 'refs/heads/main'
+  runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+  steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      - name: Validate main is merged from develop
-        run: |
-          git fetch origin develop
-          git merge-base --is-ancestor origin/develop HEAD || {
-            echo "ERROR: main is not up to date with develop"
-            exit 1
-          }
+    - name: Validate main is merged from develop
+      run: |
+        git fetch origin develop
+        git merge-base --is-ancestor origin/develop HEAD || {
+          echo "ERROR: main is not up to date with develop"
+          exit 1
+        }
 
-      - name: Deploy to PRODUCTION EC2
-        uses: appleboy/ssh-action@v0.1.10
-        with:
-          host: ${{ secrets.EC2_HOST_PRODUCTION }}
-          username: ${{ secrets.EC2_USER }}
-          key: ${{ secrets.EC2_KEY }}
-          script: |
+    - name: Deploy to PRODUCTION EC2
+      uses: appleboy/ssh-action@v0.1.10
+      with:
+        host: ${{ secrets.EC2_HOST_PRODUCTION }}
+        username: ${{ secrets.EC2_USER }}
+        key: ${{ secrets.EC2_KEY }}
+        script: |
+          # Clone project if it doesn't exist
+          if [ ! -d "/home/${{ secrets.EC2_USER }}/smart_fridge" ]; then
+            echo "Cloning project into /home/${{ secrets.EC2_USER }}/smart_fridge"
+            git clone https://github.com/rawan-ghobar/smart_fridge.git /home/${{ secrets.EC2_USER }}/smart_fridge
+          else
+            echo "Project already exists. Pulling latest code..."
             cd /home/${{ secrets.EC2_USER }}/smart_fridge
-            sudo docker compose down
-            sudo docker system prune -f
-            sudo docker pull ${{ secrets.DOCKER_USERNAME }}/smart_fridge_laravel:latest
-            sudo docker compose up -d
-            echo "Running migrations..."
-            echo "Running Laravel migrations..."
-            for i in {1..12}; do
-              echo "Waiting for MySQL to be ready..."
-              sudo docker exec smart_fridge-database-1 mysqladmin ping -h localhost -p1234 && break
-              sleep 5
-            done
+            git pull origin main
+          fi
 
-            for i in {1..5}; do
-              echo "Trying Laravel migrations..."
-              sudo docker exec smart_fridge-server-1 php artisan migrate --force && break
-              echo "Migration failed, retrying in 5s..."
-              sleep 5
-            done
+          cd /home/${{ secrets.EC2_USER }}/smart_fridge
+
+          echo "Stopping current containers..."
+          sudo docker compose down
+
+          echo "Cleaning up unused Docker resources..."
+          sudo docker system prune -f
+
+          echo "Pulling latest Docker image..."
+          sudo docker pull ${{ secrets.DOCKER_USERNAME }}/smart_fridge_laravel:latest
+
+          echo "Starting containers..."
+          sudo docker compose up -d
+
+          echo "Waiting for MySQL to be ready..."
+          for i in {1..12}; do
+            sudo docker exec smart_fridge-database-1 mysqladmin ping -h localhost -p1234 && break
+            sleep 5
+          done
+
+          echo "Running Laravel migrations..."
+          for i in {1..5}; do
+            sudo docker exec smart_fridge-server-1 php artisan migrate --force && break
+            echo "Migration failed, retrying in 5s..."
+            sleep 5
+          done
 
