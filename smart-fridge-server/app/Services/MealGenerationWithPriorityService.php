@@ -27,3 +27,6 @@ class MealGenerationService
                 'total_calories' => 'Numeric total calories for the whole meal',
             ]
         );
+
+        $response = Prism::structured()
+            ->using(Provider::OpenAI, 'gpt-4o')
