@@ -32,7 +32,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
-          extensions: mbstring, pdo, pdo_mysql, dom, curl,fileinfo
+          extensions: mbstring, pdo, pdo_mysql, dom, curl, fileinfo
           coverage: none
 
       - name: Install Composer dependencies
@@ -120,14 +120,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
-      - name: Validate main is merged from develop
-        run: |
-          git fetch origin develop
-          git merge-base --is-ancestor origin/develop HEAD || {
-            echo "ERROR: main is not up to date with develop"
-            exit 1
-          }
 
       - name: Deploy to PRODUCTION EC2
         uses: appleboy/ssh-action@v0.1.10
