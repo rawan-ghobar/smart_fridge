@@ -30,3 +30,4 @@ const useNotifications = () => {
     fetchNotifications();
   }, []);
   return { notifications, loading, refetch: fetchNotifications };
+};
