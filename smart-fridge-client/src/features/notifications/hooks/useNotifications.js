@@ -4,3 +4,4 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import api from '../../../services/api';
 const useNotifications = () => {
   const [notifications, setNotifications] = useState([]);
+  const [loading, setLoading] = useState(true);
