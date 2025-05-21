@@ -6,3 +6,5 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useHomeActions } from '../hooks/useHomeActions';
 import COLORS from '../../../theme/colors';
 import typography from '../../../theme/typography';
+const HomeScreen = ({ navigation }) => {
+  const { userName, handlePress } = useHomeActions(navigation);
