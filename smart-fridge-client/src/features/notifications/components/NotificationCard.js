@@ -4,3 +4,4 @@ import COLORS from '../../../theme/colors';
 const NotificationCard = ({ message, created_at }) => {
   return (
     <View style={styles.card}>
+      <Text style={styles.message}>{message}</Text>
