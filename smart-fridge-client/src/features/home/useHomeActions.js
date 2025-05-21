@@ -16,3 +16,5 @@ export const useHomeActions = (navigation) => {
         break;
       default:
         console.log(`Unhandled action: ${action}`);
+    }
+  };
