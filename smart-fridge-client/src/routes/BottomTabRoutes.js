@@ -19,3 +19,21 @@ const BottomTabsRoutes = () => (
         paddingBottom: 10,
         paddingTop: 10,
       },
+      tabBarIcon: ({ color, size }) => {
+        switch (route.name) {
+          case 'Home':
+            return <Ionicons name="home-outline" size={size} color={color} />;
+          case 'Shopping List':
+            return <MaterialIcons name="list-alt" size={size} color={color} />;
+          case 'Meals':
+            return <Ionicons name="fast-food-outline" size={size} color={color} />;
+          case 'Notifications':
+            return <Ionicons name="notifications-outline" size={size} color={color} />;
+          case 'Profile':
+            return <Ionicons name="person-outline" size={size} color={color} />;
+          default:
+            return null;
+        }
+      },
+    })}
+  >
