@@ -21,3 +21,12 @@ const ChooseMealScreen = ({ navigation }) => {
   const handleMealSelect = (meal) => {
     setSelectedMeal(meal);
   };
+  const handleContinue = async () => {
+    if (!selectedMeal) {
+      Alert.alert('Select Meal', 'Please select a meal type first');
+      return;
+    }
+
+    try {
+      setLoading(true);
+      const fridgeId = await AsyncStorage.getItem('fridgeId');
