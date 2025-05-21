@@ -8,3 +8,6 @@ export const useHomeActions = (navigation) => {
       case 'Check Items':
         navigation.navigate('Items');
         break;
+      case 'Custom Meal':
+        navigation.navigate('ChooseCustomizedMeal');
+        break;
