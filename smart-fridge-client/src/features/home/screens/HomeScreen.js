@@ -3,3 +3,4 @@ import { SafeAreaView, ScrollView, View, Text, StyleSheet, Image, TouchableOpaci
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome6 } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { useHomeActions } from '../hooks/useHomeActions';
