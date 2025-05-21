@@ -26,3 +26,4 @@ return (
       <View style={styles.actions}>
         <TouchableOpacity style={styles.button}>
           <Ionicons name="create-outline" size={20} color={COLORS.primary} />
+          <Text style={styles.buttonText}>Edit Profile</Text>
