@@ -17,3 +17,6 @@ const ChooseCustomizedMealScreen = ({ navigation }) => {
   const [selectedMeal, setSelectedMeal] = useState(null);
   const [loading, setLoading] = useState(false);
   const mealOptions = ['Breakfast', 'Lunch', 'Dinner'];
+  const handleMealSelect = (meal) => {
+    setSelectedMeal(meal);
+  };
