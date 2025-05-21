@@ -32,3 +32,5 @@ class MealGenerationService
             ->using(Provider::OpenAI, 'gpt-4o')
             ->withSchema($schema)
             ->withSystemPrompt('You are a smart fridge, professional cook, and a nutrition specialist')
+            ->withPrompt($prompt)
+            ->asStructured();
