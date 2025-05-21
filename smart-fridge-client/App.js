@@ -1,5 +1,4 @@
 import React from 'react';
-import { Text as DefaultText } from 'react-native';
 import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
 import Routes from './src/routes/routes';
@@ -13,13 +12,7 @@ const fetchFonts = () => {
 };
 
 export default function App() {
-
   const [fontsLoaded, setFontsLoaded] = React.useState(false);
-
-  React.useEffect(() => {
-    DefaultText.defaultProps = DefaultText.defaultProps || {};
-    DefaultText.defaultProps.style = { fontFamily: 'Outfit-Regular' };
-  }, []);
 
   if (!fontsLoaded) {
     return (
