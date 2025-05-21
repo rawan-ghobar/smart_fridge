@@ -55,3 +55,4 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   loader: { marginTop: 50 },
+  listContent: { paddingHorizontal: 20, paddingTop: 10, paddingBottom: 20 },
