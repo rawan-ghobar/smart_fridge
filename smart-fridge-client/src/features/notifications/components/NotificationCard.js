@@ -12,3 +12,4 @@ const NotificationCard = ({ message, created_at }) => {
 const styles = StyleSheet.create({
   card: {
     backgroundColor: COLORS.white,
+    borderRadius: 10,
