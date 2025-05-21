@@ -33,3 +33,5 @@ const NotificationsScreen = ({ navigation }) => {
           renderItem={({ item }) => (
             <NotificationCard message={item.message} created_at={item.created_at} />
           )}
+          keyExtractor={(item) => item.id.toString()}
+          contentContainerStyle={styles.listContent}
