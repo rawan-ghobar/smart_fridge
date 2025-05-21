@@ -17,3 +17,5 @@ if (loading) {
   return (
     <SafeAreaView style={styles.safeArea}>
       <ActivityIndicator size="large" color={COLORS.primaryAccent} style={{ marginTop: 100 }} />
+    </SafeAreaView>
+  );
