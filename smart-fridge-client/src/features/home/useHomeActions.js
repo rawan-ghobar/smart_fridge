@@ -14,3 +14,5 @@ export const useHomeActions = (navigation) => {
       case 'Expiry Products':
         navigation.navigate('ExpiringItems');
         break;
+      default:
+        console.log(`Unhandled action: ${action}`);
