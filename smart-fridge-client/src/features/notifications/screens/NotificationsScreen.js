@@ -44,3 +44,5 @@ const NotificationsScreen = ({ navigation }) => {
   );
 };
 const styles = StyleSheet.create({
+  safeArea: { flex: 1, backgroundColor: COLORS.background },
+  headerWrapper: { paddingHorizontal: 20, paddingVertical: 10, marginTop: 30 },
