@@ -36,3 +36,8 @@ const ChooseCustomizedMealScreen = ({ navigation }) => {
       setLoading(false);
     }
   };
+  return (
+    <SafeAreaView style={styles.safeArea}>
+      <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+        <Ionicons name="arrow-back-outline" size={24} color={COLORS.primary} />
+      </TouchableOpacity>
