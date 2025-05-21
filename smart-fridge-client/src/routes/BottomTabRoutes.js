@@ -3,10 +3,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 import HomeScreen from '../features/home/screens/HomeScreen';
 import ShoppingListScreen from '../features/shopping/screens/ShoppingListScreen';
-import MealsScreen from '../features/meals/screens/MealsScreen';
 import NotificationsScreen from '../features/notifications/screens/NotificationsScreen';
 import ProfileScreen from '../features/profile/screens/ProfileScreen';
 import COLORS from '../theme/colors';
+import SavedMealsScreen from '../features/meals/screens/SavedMealsScreen';
 const Tab = createBottomTabNavigator();
 const BottomTabsRoutes = () => (
   <Tab.Navigator
@@ -39,7 +39,7 @@ const BottomTabsRoutes = () => (
   >
     <Tab.Screen name="Home" component={HomeScreen} />
     <Tab.Screen name="Shopping List" component={ShoppingListScreen} />
-    <Tab.Screen name="Meals" component={MealsScreen} />
+    <Tab.Screen name="Meals" component={SavedMealsScreen} />
     <Tab.Screen name="Notifications" component={NotificationsScreen} />
     <Tab.Screen name="Profile" component={ProfileScreen} />
   </Tab.Navigator>
