@@ -11,3 +11,9 @@ import AddItemScreen from '../features/items/screens/AddItemScreen';
 import ExpiringItemsScreen from '../features/items/screens/ExpiringItemsScreen';
 
 import ConnectFridgeScreen from '../features/fridge/screens/ConnectFridgeScreen';
+
+import ChooseMealScreen from '../features/meals/screens/ChooseMealScreen';
+import MealInfoScreen from '../features/meals/screens/MealInfoScreen';
+import ChooseCustomizedMealScreen from '../features/meals/screens/ChooseCustomizedMealScreen';
+import CustomizeMealScreen from '../features/meals/screens/CustomizeMealScreen';
+import CustomizedMealInfoScreen from '../features/meals/screens/CustomizedMealInfoScreen';
