@@ -26,3 +26,6 @@ const useNotifications = () => {
       setLoading(false);
     }
   };
+  useEffect(() => {
+    fetchNotifications();
+  }, []);
