@@ -14,3 +14,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 30,
   },
+    avatar: {
+    width: 100,
+    height: 100,
+
