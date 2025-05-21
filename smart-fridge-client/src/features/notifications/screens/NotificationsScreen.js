@@ -5,10 +5,10 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import api from '../services/api';
-import COLORS from '../theme/colors';
-import typography from '../theme/typography';
+import COLORS from '../../../theme/colors';
+import typography from '../../../theme/typography';
 
-const Notifications = ({ navigation }) => {
+const NotificationsScreen = ({ navigation }) => {
   const [notifications, setNotifications] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -96,4 +96,4 @@ const styles = StyleSheet.create({
   date: { color: COLORS.placeholder, fontSize: 12, marginTop: 6 },
 });
 
-export default Notifications;
+export default NotificationsScreen;
