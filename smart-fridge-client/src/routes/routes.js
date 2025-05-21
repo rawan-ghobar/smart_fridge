@@ -30,4 +30,14 @@ const Routes = () => {
         <Stack.Screen name="Items" component={ItemListScreen} options={{ headerShown: false }} />
         <Stack.Screen name="AddItem" component={AddItemScreen} options={{ headerShown: false }} />
         <Stack.Screen name="ExpiringItems" component={ExpiringItemsScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="ConnectFridge" component={ConnectFridgeScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="ConnectFridge" component={ConnectFridgeScreen} options={{ headerShown: false }} />        {/* Meals */}
+        <Stack.Screen name="ChooseMeal" component={ChooseMealScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="MealInfo" component={MealInfoScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="ChooseCustomizedMeal" component={ChooseCustomizedMealScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="MealCustomize" component={CustomizeMealScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="CustomizedMealInfo" component={CustomizedMealInfoScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="ChooseMeal" component={ChooseMealScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="MealInfo" component={MealInfoScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="ChooseCustomizedMeal" component={ChooseCustomizedMealScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="MealCustomize" component={CustomizeMealScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="CustomizedMealInfo" component={CustomizedMealInfoScreen} options={{ headerShown: false }} />
