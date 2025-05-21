@@ -77,3 +77,9 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     paddingBottom: 20,
   },
+  emptyText: {
+    textAlign: 'center',
+    marginTop: 30,
+    color: COLORS.placeholder,
+  },
+});
