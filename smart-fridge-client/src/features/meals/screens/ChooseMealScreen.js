@@ -135,3 +135,32 @@ const styles = StyleSheet.create({
     marginTop: 30,
     marginBottom: 30,
   },
+  optionsContainer: {
+    width: '100%',
+    marginBottom: 30,
+  },
+  optionButton: {
+    borderWidth: 1,
+    borderColor: COLORS.primary,
+    borderRadius: 10,
+    paddingVertical: 14,
+    alignItems: 'center',
+    marginBottom: 15,
+    backgroundColor: COLORS.white,
+  },
+  optionButtonSelected: {
+    borderColor: COLORS.secondaryAccent,
+    shadowColor: COLORS.secondaryAccent,
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3,
+    elevation: 3,
+  },
+  optionText: {
+    color: COLORS.primary,
+    fontSize: 16,
+    fontWeight: '500',
+  },
+  optionTextSelected: {
+    color: COLORS.secondaryAccent,
+  },
