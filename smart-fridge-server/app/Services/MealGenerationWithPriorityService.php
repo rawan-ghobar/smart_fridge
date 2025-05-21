@@ -16,3 +16,14 @@ class MealGenerationService
         $itemsDescription = ItemHelper::buildItemsDescription($mappedItems);
 
         $prompt = PromptHelper::buildMealGenerationPrompt($itemsDescription, $mealType);
+
+        $schema = MealGenerationSchema::createPrismSchema(
+            'meal_recommendation',
+            "A {$mealType} meal using available quantities and returning total ca lories",
+            [
+                'meal_name'      => 'Name of the recommended meal',
+                'ingredients'    => 'List each ingredient with exact quantity and unit used',
+                'instructions'   => 'Step by step preparation instructions',
+                'total_calories' => 'Numeric total calories for the whole meal',
+            ]
+        );
