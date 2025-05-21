@@ -9,3 +9,4 @@ const ProfileHeader = ({ avatar, name, email }) => (
     <Text style={styles.email}>{email}</Text>
   </View>
 );
+const styles = StyleSheet.create({
