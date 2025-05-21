@@ -20,3 +20,5 @@ const styles = StyleSheet.create({
   },
   message: {
     color: COLORS.primary,
+    fontSize: 16,
+  },
