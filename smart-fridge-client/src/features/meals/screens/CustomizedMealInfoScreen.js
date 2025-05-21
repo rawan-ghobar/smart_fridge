@@ -108,3 +108,15 @@ return (
                 onChangeText={setUserCalories}
               />
             </View>
+            <View style={styles.inputGroup}>
+              <Text style={styles.label}>Additional notes (optional)</Text>
+              <TextInput
+                placeholder="No peanuts, extra protein…"
+                placeholderTextColor={COLORS.placeholder}
+                style={[styles.input, styles.notesInput]}
+                value={notes}
+                onChangeText={setNotes}
+                multiline
+                numberOfLines={3}
+              />
+            </View>
