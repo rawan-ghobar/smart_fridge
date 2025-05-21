@@ -11,3 +11,4 @@ const useUser = () => {
           email: 'johndoe@example.com',
           avatar: require('../../../../assets/avatar-placeholder.png'),
         });
+      } catch (error) {
