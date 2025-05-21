@@ -15,3 +15,8 @@ api.interceptors.request.use(
       console.error('Failed to get token from AsyncStorage', error);
     }
     return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
