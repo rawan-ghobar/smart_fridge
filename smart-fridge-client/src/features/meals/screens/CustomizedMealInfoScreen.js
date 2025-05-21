@@ -97,3 +97,14 @@ return (
               style={styles.image}
               resizeMode="contain"
             />
+            <View style={styles.inputGroup}>
+              <Text style={styles.label}>Calorie target *</Text>
+              <TextInput
+                placeholder="e.g. 500"
+                placeholderTextColor={COLORS.placeholder}
+                keyboardType="numeric"
+                style={styles.input}
+                value={usercalories}
+                onChangeText={setUserCalories}
+              />
+            </View>
