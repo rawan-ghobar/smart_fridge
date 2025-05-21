@@ -13,3 +13,6 @@ import { Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import COLORS from '../../../theme/colors';
 import typography from '../../../theme/typography';
+const ChooseCustomizedMealScreen = ({ navigation }) => {
+  const [selectedMeal, setSelectedMeal] = useState(null);
+  const [loading, setLoading] = useState(false);
