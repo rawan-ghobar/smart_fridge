@@ -13,3 +13,4 @@ const useNotifications = () => {
         setLoading(false);
         return;
       }
+      const res = await api.get(`/user/getnotifications/${fridgeId}`);
