@@ -70,3 +70,11 @@ const ChooseMealScreen = ({ navigation }) => {
       <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
         <Ionicons name="arrow-back-outline" size={24} color={COLORS.primary} />
       </TouchableOpacity>
+      <View style={styles.container}>
+        <Text style={styles.questionText}>Which meal do you want me to generate?</Text>
+
+        <Image
+          source={require('../../../../assets/thinkingfridge.png')}
+          style={styles.fridgeImage}
+          resizeMode="contain"
+        />
