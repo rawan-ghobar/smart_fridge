@@ -4,3 +4,4 @@ const COLORS = {
   primaryAccent: '#2A6AE4',
   secondaryAccent: '#F96E2A',
   placeholder: '#C0C0C0',
+  white: '#FFFFFF',
