@@ -20,3 +20,4 @@ const useUser = () => {
   }, []);
   return { user, loading };
 };
+export default useUser;
