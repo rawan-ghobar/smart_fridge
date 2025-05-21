@@ -19,3 +19,13 @@ return (
     <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
       <Ionicons name="arrow-back-outline" size={24} color={COLORS.primary} />
     </TouchableOpacity>
+    <ScrollView contentContainerStyle={styles.container}>
+      <Text style={styles.headerText}>{name}</Text>
+
+      <Image
+        source={require('../../../../assets/fridgeeating.png')}
+        style={styles.mealImage}
+        resizeMode="cover"
+      />
+
+      <Text style={styles.caloriesText}>Total Calories: {calories}</Text>
