@@ -11,3 +11,6 @@ export const useHomeActions = (navigation) => {
       case 'Custom Meal':
         navigation.navigate('ChooseCustomizedMeal');
         break;
+      case 'Expiry Products':
+        navigation.navigate('ExpiringItems');
+        break;
