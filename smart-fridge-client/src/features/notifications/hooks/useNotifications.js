@@ -22,3 +22,7 @@ const useNotifications = () => {
     } catch (err) {
       console.error(err.response?.data || err.message);
       Alert.alert('Error', 'Network error.');
+    } finally {
+      setLoading(false);
+    }
+  };
