@@ -14,3 +14,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import api from '../../../services/api';
 import COLORS from '../../../theme/colors';
 import typography from '../../../theme/typography';
+const ChooseMealScreen = ({ navigation }) => {
+  const [selectedMeal, setSelectedMeal] = useState(null);
+  const [loading, setLoading] = useState(false);
