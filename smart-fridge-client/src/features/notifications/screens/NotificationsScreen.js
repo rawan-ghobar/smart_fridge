@@ -17,3 +17,11 @@ const NotificationsScreen = ({ navigation }) => {
   const { notifications, loading } = useNotifications();
   return (
     <SafeAreaView style={styles.safeArea}>
+      <View style={styles.headerWrapper}>
+        <View style={styles.header}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Ionicons name="arrow-back-outline" size={24} color={COLORS.primary} />
+          </TouchableOpacity>
+          <Text style={styles.headerTitle}>Notifications</Text>
+        </View>
+      </View>
