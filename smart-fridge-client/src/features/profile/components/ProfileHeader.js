@@ -7,3 +7,5 @@ const ProfileHeader = ({ avatar, name, email }) => (
     <Image source={avatar} style={styles.avatar} />
     <Text style={styles.name}>{name}</Text>
     <Text style={styles.email}>{email}</Text>
+  </View>
+);
