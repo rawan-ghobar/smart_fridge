@@ -29,3 +29,4 @@ const useNotifications = () => {
   useEffect(() => {
     fetchNotifications();
   }, []);
+  return { notifications, loading, refetch: fetchNotifications };
