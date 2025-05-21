@@ -22,4 +22,8 @@ const styles = StyleSheet.create({
     borderColor: COLORS.primaryAccent,
     marginBottom: 16,
   },
-
+  name: {
+    ...typography.header,
+    color: COLORS.primary,
+    marginBottom: 4,
+  },
