@@ -43,3 +43,4 @@ const NotificationsScreen = ({ navigation }) => {
     </SafeAreaView>
   );
 };
+const styles = StyleSheet.create({
