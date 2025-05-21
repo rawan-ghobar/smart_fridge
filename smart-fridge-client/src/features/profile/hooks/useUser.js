@@ -5,3 +5,4 @@ const useUser = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
+        await new Promise(resolve => setTimeout(resolve, 1000));
