@@ -18,3 +18,5 @@ export const useHomeActions = (navigation) => {
         console.log(`Unhandled action: ${action}`);
     }
   };
+  return { userName, handlePress };
+};
