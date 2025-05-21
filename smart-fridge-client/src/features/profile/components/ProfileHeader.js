@@ -27,3 +27,8 @@ const styles = StyleSheet.create({
     color: COLORS.primary,
     marginBottom: 4,
   },
+  email: {
+    fontSize: 14,
+    color: COLORS.placeholder,
+  },
+});
