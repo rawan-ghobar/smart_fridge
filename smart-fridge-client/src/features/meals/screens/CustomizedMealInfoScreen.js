@@ -70,3 +70,16 @@ const styles = StyleSheet.create({
     paddingBottom: 30,
     alignItems: 'center',
   },
+  headerText: {
+    ...typography.header,
+    color: COLORS.secondaryAccent,
+    marginTop: 10,
+    marginBottom: 20,
+    textAlign: 'center',
+  },
+  mealImage: {
+    width: '50%',
+    height: 200,
+    borderRadius: 12,
+    marginBottom: 10,
+  },
