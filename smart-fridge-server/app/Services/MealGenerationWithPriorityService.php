@@ -5,3 +5,4 @@ use App\Helpers\PromptHelper;
 use Prism\Prism\Prism;
 use Prism\Prism\Enums\Provider;
 use App\Schemas\MealGenerationSchema;
+use Illuminate\Support\Collection;
