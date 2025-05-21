@@ -1,18 +1,22 @@
 <?php
+
 namespace App\Services;
+
 use App\Helpers\ItemHelper;
 use App\Helpers\PromptHelper;
 use Prism\Prism\Prism;
 use Prism\Prism\Enums\Provider;
 use App\Schemas\MealGenerationSchema;
 use Illuminate\Support\Collection;
-class MealGenerationService
+
+class MealGenerationWithPriorityService
 {
     public static function generateMeal(string $mealType, Collection $fridgeItems, int $priorityItemId)
     {
         $mappedItems = ItemHelper::mapFridgeItems($fridgeItems);
 
-        $priorityItemId = $fridgeItems->firstWhere('id', $priorityItemId);
+        $priorityItemId= $fridgeItems->firstWhere('id', $priorityItemId);
+
         $itemsDescription = ItemHelper::buildItemsDescription($mappedItems);
 
         $prompt = PromptHelper::buildMealGenerationPrompt($itemsDescription, $mealType);
@@ -34,7 +38,7 @@ class MealGenerationService
             ->withSystemPrompt('You are a smart fridge, professional cook, and a nutrition specialist')
             ->withPrompt($prompt)
             ->asStructured();
-        return $response->structured;
 
+        return $response->structured;
     }
 }
