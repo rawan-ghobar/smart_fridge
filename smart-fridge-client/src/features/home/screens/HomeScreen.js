@@ -32,3 +32,5 @@ const OptionButton = ({ icon, label, onPress }) => (
     <Text style={styles.buttonText}>{label}</Text>
   </TouchableOpacity>
 );
+const styles = StyleSheet.create({
+  safeArea: { flex: 1, backgroundColor: COLORS.background },
